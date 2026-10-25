@@ -1,0 +1,68 @@
+# E4 confirmatory suite: the T1.2 cross-crop trait axis.
+#
+# T1.2 trains on four crops and holds four out:
+#
+#   in-distribution  cotton, millet, rapeseed, rice
+#   held-out         barley, groundnut, pigeonpea, seed_onion
+#
+# so the suite carries its own seen control. The split structure mirrors the
+# submitted config's own `test_id_crops` / `test_heldout_crops` splits, which
+# were declared there but never frozen; this file freezes them against an
+# immutable source pool.
+#
+# Unlike the maize-derived suites there is no pairing across splits, and there
+# should not be: the two splits are different crops, so no scenario in one has
+# a counterpart in the other. Pairing within a crop is what the analysis uses,
+# and `crop_name` in the rendered env config carries it.
+#
+# The pool ships a real test split disjoint from train and val, so the frozen
+# source needed no exclusion step. See
+# experiments/rebuttal_confirmatory_eval/prepare_t12_eval_pool.py.
+env_name: wofost_gym
+dataset_id: e4_t12_cross_crop
+validation_axis: crop
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/t12_cross_crop_e4
+
+sampling:
+  generation_seed: 20260725
+  splits:
+    test_id_crops:
+      role: test
+      validation_set: seen_id_crops
+      source_split: test
+      labels:
+        crop_regime: id
+      crop_budgets:
+        cotton: 128
+        millet: 128
+        rapeseed: 128
+        rice: 128
+
+    test_heldout_crops:
+      role: test
+      validation_set: heldout_crops
+      source_split: test
+      labels:
+        crop_regime: heldout
+      crop_budgets:
+        barley: 128
+        groundnut: 128
+        pigeonpea: 128
+        seed_onion: 128
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  valid_action_bonus: 0.1
+  objective_id: profit_max
+  include_crop_traits: true
+  crop_traits_dir: agrimanager/env/wofost_gym/crop_traits
+  trait_schema: traits_v1_23d
+  require_think: false

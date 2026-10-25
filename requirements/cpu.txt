@@ -1,0 +1,46 @@
+# CPU-only stack: scripted baselines, dataset building, the WOFOST/Cycles
+# environments, numerical-RL baselines and the unit tests. No GPU, no vLLM.
+# Versions match requirements/locks/agrimanager-py312-cu128.lock.txt where that
+# file pins them. torch comes from the PyTorch CPU index (install.sh --cpu adds
+# --extra-index-url https://download.pytorch.org/whl/cpu).
+# The exact environment verified by install.sh --cpu is frozen in
+# requirements/locks/agrimanager-py312-cpu.lock.txt.
+torch==2.8.0
+numpy==2.2.0
+pandas==2.3.3
+pyarrow==22.0.0
+scipy==1.17.0
+matplotlib==3.10.8
+pillow==12.1.0
+PyYAML==6.0.3
+tqdm==4.67.2
+Jinja2==3.1.6
+requests==2.32.5
+cachetools==6.2.6
+cloudpickle==3.1.2
+hydra-core==1.3.2
+omegaconf==2.3.0
+gymnasium==1.0.0
+datasets==4.5.0
+huggingface-hub==0.36.0
+transformers==4.56.1
+tokenizers==0.22.2
+safetensors==0.7.0
+accelerate==1.12.0
+peft==0.18.1
+ray==2.53.0
+tensordict==0.10.0
+torchdata==0.11.0
+codetiming==1.4.0
+dill==0.4.0
+openai==2.16.0
+google-genai==1.61.0
+wandb==0.24.1
+# WOFOST-Gym (pcse, pcse_gym) runtime dependencies
+traitlets_pcse==5.0.0.dev0
+dotmap==1.3.30
+pygame==2.6.1
+tyro==1.0.5
+huggingface-sb3==3.0
+# tests
+pytest==9.0.2

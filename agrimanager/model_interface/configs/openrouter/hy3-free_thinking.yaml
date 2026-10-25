@@ -1,0 +1,9 @@
+model_provider: "openrouter"
+model_name: "tencent/hy3:free"
+num_workers: 8
+timeout: 180
+app_title: "AgriManager"
+
+# Enable the model's native reasoning without overriding its default effort.
+reasoning:
+  enabled: true

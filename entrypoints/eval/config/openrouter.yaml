@@ -1,0 +1,25 @@
+data:
+  inference_file: smoke_tests/wofost_gym/data/wofost_gym_smoke_llm/test.parquet
+  validation_axis: null
+  max_samples: null
+
+model:
+  config: agrimanager/model_interface/configs/openrouter/free.yaml
+  path: null  # Optional OpenRouter model slug override.
+
+runtime:
+  temperature: 0
+  max_tokens: 128
+  max_retries: 2
+  num_trials: 1
+  max_turns: null
+
+output:
+  dir: smoke_tests/wofost_gym/results/llm_eval/openrouter
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

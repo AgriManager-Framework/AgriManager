@@ -1,0 +1,30 @@
+# CPU quickstart: 8 maize scenarios from the small public maize weather pool
+# (about 0.25 GB download). Used by smoke_tests/wofost_gym/run_cpu_quickstart.sh.
+# The WOFOST-Gym checkout is taken from $WOFOST_GYM_PATH, or from
+# ../AgriManagerExternal/WOFOSTGym when that variable is unset (install.sh default).
+env_name: wofost_gym
+dataset_id: quickstart_maize_cpu
+
+source:
+  kind: weather_pool
+  path: agrimanager/weather_pool_maize
+
+sampling:
+  generation_seed: 42
+  splits:
+    train:
+      crops: [maize]
+      num_samples: 8
+    val:
+      crop_budgets:
+        maize: 8
+
+env:
+  env_id: lnpkw-v0
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: profit_max
+  include_crop_traits: false
+  require_think: false

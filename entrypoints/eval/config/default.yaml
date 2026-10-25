@@ -1,0 +1,40 @@
+data:
+  inference_file: smoke_tests/wofost_gym/data/wofost_gym_smoke_llm/test.parquet
+  validation_axis: null
+  max_samples: null
+
+  # Frozen evaluation suites are policy-neutral, so the reasoning format the
+  # checkpoint was trained under must be reapplied here. Example:
+  #   +data.env_config_overrides.require_think=True
+  #   +data.env_config_overrides.thinking_mode=think
+  #   +data.env_config_overrides.think_tag=tool_call
+  env_config_overrides: {}
+
+  # Values every environment must hold after the overrides are applied. A
+  # mistyped override key silently leaves the suite default in place and still
+  # produces a plausible score; declaring the expectation turns that into an
+  # error. Example: +data.assert_env_config.require_think=True
+  assert_env_config: {}
+
+model:
+  config: agrimanager/model_interface/configs/vllm_offline/default.yaml
+  path: null  # override this with your checkpoint path
+
+runtime:
+  temperature: 0
+  max_tokens: 40000
+  max_retries: 5
+  # Repeated evaluation passes over the same file. The rollout module already
+  # reads this; declaring it here is what lets a caller override it, since hydra
+  # refuses to set a key the config does not define.
+  num_trials: 1
+
+output:
+  dir: smoke_tests/wofost_gym/results/llm_eval/entrypoint_default
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

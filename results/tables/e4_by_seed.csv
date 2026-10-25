@@ -1,0 +1,755 @@
+setting,cell,method,arm,seed,canonical,target,objective,metric,n_scenarios,final_wso,total_n_kg_ha,total_irrig_mm,invalid_rate
+T1.1,t11-chickpea,Ag heuristic (current),,0.0,True,cold,-0.5561943414793485,objective_reward,128,150.3681585206515,120.0,9.375,0.0
+T1.1,t11-chickpea,Ag heuristic (current),,0.0,True,drought,-0.4424065124423719,objective_reward,128,279.0388000576281,121.25,50.78125,0.0
+T1.1,t11-chickpea,Ag heuristic (current),,0.0,True,hot,-0.6238767612951998,objective_reward,128,72.17792620480027,120.15625,13.28125,0.0
+T1.1,t11-chickpea,Ag heuristic (current),,0.0,True,id,-0.6649453044360666,objective_reward,128,53.49219556393341,121.40625,7.8125,0.0
+T1.1,t11-chickpea,Ag heuristic (current),,0.0,True,wet,-0.5615048676313807,objective_reward,128,159.9404448686193,121.09375,5.46875,0.0
+T1.1,t11-chickpea,Ag heuristic (paper),,0.0,True,cold,0.0212774391822651,objective_reward,128,21.316501682265187,0.0,0.78125,0.0
+T1.1,t11-chickpea,Ag heuristic (paper),,0.0,True,drought,3.487552034392216e-05,objective_reward,128,7.886438020343922,0.0,2.34375,0.0
+T1.1,t11-chickpea,Ag heuristic (paper),,0.0,True,hot,-0.0188810380075602,objective_reward,128,9.790836992439756,0.0,6.25,0.0
+T1.1,t11-chickpea,Ag heuristic (paper),,0.0,True,id,-0.0018896740131204,objective_reward,128,10.14157598687958,0.0,0.0,0.0
+T1.1,t11-chickpea,Ag heuristic (paper),,0.0,True,wet,0.0262476966213904,objective_reward,128,33.16175912139042,0.0,0.78125,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,2.0,True,cold,0.0204349354749713,objective_reward,128,20.43493547497131,0.0,0.0,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,2.0,True,drought,0.0075206549182766,objective_reward,128,7.52065491827664,0.0,0.0,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,2.0,True,hot,0.0097154511758058,objective_reward,128,9.71545117580582,0.0,0.0,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,2.0,True,id,0.01013457589853,objective_reward,128,10.134575898530082,0.0,0.0,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,2.0,True,wet,0.0336058543945911,objective_reward,128,33.605854394591134,0.0,0.0,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,3.0,True,cold,0.0664948063684891,objective_reward,128,68.8776188684892,0.0,47.65625,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,3.0,True,drought,0.2326481260354758,objective_reward,128,237.72625103547588,0.0,101.5625,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,3.0,True,hot,0.0938589251594956,objective_reward,128,99.2104876594956,0.0,107.03125,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,3.0,True,id,0.0496094996700436,objective_reward,128,54.882937170043625,0.0,105.46875,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,3.0,True,wet,0.0378276750235717,objective_reward,128,42.43705002357172,0.0,92.1875,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,4.0,True,cold,0.0123895821976321,objective_reward,128,28.3661446976321,0.0,319.53125,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,4.0,True,drought,0.0194786550926202,objective_reward,128,36.31459259262027,0.0,336.71875,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,4.0,True,hot,0.0167635027707231,objective_reward,128,32.036940270723164,0.0,305.46875,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,4.0,True,id,0.0163299191967697,objective_reward,128,30.90023169676979,0.0,291.40625,0.0
+T1.1,t11-chickpea,LLM-RL,no-think,4.0,True,wet,0.0170584279276229,objective_reward,128,29.206865427622997,0.0,242.96875,0.0
+T1.1,t11-chickpea,LLM-RL,think,2.0,True,cold,1.033791876140647,objective_reward,128,2126.4481261406468,50.78125,385.9375,0.0
+T1.1,t11-chickpea,LLM-RL,think,2.0,True,drought,2.137813551121761,objective_reward,128,3146.680738621761,50.46875,574.21875,0.0
+T1.1,t11-chickpea,LLM-RL,think,2.0,True,hot,1.74371194844641,objective_reward,128,2695.45022969641,46.25,583.203125,0.0
+T1.1,t11-chickpea,LLM-RL,think,2.0,True,id,2.124815459279302,objective_reward,128,3296.573271779302,59.84375,524.21875,0.0
+T1.1,t11-chickpea,LLM-RL,think,2.0,True,wet,1.65333251284582,objective_reward,128,2932.57079409582,67.8125,432.421875,0.0
+T1.1,t11-chickpea,LLM-RL,think,3.0,True,cold,0.4000735840184767,objective_reward,128,1898.9017090184768,194.53125,447.65625,0.0
+T1.1,t11-chickpea,LLM-RL,think,3.0,True,drought,1.979243445028357,objective_reward,128,3024.9075075283567,86.71875,599.21875,0.0
+T1.1,t11-chickpea,LLM-RL,think,3.0,True,hot,1.468952618480173,objective_reward,128,2392.585430980173,67.34375,555.46875,0.0
+T1.1,t11-chickpea,LLM-RL,think,3.0,True,id,2.1359987326841923,objective_reward,128,3261.2526389341924,81.25,585.546875,0.0
+T1.1,t11-chickpea,LLM-RL,think,3.0,True,wet,1.4987918780895653,objective_reward,128,2768.225471839565,99.6875,476.171875,0.0
+T1.1,t11-chickpea,LLM-RL,think,4.0,True,cold,0.7802148098368142,objective_reward,128,1615.8593410868143,44.375,412.109375,0.0
+T1.1,t11-chickpea,LLM-RL,think,4.0,True,drought,1.4475835265697623,objective_reward,128,2225.7280578197624,44.375,601.953125,0.0
+T1.1,t11-chickpea,LLM-RL,think,4.0,True,hot,1.2450025324912763,objective_reward,128,1973.1470637412765,40.46875,573.046875,0.0
+T1.1,t11-chickpea,LLM-RL,think,4.0,True,id,1.9179933767934148,objective_reward,128,2778.481658043415,41.875,585.546875,0.0
+T1.1,t11-chickpea,LLM-RL,think,4.0,True,wet,1.548303635344155,objective_reward,128,2463.5184790941557,45.3125,474.609375,0.0
+T1.1,t11-chickpea,No-action,,0.0,True,cold,0.0204349354749713,objective_reward,128,20.43493547497131,0.0,0.0,0.0
+T1.1,t11-chickpea,No-action,,0.0,True,drought,0.0075206549182766,objective_reward,128,7.52065491827664,0.0,0.0,0.0
+T1.1,t11-chickpea,No-action,,0.0,True,hot,0.0097154511758058,objective_reward,128,9.71545117580582,0.0,0.0,0.0
+T1.1,t11-chickpea,No-action,,0.0,True,id,0.01013457589853,objective_reward,128,10.134575898530082,0.0,0.0,0.0
+T1.1,t11-chickpea,No-action,,0.0,True,wet,0.0336058543945911,objective_reward,128,33.605854394591134,0.0,0.0,0.0
+T1.1,t11-chickpea,PPO (n1),,1.0,True,cold,-0.8322046962320541,objective_reward,128,,164.21875,672.265625,
+T1.1,t11-chickpea,PPO (n1),,1.0,True,drought,0.4972644379373961,objective_reward,128,,118.28125,638.28125,
+T1.1,t11-chickpea,PPO (n1),,1.0,True,hot,0.1953322446835,objective_reward,128,,114.84375,526.5625,
+T1.1,t11-chickpea,PPO (n1),,1.0,True,id,0.5197256338500091,objective_reward,128,,127.8125,612.109375,
+T1.1,t11-chickpea,PPO (n1),,1.0,True,wet,0.2164032900257028,objective_reward,128,,142.1875,608.984375,
+T1.1,t11-chickpea,PPO (n1),,2.0,True,cold,-0.7262135758178073,objective_reward,128,,159.53125,703.125,
+T1.1,t11-chickpea,PPO (n1),,2.0,True,drought,0.5031621952594661,objective_reward,128,,124.375,618.359375,
+T1.1,t11-chickpea,PPO (n1),,2.0,True,hot,0.4315225824162804,objective_reward,128,,90.3125,584.765625,
+T1.1,t11-chickpea,PPO (n1),,2.0,True,id,0.5163939992665986,objective_reward,128,,113.75,637.5,
+T1.1,t11-chickpea,PPO (n1),,2.0,True,wet,0.116133624684401,objective_reward,128,,126.09375,621.484375,
+T1.1,t11-chickpea,PPO (n1),,3.0,True,cold,-0.8383867259180535,objective_reward,128,,163.125,704.6875,
+T1.1,t11-chickpea,PPO (n1),,3.0,True,drought,0.6217456771441949,objective_reward,128,,118.125,616.796875,
+T1.1,t11-chickpea,PPO (n1),,3.0,True,hot,0.3396626223072588,objective_reward,128,,102.8125,538.28125,
+T1.1,t11-chickpea,PPO (n1),,3.0,True,id,0.5077601710302853,objective_reward,128,,127.1875,643.75,
+T1.1,t11-chickpea,PPO (n1),,3.0,True,wet,0.1902193755920566,objective_reward,128,,121.40625,631.640625,
+T1.1,t11-chickpea,PPO (n8),,1.0,False,cold,1.0243500651395363,objective_reward,128,,3.125,502.34375,
+T1.1,t11-chickpea,PPO (n8),,1.0,False,drought,2.8515888316950035,objective_reward,128,,0.9375,577.734375,
+T1.1,t11-chickpea,PPO (n8),,1.0,False,hot,2.0122515976774262,objective_reward,128,,0.9375,535.15625,
+T1.1,t11-chickpea,PPO (n8),,1.0,False,id,2.738838749137472,objective_reward,128,,0.46875,544.53125,
+T1.1,t11-chickpea,PPO (n8),,1.0,False,wet,2.159822816485085,objective_reward,128,,3.75,530.078125,
+T1.1,t11-chickpea,zero-shot (Qwen),no-think,0.0,True,cold,0.0191920145548909,objective_reward,128,57.80529580489099,6.71875,267.578125,0.0
+T1.1,t11-chickpea,zero-shot (Qwen),no-think,0.0,True,drought,-0.2508549156520628,objective_reward,128,175.43414684793714,117.65625,186.71875,0.0
+T1.1,t11-chickpea,zero-shot (Qwen),no-think,0.0,True,hot,-0.4606771657017003,objective_reward,128,71.27595929829965,150.3125,117.1875,0.0
+T1.1,t11-chickpea,zero-shot (Qwen),no-think,0.0,True,id,-0.4295973987321578,objective_reward,128,38.46900751784215,128.4375,164.453125,0.0
+T1.1,t11-chickpea,zero-shot (Qwen),no-think,0.0,True,wet,-0.3489347098776311,objective_reward,128,36.944196372368886,106.5625,189.453125,0.0
+T1.1,t11-chickpea,zero-shot (Qwen),think,0.0,True,cold,-0.5126874072489854,objective_reward,128,1308.0743115010146,143.90625,209.765625,0.0034722222222222
+T1.1,t11-chickpea,zero-shot (Qwen),think,0.0,True,drought,-0.1058411228324953,objective_reward,128,1354.549502167505,124.6875,245.3125,0.0022750686813186
+T1.1,t11-chickpea,zero-shot (Qwen),think,0.0,True,hot,-0.2802504531361822,objective_reward,128,1063.9878281138178,100.9375,226.953125,0.0013111888111888
+T1.1,t11-chickpea,zero-shot (Qwen),think,0.0,True,id,-0.0838158990645301,objective_reward,128,1515.0708196854698,111.40625,205.859375,0.0045846253164727
+T1.1,t11-chickpea,zero-shot (Qwen),think,0.0,True,wet,-0.3602172109535216,objective_reward,128,1403.2398202964782,121.09375,167.578125,0.0028543709150326
+T1.1,t11-potato,A2C (n1),,1.0,True,cold,6.35737621763423,objective_reward,128,,215.78125,390.234375,
+T1.1,t11-potato,A2C (n1),,1.0,True,drought,4.092596614729444,objective_reward,128,,200.15625,320.703125,
+T1.1,t11-potato,A2C (n1),,1.0,True,hot,7.720227920779213,objective_reward,128,,138.4375,358.984375,
+T1.1,t11-potato,A2C (n1),,1.0,True,id,6.577971441126048,objective_reward,128,,194.6875,346.484375,
+T1.1,t11-potato,A2C (n1),,1.0,True,wet,8.491368571916793,objective_reward,128,,194.0625,345.703125,
+T1.1,t11-potato,A2C (n1),,2.0,True,cold,6.5888418955978185,objective_reward,128,,225.78125,848.828125,
+T1.1,t11-potato,A2C (n1),,2.0,True,drought,3.990503643045901,objective_reward,128,,205.625,717.96875,
+T1.1,t11-potato,A2C (n1),,2.0,True,hot,7.691336191650093,objective_reward,128,,158.75,504.296875,
+T1.1,t11-potato,A2C (n1),,2.0,True,id,6.807958349154093,objective_reward,128,,208.28125,754.6875,
+T1.1,t11-potato,A2C (n1),,2.0,True,wet,8.588167009187986,objective_reward,128,,222.96875,686.328125,
+T1.1,t11-potato,A2C (n1),,3.0,True,cold,6.438722921414915,objective_reward,128,,240.78125,1261.71875,
+T1.1,t11-potato,A2C (n1),,3.0,True,drought,4.14473199678847,objective_reward,128,,222.34375,1105.078125,
+T1.1,t11-potato,A2C (n1),,3.0,True,hot,8.426589671828154,objective_reward,128,,159.6875,737.5,
+T1.1,t11-potato,A2C (n1),,3.0,True,id,6.747973550883174,objective_reward,128,,225.3125,1135.9375,
+T1.1,t11-potato,A2C (n1),,3.0,True,wet,8.324014494215762,objective_reward,128,,229.375,987.5,
+T1.1,t11-potato,Ag heuristic (current),,0.0,True,cold,-0.1209654094825155,objective_reward,128,90.59709051748445,40.3125,0.0,0.0
+T1.1,t11-potato,Ag heuristic (current),,0.0,True,drought,-0.1686640227927236,objective_reward,128,88.75785220727637,48.28125,1.5625,0.0
+T1.1,t11-potato,Ag heuristic (current),,0.0,True,hot,-0.1450173614764878,objective_reward,128,126.85763852351216,49.6875,0.0,0.0
+T1.1,t11-potato,Ag heuristic (current),,0.0,True,id,-0.2017898112775622,objective_reward,128,91.33518872243776,48.28125,0.0,0.0
+T1.1,t11-potato,Ag heuristic (current),,0.0,True,wet,-0.2343842364047068,objective_reward,128,111.70951359529312,62.8125,0.0,0.0
+T1.1,t11-potato,Ag heuristic (paper),,0.0,True,cold,-0.0521009708938919,objective_reward,128,176.180279106108,41.25,18.75,0.0
+T1.1,t11-potato,Ag heuristic (paper),,0.0,True,drought,0.0215175579591165,objective_reward,128,292.5527142091165,49.0625,130.078125,0.0
+T1.1,t11-potato,Ag heuristic (paper),,0.0,True,hot,0.0643885229708146,objective_reward,128,406.4002417208147,50.3125,33.984375,0.0
+T1.1,t11-potato,Ag heuristic (paper),,0.0,True,id,0.0292179058905269,objective_reward,128,293.80774964052694,41.5625,48.046875,0.0
+T1.1,t11-potato,Ag heuristic (paper),,0.0,True,wet,0.1283967948957608,objective_reward,128,423.4163261457609,51.5625,12.890625,0.0
+T1.1,t11-potato,DQN (n1),,1.0,True,cold,-0.5139600661001305,objective_reward,128,,16.25,41.015625,
+T1.1,t11-potato,DQN (n1),,1.0,True,drought,-0.6741340558314459,objective_reward,128,,12.1875,21.875,
+T1.1,t11-potato,DQN (n1),,1.0,True,hot,-0.2877959062252216,objective_reward,128,,10.15625,19.921875,
+T1.1,t11-potato,DQN (n1),,1.0,True,id,-0.4021884395400252,objective_reward,128,,13.75,37.5,
+T1.1,t11-potato,DQN (n1),,1.0,True,wet,-0.3710843763711232,objective_reward,128,,11.09375,41.015625,
+T1.1,t11-potato,DQN (n1),,2.0,True,cold,-3.6195610381886296,objective_reward,128,,15.625,30.859375,
+T1.1,t11-potato,DQN (n1),,2.0,True,drought,-3.4237403720100272,objective_reward,128,,10.0,33.203125,
+T1.1,t11-potato,DQN (n1),,2.0,True,hot,-2.44568176253822,objective_reward,128,,14.53125,30.078125,
+T1.1,t11-potato,DQN (n1),,2.0,True,id,-3.55953598912421,objective_reward,128,,11.09375,31.640625,
+T1.1,t11-potato,DQN (n1),,2.0,True,wet,-3.282362659894289,objective_reward,128,,15.0,33.203125,
+T1.1,t11-potato,DQN (n1),,3.0,True,cold,-2.7431886948871167,objective_reward,128,,17.03125,34.765625,
+T1.1,t11-potato,DQN (n1),,3.0,True,drought,-2.62943115978226,objective_reward,128,,7.03125,23.046875,
+T1.1,t11-potato,DQN (n1),,3.0,True,hot,-1.858942366942768,objective_reward,128,,9.0625,18.359375,
+T1.1,t11-potato,DQN (n1),,3.0,True,id,-2.5008310891702155,objective_reward,128,,15.78125,34.375,
+T1.1,t11-potato,DQN (n1),,3.0,True,wet,-2.06895830772067,objective_reward,128,,13.90625,29.296875,
+T1.1,t11-potato,LLM-RL,no-think,2.0,True,cold,0.0955932162627185,objective_reward,128,95.5932162627186,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,2.0,True,drought,0.0910165621721298,objective_reward,128,91.01656217212988,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,2.0,True,hot,0.1396455219244816,objective_reward,128,139.6455219244816,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,2.0,True,id,0.0962536323188625,objective_reward,128,96.25363231886251,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,2.0,True,wet,0.1112154593082972,objective_reward,128,111.2545218082972,0.0,0.78125,0.0
+T1.1,t11-potato,LLM-RL,no-think,3.0,True,cold,0.0955932162627185,objective_reward,128,95.5932162627186,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,3.0,True,drought,0.0910165621721298,objective_reward,128,91.01656217212988,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,3.0,True,hot,0.1396455219244816,objective_reward,128,139.6455219244816,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,3.0,True,id,0.0962536323188625,objective_reward,128,96.25363231886251,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,3.0,True,wet,0.1112395290935976,objective_reward,128,111.23952909359768,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,4.0,True,cold,0.0956284692592921,objective_reward,128,95.6284692592922,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,4.0,True,drought,0.0900035756560981,objective_reward,128,90.00357565609809,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,4.0,True,hot,0.1396622115206545,objective_reward,128,139.66221152065458,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,4.0,True,id,0.09626259674214,objective_reward,128,96.26259674214,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,no-think,4.0,True,wet,0.1112184008614431,objective_reward,128,111.21840086144316,0.0,0.0,0.0
+T1.1,t11-potato,LLM-RL,think,2.0,True,cold,8.170130786177758,objective_reward,128,9153.56828617776,127.5,93.75,0.0
+T1.1,t11-potato,LLM-RL,think,2.0,True,drought,7.50068044719445,objective_reward,128,8566.81325969445,137.5,236.71875,0.0
+T1.1,t11-potato,LLM-RL,think,2.0,True,hot,11.009474102264,objective_reward,128,12867.813946014,241.875,183.984375,0.0
+T1.1,t11-potato,LLM-RL,think,2.0,True,id,8.871490596588865,objective_reward,128,10192.193721588865,176.25,173.4375,0.0
+T1.1,t11-potato,LLM-RL,think,2.0,True,wet,9.615959810400446,objective_reward,128,11223.069185400444,215.3125,100.0,0.0
+T1.1,t11-potato,LLM-RL,think,3.0,True,cold,7.60503971784466,objective_reward,128,8837.57878034466,163.125,99.21875,0.0
+T1.1,t11-potato,LLM-RL,think,3.0,True,drought,6.4795093753167,objective_reward,128,7676.931250316699,152.03125,100.0,0.0
+T1.1,t11-potato,LLM-RL,think,3.0,True,hot,10.98068974882693,objective_reward,128,12732.60381132693,239.6875,100.0,0.0
+T1.1,t11-potato,LLM-RL,think,3.0,True,id,8.240850524364346,objective_reward,128,9731.377868114345,197.96875,101.171875,0.0
+T1.1,t11-potato,LLM-RL,think,3.0,True,wet,9.5414478730028,objective_reward,128,11322.1509980028,238.125,100.0,0.0
+T1.1,t11-potato,LLM-RL,think,4.0,True,cold,7.807481722867285,objective_reward,128,8489.395785367285,109.0625,72.65625,0.0
+T1.1,t11-potato,LLM-RL,think,4.0,True,drought,6.515214787046043,objective_reward,128,7202.070255796043,114.375,169.140625,0.0
+T1.1,t11-potato,LLM-RL,think,4.0,True,hot,10.326443838001746,objective_reward,128,11362.713369251744,168.59375,147.265625,0.0
+T1.1,t11-potato,LLM-RL,think,4.0,True,id,8.541213908861513,objective_reward,128,9371.057658861511,136.09375,129.6875,0.0
+T1.1,t11-potato,LLM-RL,think,4.0,True,wet,9.71250862544166,objective_reward,128,10717.82112544166,162.03125,87.5,0.0
+T1.1,t11-potato,No-action,,0.0,True,cold,0.0956284692592921,objective_reward,128,95.6284692592922,0.0,0.0,0.0
+T1.1,t11-potato,No-action,,0.0,True,drought,0.0900035756560981,objective_reward,128,90.00357565609809,0.0,0.0,0.0
+T1.1,t11-potato,No-action,,0.0,True,hot,0.1396622115206545,objective_reward,128,139.66221152065458,0.0,0.0,0.0
+T1.1,t11-potato,No-action,,0.0,True,id,0.09626259674214,objective_reward,128,96.26259674214,0.0,0.0,0.0
+T1.1,t11-potato,No-action,,0.0,True,wet,0.1112184008614431,objective_reward,128,111.21840086144316,0.0,0.0,0.0
+T1.1,t11-potato,PPO (n1),,1.0,True,cold,5.335569055215865,objective_reward,128,,253.28125,942.1875,
+T1.1,t11-potato,PPO (n1),,1.0,True,drought,3.2801092095962705,objective_reward,128,,243.28125,732.8125,
+T1.1,t11-potato,PPO (n1),,1.0,True,hot,7.446750548267908,objective_reward,128,,180.15625,567.578125,
+T1.1,t11-potato,PPO (n1),,1.0,True,id,5.971854976848216,objective_reward,128,,238.59375,745.3125,
+T1.1,t11-potato,PPO (n1),,1.0,True,wet,7.290223971530861,objective_reward,128,,246.875,739.453125,
+T1.1,t11-potato,PPO (n1),,2.0,True,cold,5.356652656783287,objective_reward,128,,274.6875,867.96875,
+T1.1,t11-potato,PPO (n1),,2.0,True,drought,3.3640599121117924,objective_reward,128,,267.03125,729.6875,
+T1.1,t11-potato,PPO (n1),,2.0,True,hot,7.549980615640124,objective_reward,128,,198.4375,530.859375,
+T1.1,t11-potato,PPO (n1),,2.0,True,id,6.165204419134776,objective_reward,128,,261.40625,751.5625,
+T1.1,t11-potato,PPO (n1),,2.0,True,wet,7.507123702164314,objective_reward,128,,275.15625,698.4375,
+T1.1,t11-potato,PPO (n1),,3.0,True,cold,5.149333573342509,objective_reward,128,,278.90625,739.0625,
+T1.1,t11-potato,PPO (n1),,3.0,True,drought,3.223336244211653,objective_reward,128,,268.4375,655.46875,
+T1.1,t11-potato,PPO (n1),,3.0,True,hot,8.070657441919058,objective_reward,128,,209.375,501.171875,
+T1.1,t11-potato,PPO (n1),,3.0,True,id,5.828020183374545,objective_reward,128,,278.4375,655.078125,
+T1.1,t11-potato,PPO (n1),,3.0,True,wet,7.456464600598404,objective_reward,128,,270.46875,604.6875,
+T1.1,t11-potato,PPO (n8),,1.0,False,cold,8.371648425915607,objective_reward,128,,260.3125,746.484375,
+T1.1,t11-potato,PPO (n8),,1.0,False,drought,7.787254389699131,objective_reward,128,,220.3125,691.40625,
+T1.1,t11-potato,PPO (n8),,1.0,False,hot,10.511184991845116,objective_reward,128,,177.8125,584.765625,
+T1.1,t11-potato,PPO (n8),,1.0,False,id,9.352971888980704,objective_reward,128,,235.0,691.796875,
+T1.1,t11-potato,PPO (n8),,1.0,False,wet,10.320543801874102,objective_reward,128,,261.5625,654.296875,
+T1.1,t11-potato,zero-shot (Qwen),no-think,0.0,True,cold,-0.0144213809907958,objective_reward,128,110.6567440092042,30.9375,95.3125,0.0
+T1.1,t11-potato,zero-shot (Qwen),no-think,0.0,True,drought,-0.3447422113687295,objective_reward,128,112.4257573812705,111.5625,96.484375,0.0
+T1.1,t11-potato,zero-shot (Qwen),no-think,0.0,True,hot,-1.3328389853727942,objective_reward,128,135.9891396272058,408.59375,18.75,0.0
+T1.1,t11-potato,zero-shot (Qwen),no-think,0.0,True,id,-0.3976775046851849,objective_reward,128,106.38499531481506,127.1875,78.125,0.0
+T1.1,t11-potato,zero-shot (Qwen),no-think,0.0,True,wet,-0.6133351953300462,objective_reward,128,114.47730466995384,195.46875,48.4375,0.0
+T1.1,t11-potato,zero-shot (Qwen),think,0.0,True,cold,6.073543703460983,objective_reward,128,8272.762453460982,299.21875,90.625,0.0013020833333333
+T1.1,t11-potato,zero-shot (Qwen),think,0.0,True,drought,4.539505945192076,objective_reward,128,6678.060632692076,284.21875,149.21875,0.0032905455647518
+T1.1,t11-potato,zero-shot (Qwen),think,0.0,True,hot,9.020165548840255,objective_reward,128,11239.247580090256,289.6875,99.609375,0.0033424170106639
+T1.1,t11-potato,zero-shot (Qwen),think,0.0,True,id,6.18285158992919,objective_reward,128,8500.66408992919,312.34375,104.6875,0.003421552971485
+T1.1,t11-potato,zero-shot (Qwen),think,0.0,True,wet,7.930551474204041,objective_reward,128,10377.83663045404,333.125,87.890625,0.0028944431390977
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,2.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,2.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,3.0,True,heldout_crops,0.3478625100067224,objective_reward,512,416.02657250672246,0.0,1363.28125,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,3.0,True,id_crops,0.6884296025287978,objective_reward,512,754.8065556537979,0.0,1327.5390625,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,4.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,no-think,4.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,think,2.0,True,heldout_crops,1.8154017369666973,objective_reward,512,2656.1390416541976,79.84375,515.33203125,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,think,2.0,True,id_crops,1.9853920198634456,objective_reward,512,2996.319754238445,115.703125,339.6484375,0.0
+T1.2,t12-crosscrop-16id,LLM-RL,think,3.0,True,heldout_crops,2.108267178214137,objective_reward,512,2895.674404776637,92.7734375,289.55078125,0.0027693717474126
+T1.2,t12-crosscrop-16id,LLM-RL,think,3.0,True,id_crops,1.9915136620575076,objective_reward,512,2904.682607370008,115.46875,306.54296875,0.0055521119049079
+T1.2,t12-crosscrop-16id,LLM-RL,think,4.0,True,heldout_crops,1.5610524583393486,objective_reward,512,2379.4606614643485,72.03125,482.6171875,0.000244140625
+T1.2,t12-crosscrop-16id,LLM-RL,think,4.0,True,id_crops,1.91636840852412,objective_reward,512,2908.37036164912,108.828125,284.9609375,0.000313000801282
+T1.2,t12-crosscrop-16id,PPO (n1),,1.0,True,heldout_crops,0.199514305604593,objective_reward,512,,161.640625,390.13671875,
+T1.2,t12-crosscrop-16id,PPO (n1),,1.0,True,id_crops,0.1457031958400133,objective_reward,512,,156.71875,425.68359375,
+T1.2,t12-crosscrop-16id,PPO (n1),,2.0,True,heldout_crops,0.2442394041579538,objective_reward,512,,176.7578125,378.125,
+T1.2,t12-crosscrop-16id,PPO (n1),,2.0,True,id_crops,0.08034447497533,objective_reward,512,,166.40625,401.07421875,
+T1.2,t12-crosscrop-16id,PPO (n1),,3.0,True,heldout_crops,0.3195661551986986,objective_reward,512,,169.453125,394.04296875,
+T1.2,t12-crosscrop-16id,PPO (n1),,3.0,True,id_crops,0.149924908739624,objective_reward,512,,164.1796875,416.11328125,
+T1.2,t12-crosscrop-16id,PPO (n8),,1.0,True,heldout_crops,1.693064379204337,objective_reward,512,,133.8671875,512.890625,
+T1.2,t12-crosscrop-16id,PPO (n8),,1.0,True,id_crops,1.8711840388335668,objective_reward,512,,138.0078125,559.9609375,
+T1.2,t12-crosscrop-16id,PPO (n8),,2.0,True,heldout_crops,1.3995128054776276,objective_reward,512,,154.5703125,370.60546875,
+T1.2,t12-crosscrop-16id,PPO (n8),,2.0,True,id_crops,1.8859522450177968,objective_reward,512,,152.03125,438.671875,
+T1.2,t12-crosscrop-16id,PPO (n8),,3.0,True,heldout_crops,1.8134125555795555,objective_reward,512,,167.8125,325.48828125,
+T1.2,t12-crosscrop-16id,PPO (n8),,3.0,True,id_crops,1.8893216142699425,objective_reward,512,,142.5,403.7109375,
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,2.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,2.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,3.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,3.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,4.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,no-think,4.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,think,2.0,True,heldout_crops,1.5107603161748722,objective_reward,512,2051.414613049872,65.078125,830.859375,0.0001302083333333
+T1.2,t12-crosscrop-4id,LLM-RL,think,2.0,True,id_crops,2.0267520568981148,objective_reward,512,2729.671978773115,96.015625,488.28125,0.0001775568181818
+T1.2,t12-crosscrop-4id,LLM-RL,think,3.0,True,heldout_crops,1.7048343864339086,objective_reward,512,2668.8334098714085,103.0859375,415.72265625,0.0010712205317982
+T1.2,t12-crosscrop-4id,LLM-RL,think,3.0,True,id_crops,2.0912182600745246,objective_reward,512,3240.720213199525,145.3125,342.3828125,0.0023855854203818
+T1.2,t12-crosscrop-4id,LLM-RL,think,4.0,True,heldout_crops,1.6676610292852838,objective_reward,512,2546.591693347784,109.0234375,342.28515625,0.0
+T1.2,t12-crosscrop-4id,LLM-RL,think,4.0,True,id_crops,1.98059770135446,objective_reward,512,2997.48734979196,130.6640625,252.83203125,0.0
+T1.2,t12-crosscrop-4id,PPO (n1),,1.0,True,heldout_crops,0.3517205384153631,objective_reward,512,,171.1328125,385.15625,
+T1.2,t12-crosscrop-4id,PPO (n1),,1.0,True,id_crops,0.4708680315958017,objective_reward,512,,165.625,413.4765625,
+T1.2,t12-crosscrop-4id,PPO (n1),,2.0,True,heldout_crops,0.4366516014555406,objective_reward,512,,178.671875,404.39453125,
+T1.2,t12-crosscrop-4id,PPO (n1),,2.0,True,id_crops,0.4124820987977854,objective_reward,512,,167.96875,422.0703125,
+T1.2,t12-crosscrop-4id,PPO (n1),,3.0,True,heldout_crops,0.3459304379186764,objective_reward,512,,177.8515625,390.13671875,
+T1.2,t12-crosscrop-4id,PPO (n1),,3.0,True,id_crops,0.5020657982815672,objective_reward,512,,166.40625,434.375,
+T1.2,t12-crosscrop-4id,PPO (n8),,1.0,True,heldout_crops,1.780109963803986,objective_reward,512,,128.671875,604.1015625,
+T1.2,t12-crosscrop-4id,PPO (n8),,1.0,True,id_crops,2.194854037281073,objective_reward,512,,123.203125,592.3828125,
+T1.2,t12-crosscrop-4id,PPO (n8),,2.0,True,heldout_crops,1.944267086865744,objective_reward,512,,113.4765625,483.0078125,
+T1.2,t12-crosscrop-4id,PPO (n8),,2.0,True,id_crops,2.1995830043663385,objective_reward,512,,110.3515625,384.1796875,
+T1.2,t12-crosscrop-4id,PPO (n8),,3.0,True,heldout_crops,1.5733098101466312,objective_reward,512,,118.59375,513.8671875,
+T1.2,t12-crosscrop-4id,PPO (n8),,3.0,True,id_crops,2.194227817551935,objective_reward,512,,102.6171875,496.19140625,
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,2.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,2.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,3.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,3.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,4.0,True,heldout_crops,0.4113080228443403,objective_reward,512,416.3177884693403,0.0,100.1953125,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,no-think,4.0,True,id_crops,0.8482950264994507,objective_reward,512,853.3438546244506,0.0,100.9765625,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,think,2.0,True,heldout_crops,1.8787136367009047,objective_reward,512,2802.131605450905,92.34375,226.171875,0.000244140625
+T1.2,t12-crosscrop-8id,LLM-RL,think,2.0,True,id_crops,1.871840610713712,objective_reward,512,2902.856235713712,116.5625,240.8203125,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,think,3.0,True,heldout_crops,1.5301384776877909,objective_reward,512,2540.079883937791,110.3515625,424.0234375,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,think,3.0,True,id_crops,1.7725621956774489,objective_reward,512,2886.986023802449,137.578125,366.6015625,0.0
+T1.2,t12-crosscrop-8id,LLM-RL,think,4.0,True,heldout_crops,1.7902153027815957,objective_reward,512,2669.512177781596,87.7734375,352.9296875,0.000888001685049
+T1.2,t12-crosscrop-8id,LLM-RL,think,4.0,True,id_crops,1.7904554102625954,objective_reward,512,2769.8304102625957,106.1328125,379.1015625,0.000505354020979
+T1.2,t12-crosscrop-8id,PPO (n1),,1.0,True,heldout_crops,0.3623637747568092,objective_reward,512,,143.359375,398.33984375,
+T1.2,t12-crosscrop-8id,PPO (n1),,1.0,True,id_crops,0.310305531198191,objective_reward,512,,158.046875,433.0078125,
+T1.2,t12-crosscrop-8id,PPO (n1),,2.0,True,heldout_crops,0.4634181172606736,objective_reward,512,,154.6484375,382.12890625,
+T1.2,t12-crosscrop-8id,PPO (n1),,2.0,True,id_crops,0.1660344793342912,objective_reward,512,,161.0546875,417.578125,
+T1.2,t12-crosscrop-8id,PPO (n1),,3.0,True,heldout_crops,0.4162430110654547,objective_reward,512,,159.4921875,412.01171875,
+T1.2,t12-crosscrop-8id,PPO (n1),,3.0,True,id_crops,0.2620333345442209,objective_reward,512,,156.9921875,423.53515625,
+T1.2,t12-crosscrop-8id,PPO (n8),,1.0,True,heldout_crops,2.011009188156846,objective_reward,512,,119.8828125,416.6015625,
+T1.2,t12-crosscrop-8id,PPO (n8),,1.0,True,id_crops,2.011461738412859,objective_reward,512,,145.1953125,429.1015625,
+T1.2,t12-crosscrop-8id,PPO (n8),,2.0,True,heldout_crops,2.0009338427830703,objective_reward,512,,122.96875,368.84765625,
+T1.2,t12-crosscrop-8id,PPO (n8),,2.0,True,id_crops,2.080523619743337,objective_reward,512,,162.578125,336.9140625,
+T1.2,t12-crosscrop-8id,PPO (n8),,3.0,True,heldout_crops,2.0087009124074653,objective_reward,512,,121.796875,400.09765625,
+T1.2,t12-crosscrop-8id,PPO (n8),,3.0,True,id_crops,2.0299713531580776,objective_reward,512,,148.515625,421.19140625,
+T1.2,,Ag heuristic (current),,0.0,True,heldout_crops,0.349700409469784,objective_reward,512,926.526581344784,93.59375,9.5703125,0.0
+T1.2,,Ag heuristic (current),,0.0,True,id_crops,0.6163703779969067,objective_reward,512,1251.6828779969069,109.4921875,12.109375,0.0
+T1.2,,Ag heuristic (paper),,0.0,True,heldout_crops,0.5685880192687643,objective_reward,512,740.1309880187644,24.7265625,13.671875,0.0
+T1.2,,Ag heuristic (paper),,0.0,True,id_crops,1.1473138962275309,objective_reward,512,1448.373466540031,61.484375,18.26171875,0.0
+T1.2,,No-action,,0.0,True,heldout_crops,0.4237461497925034,objective_reward,512,423.74614979250345,0.0,0.0,0.0
+T1.2,,No-action,,0.0,True,id_crops,0.7160311193357474,objective_reward,512,716.0311193357475,0.0,0.0,0.0
+T1.2,,zero-shot (Qwen),no-think,0.0,True,heldout_crops,0.3932556556871256,objective_reward,512,418.2751869371257,5.2734375,2.34375,0.0
+T1.2,,zero-shot (Qwen),no-think,0.0,True,id_crops,0.4295767799786827,objective_reward,512,588.4439674786828,45.3515625,2.734375,0.0
+T1.2,,zero-shot (Qwen),think,0.0,True,heldout_crops,0.8884192221920301,objective_reward,512,2355.2063315670302,178.4375,192.578125,0.0
+T1.2,,zero-shot (Qwen),think,0.0,True,id_crops,0.7941940391078357,objective_reward,512,2402.870796920336,184.6484375,133.10546875,0.0
+T1.3,t13-price,LLM-RL,no-think,1.0,True,all,29219.542746678388,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,LLM-RL,no-think,2.0,True,all,29219.542746678388,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,LLM-RL,no-think,3.0,True,all,31061.89734802768,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,LLM-RL,think,1.0,True,all,29601.443660544664,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,LLM-RL,think,2.0,True,all,30105.38462891669,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,LLM-RL,think,3.0,True,all,29770.12186538758,gross_revenue,384,,0.0,,0.0
+T1.3,t13-price,PPO (n1),,1.0,True,all,28516.305080212263,gross_revenue,384,,,,
+T1.3,t13-price,PPO (n1),,2.0,True,all,28175.73459830344,gross_revenue,384,,,,
+T1.3,t13-price,PPO (n1),,3.0,True,all,28415.42148024531,gross_revenue,384,,,,
+T1.3,,Ag heuristic (current),,0.0,True,all,28555.344091762683,gross_revenue,384,,0.0,,0.0
+T1.3,,No-action,,0.0,True,all,10891.499576094377,gross_revenue,384,,0.0,,0.0
+T1.3,,zero-shot (Qwen),no-think,0.0,True,all,20451.124830426823,gross_revenue,384,,0.0,,0.0
+T1.3,,zero-shot (Qwen),think,0.0,True,all,13752.038196830184,gross_revenue,384,,0.0,,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s1,1.0878473588381972,objective_reward,128,1092.8082963381971,0.0,99.21875,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s2a,0.9916966019834657,objective_reward,128,996.6575394834656,0.0,99.21875,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s2b,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s2c,0.5230498863205214,objective_reward,128,523.3233238205214,0.0,5.46875,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s2d,1.0847252872404032,objective_reward,128,1089.686224740403,0.0,99.21875,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s3,1.0784022126603845,objective_reward,128,1083.2850251603843,0.0,97.65625,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s4,1.0631945701775136,objective_reward,128,1068.1555076775137,0.0,99.21875,0.0
+T2.1,t21-observation,LLM-RL,no-think,2.0,True,s5,0.5031365470831146,objective_reward,128,503.9959220831146,0.0,17.1875,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s1,1.1565713606738863,objective_reward,128,1165.0479231738864,0.0,169.53125,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s2a,0.698521447402237,objective_reward,128,710.5526974022371,0.0,240.625,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s2b,0.9509710777381224,objective_reward,128,959.0960777381224,0.0,162.5,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s2c,1.1737690811938477,objective_reward,128,1182.0503311938478,0.0,165.625,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s2d,1.173818718908586,objective_reward,128,1182.021843908586,0.0,164.0625,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s3,0.6202905137464916,objective_reward,128,643.4545762464916,0.0,463.28125,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s4,1.0495544453343046,objective_reward,128,1057.9919453343048,0.0,168.75,0.0
+T2.1,t21-observation,LLM-RL,no-think,3.0,True,s5,0.9924808632255292,objective_reward,128,1001.5043007255292,0.0,180.46875,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s1,1.22236813669917,objective_reward,128,1230.0634491991698,0.0,153.90625,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s2a,1.155847172054444,objective_reward,128,1163.2690470544442,0.0,148.4375,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s2b,0.4927558584712897,objective_reward,128,493.8886709712897,0.0,22.65625,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s2c,1.1952793112925053,objective_reward,128,1202.935561292505,0.0,153.125,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s2d,1.2225654663853405,objective_reward,128,1230.1045288853404,0.0,150.78125,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s3,1.161841515011714,objective_reward,128,1168.950890011714,0.0,142.1875,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s4,1.207954921801255,objective_reward,128,1214.986171801255,0.0,140.625,0.0
+T2.1,t21-observation,LLM-RL,no-think,4.0,True,s5,0.9224468902432844,objective_reward,128,926.9390777432844,0.0,89.84375,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s1,5.95915577250522,objective_reward,128,7311.36280375522,190.3125,451.953125,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s2a,5.6290241172812125,objective_reward,128,6896.699898531212,170.625,539.453125,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s2b,1.0654592071827014,objective_reward,128,2309.365457182701,210.3125,131.25,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s2c,3.3776944641728788,objective_reward,128,4796.620245422879,242.65625,414.453125,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s2d,5.739052788866482,objective_reward,128,7130.693413866483,197.5,468.75,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s3,4.871162231382212,objective_reward,128,6254.580200132213,213.28125,370.703125,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s4,5.051584194012968,objective_reward,128,6576.3107565129685,232.34375,457.03125,0.0
+T2.1,t21-observation,LLM-RL,think,2.0,True,s5,5.3185900561421295,objective_reward,128,6840.66036864213,229.53125,367.96875,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s1,5.601251029356937,objective_reward,128,7277.422904356937,222.96875,385.9375,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s2a,5.552294991114404,objective_reward,128,7192.880928614404,235.0,515.625,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s2b,2.823545165208741,objective_reward,128,4791.338133958741,293.125,271.484375,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s2c,5.157937569297194,objective_reward,128,6962.6250692971935,195.46875,407.8125,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s2d,5.574892380401468,objective_reward,128,7298.759567901468,215.78125,389.84375,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s3,5.389241260143788,objective_reward,128,7094.963916393787,241.09375,447.265625,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s4,4.874608211750245,objective_reward,128,6702.498836750245,222.5,395.3125,0.0
+T2.1,t21-observation,LLM-RL,think,3.0,True,s5,5.440993307900935,objective_reward,128,7045.583151650935,220.625,568.359375,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s1,5.65978815919407,objective_reward,128,7106.87800294407,178.4375,398.046875,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s2a,5.201690793862662,objective_reward,128,6677.706418862662,194.0625,532.03125,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s2b,0.1105763425758497,objective_reward,128,1774.7169675758498,262.34375,27.34375,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s2c,5.536112963507658,objective_reward,128,7096.816088507659,164.375,346.09375,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s2d,5.703438098429988,objective_reward,128,7173.106067179988,177.1875,412.890625,0.0
+T2.1,t21-observation,LLM-RL,think,4.0,True,s3,5.40264501801542,objective_reward,128,6962.99658051542,195.15625,392.96875,0.0005580357142857
+T2.1,t21-observation,LLM-RL,think,4.0,True,s4,5.032508832221086,objective_reward,128,6645.809613471086,193.90625,376.953125,0.0005580357142857
+T2.1,t21-observation,LLM-RL,think,4.0,True,s5,5.279829592390196,objective_reward,128,6879.888186140196,194.21875,425.390625,0.0004340277777777
+T2.1,,Ag heuristic (current),,0.0,True,s1,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s2a,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s2b,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s2c,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s2d,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s3,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s4,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (current),,0.0,True,s5,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s1,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s2a,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s2b,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s2c,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s2d,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s3,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s4,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,Ag heuristic (paper),,0.0,True,s5,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.1,,No-action,,0.0,True,s1,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s2a,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s2b,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s2c,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s2d,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s3,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s4,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,No-action,,0.0,True,s5,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s1,-0.2206845120162756,objective_reward,128,567.4600192337244,99.6875,87.890625,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s2a,-0.7965305077483023,objective_reward,128,432.4538672516977,300.3125,0.0,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s2b,-0.2661176553213982,objective_reward,128,428.9604696786018,198.59375,0.0,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s2c,0.4175320301529828,objective_reward,128,417.9617176529828,0.0,8.59375,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s2d,-0.2875977680769757,objective_reward,128,574.9022319230244,49.6875,56.25,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s3,-0.4095954872692264,objective_reward,128,855.5217002307736,141.875,1.5625,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s4,-1.0560969186050804,objective_reward,128,418.1413626449196,376.25,19.140625,0.0
+T2.1,,zero-shot (Qwen),no-think,0.0,True,s5,0.400686425126222,objective_reward,128,407.3465813762221,1.875,1.953125,0.0
+T2.1,,zero-shot (Qwen),think,0.0,True,s1,3.4268406580330635,objective_reward,128,5389.789876783064,240.15625,175.390625,0.001860119047619
+T2.1,,zero-shot (Qwen),think,0.0,True,s2a,3.245986899901039,objective_reward,128,5007.451743651039,200.15625,313.671875,0.0029932415674603
+T2.1,,zero-shot (Qwen),think,0.0,True,s2b,1.7758112716628045,objective_reward,128,3673.780021662804,311.25,311.71875,0.0021701388888888
+T2.1,,zero-shot (Qwen),think,0.0,True,s2c,2.418909433857335,objective_reward,128,4287.034433857335,250.9375,144.53125,0.0052786839896214
+T2.1,,zero-shot (Qwen),think,0.0,True,s2d,3.9159301162233295,objective_reward,128,5751.61370997333,222.03125,229.296875,0.0047991071428571
+T2.1,,zero-shot (Qwen),think,0.0,True,s3,3.040090854073976,objective_reward,128,4542.708041573976,184.375,139.0625,0.1541080364437441
+T2.1,,zero-shot (Qwen),think,0.0,True,s4,2.630565592969833,objective_reward,128,4880.682780469833,280.3125,160.9375,0.0044998468137254
+T2.1,,zero-shot (Qwen),think,0.0,True,s5,2.5395974845671176,objective_reward,128,3426.706859567118,110.0,179.6875,0.4376256702600912
+T2.2,t22-family-a,LLM-RL,no-think,2.0,True,ln,0.1473558152885907,objective_reward,128,147.35581528859072,0.0,0.0,0.0
+T2.2,t22-family-a,LLM-RL,no-think,2.0,True,lnpkw,1.1059835782352558,objective_reward,128,1113.249203235256,0.0,145.3125,0.0
+T2.2,t22-family-a,LLM-RL,no-think,2.0,True,lnw,0.676553317163487,objective_reward,128,683.389254663487,0.0,136.71875,0.0
+T2.2,t22-family-a,LLM-RL,no-think,2.0,True,lw,2.770314694246605,objective_reward,128,2770.314694246605,0.0,0.0,0.0
+T2.2,t22-family-a,LLM-RL,no-think,3.0,True,ln,2.699305504373444,objective_reward,128,2813.6023793734444,32.65625,0.0,0.0
+T2.2,t22-family-a,LLM-RL,no-think,3.0,True,lnpkw,1.1787113373067617,objective_reward,128,1250.4300873067614,18.125,165.625,0.0
+T2.2,t22-family-a,LLM-RL,no-think,3.0,True,lnw,2.6139811533353607,objective_reward,128,2702.2428720853604,22.96875,157.421875,0.0
+T2.2,t22-family-a,LLM-RL,no-think,3.0,True,lw,6.563218847726857,objective_reward,128,6571.812597726856,0.0,171.875,0.0
+T2.2,t22-family-a,LLM-RL,no-think,4.0,True,ln,0.1473558152885907,objective_reward,128,147.35581528859072,0.0,0.0,0.0
+T2.2,t22-family-a,LLM-RL,no-think,4.0,True,lnpkw,1.1782458155034543,objective_reward,128,1188.3239405034544,0.0,201.5625,0.0
+T2.2,t22-family-a,LLM-RL,no-think,4.0,True,lnw,0.6335410542943426,objective_reward,128,642.9941792943426,0.0,189.0625,0.0
+T2.2,t22-family-a,LLM-RL,no-think,4.0,True,lw,2.770314694246605,objective_reward,128,2770.314694246605,0.0,0.0,0.0
+T2.2,t22-family-a,LLM-RL,think,2.0,True,ln,5.913074724486024,objective_reward,128,7070.262224486024,330.625,0.0,0.0
+T2.2,t22-family-a,LLM-RL,think,2.0,True,lnpkw,5.448582983023461,objective_reward,128,6509.403295523461,132.96875,330.46875,0.0
+T2.2,t22-family-a,LLM-RL,think,2.0,True,lnw,6.10419527697897,objective_reward,128,7019.4491832289705,255.3125,433.203125,0.0
+T2.2,t22-family-a,LLM-RL,think,2.0,True,lw,7.154795639126483,objective_reward,128,7184.151107876483,0.0,587.109375,0.0
+T2.2,t22-family-a,LLM-RL,think,3.0,True,ln,5.651518353077178,objective_reward,128,6664.877728077178,289.53125,0.0,0.0
+T2.2,t22-family-a,LLM-RL,think,3.0,True,lnpkw,5.7340063902448986,objective_reward,128,6795.900921494898,150.0,327.734375,0.0
+T2.2,t22-family-a,LLM-RL,think,3.0,True,lnw,5.575369127486174,objective_reward,128,6361.990221236174,218.75,419.921875,0.0
+T2.2,t22-family-a,LLM-RL,think,3.0,True,lw,7.136575161737944,objective_reward,128,7163.879849237944,0.0,546.09375,0.0
+T2.2,t22-family-a,LLM-RL,think,4.0,True,ln,5.555011709733314,objective_reward,128,6988.371084733314,409.53125,0.0,0.0
+T2.2,t22-family-a,LLM-RL,think,4.0,True,lnpkw,5.8401042232836256,objective_reward,128,7231.920629533625,217.34375,373.828125,0.0
+T2.2,t22-family-a,LLM-RL,think,4.0,True,lnw,5.61187171182978,objective_reward,128,6874.332649329779,355.15625,388.28125,0.0
+T2.2,t22-family-a,LLM-RL,think,4.0,True,lw,6.942900731607052,objective_reward,128,6984.404637857052,0.0,830.078125,0.0
+T2.2,t22-family-a,PPO masked,,1.0,True,ln,5.151058832343725,objective_reward,128,,529.375,0.0,
+T2.2,t22-family-a,PPO masked,,1.0,True,lnpkw,3.2480549497516797,objective_reward,128,,252.96875,493.75,
+T2.2,t22-family-a,PPO masked,,1.0,True,lnw,3.787028119966793,objective_reward,128,,302.1875,1008.203125,
+T2.2,t22-family-a,PPO masked,,1.0,True,lw,5.041624539900427,objective_reward,128,,0.0,1509.765625,
+T2.2,t22-family-a,PPO masked,,2.0,True,ln,4.99483762964888,objective_reward,128,,553.59375,0.0,
+T2.2,t22-family-a,PPO masked,,2.0,True,lnpkw,3.255406640738778,objective_reward,128,,255.9375,487.890625,
+T2.2,t22-family-a,PPO masked,,2.0,True,lnw,3.358127802056392,objective_reward,128,,305.78125,1065.625,
+T2.2,t22-family-a,PPO masked,,2.0,True,lw,5.025615179624358,objective_reward,128,,0.0,1574.21875,
+T2.2,t22-family-a,PPO masked,,3.0,True,ln,4.93787124936074,objective_reward,128,,528.59375,0.0,
+T2.2,t22-family-a,PPO masked,,3.0,True,lnpkw,3.026400066488282,objective_reward,128,,262.8125,517.96875,
+T2.2,t22-family-a,PPO masked,,3.0,True,lnw,3.5566962267175675,objective_reward,128,,294.0625,1089.0625,
+T2.2,t22-family-a,PPO masked,,3.0,True,lw,5.163177986672351,objective_reward,128,,0.0,1549.21875,
+T2.2,t22-family-b,LLM-RL,no-think,2.0,True,ln,0.8895854937508387,objective_reward,128,922.3979937508389,9.375,0.0,0.0
+T2.2,t22-family-b,LLM-RL,no-think,2.0,True,lnpkw,0.6530053945643672,objective_reward,128,654.1772695643672,0.0,23.4375,0.0
+T2.2,t22-family-b,LLM-RL,no-think,2.0,True,lnw,0.1432336182645642,objective_reward,128,196.82736826456429,15.3125,0.0,0.0
+T2.2,t22-family-b,LLM-RL,no-think,2.0,True,lw,6.764759621069517,objective_reward,128,6805.658058569517,0.0,817.96875,0.0
+T2.2,t22-family-b,LLM-RL,no-think,3.0,True,ln,2.192380647663407,objective_reward,128,2244.333772663407,14.84375,0.0,0.0
+T2.2,t22-family-b,LLM-RL,no-think,3.0,True,lnpkw,0.627872351321808,objective_reward,128,638.028601321808,0.0,203.125,0.0
+T2.2,t22-family-b,LLM-RL,no-think,3.0,True,lnw,0.1366415134098484,objective_reward,128,150.58682590984844,0.0,278.90625,0.0
+T2.2,t22-family-b,LLM-RL,no-think,3.0,True,lw,7.166129375310073,objective_reward,128,7195.895000310074,0.0,595.3125,0.0
+T2.2,t22-family-b,LLM-RL,no-think,4.0,True,ln,0.1473558152885907,objective_reward,128,147.35581528859072,0.0,0.0,0.0
+T2.2,t22-family-b,LLM-RL,no-think,4.0,True,lnpkw,0.6084108099270437,objective_reward,128,623.7623724270437,0.0,307.03125,0.0
+T2.2,t22-family-b,LLM-RL,no-think,4.0,True,lnw,0.1464111126877646,objective_reward,128,166.60642518776464,0.0,403.90625,0.0
+T2.2,t22-family-b,LLM-RL,no-think,4.0,True,lw,7.300812246341902,objective_reward,128,7355.812246341902,0.0,1100.0,0.0
+T2.2,t22-family-b,LLM-RL,think,2.0,True,ln,5.970144718977405,objective_reward,128,7213.191593977405,355.15625,0.0,0.0
+T2.2,t22-family-b,LLM-RL,think,2.0,True,lnpkw,5.82469329274411,objective_reward,128,7709.537042744109,247.8125,568.75,0.0
+T2.2,t22-family-b,LLM-RL,think,2.0,True,lnw,5.942851935507144,objective_reward,128,7150.254279257144,335.0,698.046875,0.0
+T2.2,t22-family-b,LLM-RL,think,2.0,True,lw,6.959018099003254,objective_reward,128,7032.514192753254,0.0,1469.921875,0.0
+T2.2,t22-family-b,LLM-RL,think,3.0,True,ln,3.645949637489829,objective_reward,128,4455.324637489829,231.25,0.0,0.0
+T2.2,t22-family-b,LLM-RL,think,3.0,True,lnpkw,2.1839111730662664,objective_reward,128,3136.489298066266,130.3125,27.34375,0.0004340277777777
+T2.2,t22-family-b,LLM-RL,think,3.0,True,lnw,2.6356500595840657,objective_reward,128,3616.4703720840657,279.21875,71.09375,0.0
+T2.2,t22-family-b,LLM-RL,think,3.0,True,lw,6.7897991271805385,objective_reward,128,6829.603814680539,0.0,796.09375,0.0
+T2.2,t22-family-b,LLM-RL,think,4.0,True,ln,5.840042935205156,objective_reward,128,7117.542935205157,365.0,0.0,0.0
+T2.2,t22-family-b,LLM-RL,think,4.0,True,lnpkw,4.132352053029058,objective_reward,128,5299.324709279058,163.75,132.421875,0.0
+T2.2,t22-family-b,LLM-RL,think,4.0,True,lnw,4.157327776488428,objective_reward,128,5103.069963988428,268.75,102.34375,0.0
+T2.2,t22-family-b,LLM-RL,think,4.0,True,lw,7.282935061871141,objective_reward,128,7306.704593121141,0.0,475.390625,0.0
+T2.2,t22-family-b,PPO masked,,1.0,True,ln,4.851650719057861,objective_reward,128,,607.5,0.0,
+T2.2,t22-family-b,PPO masked,,1.0,True,lnpkw,2.236614519789753,objective_reward,128,,270.0,591.40625,
+T2.2,t22-family-b,PPO masked,,1.0,True,lnw,4.206676564298125,objective_reward,128,,374.21875,833.203125,
+T2.2,t22-family-b,PPO masked,,1.0,True,lw,6.82404170533679,objective_reward,128,,0.0,1054.6875,
+T2.2,t22-family-b,PPO masked,,2.0,True,ln,4.736799154336642,objective_reward,128,,639.21875,0.0,
+T2.2,t22-family-b,PPO masked,,2.0,True,lnpkw,2.228932739726304,objective_reward,128,,243.90625,627.34375,
+T2.2,t22-family-b,PPO masked,,2.0,True,lnw,3.927623823934786,objective_reward,128,,371.5625,904.296875,
+T2.2,t22-family-b,PPO masked,,2.0,True,lw,6.930100011511236,objective_reward,128,,0.0,1142.578125,
+T2.2,t22-family-b,PPO masked,,3.0,True,ln,4.712086036128519,objective_reward,128,,612.1875,0.0,
+T2.2,t22-family-b,PPO masked,,3.0,True,lnpkw,2.2409459278518167,objective_reward,128,,288.59375,619.921875,
+T2.2,t22-family-b,PPO masked,,3.0,True,lnw,4.091198856185079,objective_reward,128,,393.59375,876.171875,
+T2.2,t22-family-b,PPO masked,,3.0,True,lw,6.973718304554684,objective_reward,128,,0.0,1278.515625,
+T2.2,t22-target,PPO target-trained,,1.0,True,ln,5.243632137535942,objective_reward,128,,575.46875,0.0,
+T2.2,t22-target,PPO target-trained,,1.0,True,lnpkw,3.2577068343708526,objective_reward,128,,258.4375,543.359375,
+T2.2,t22-target,PPO target-trained,,1.0,True,lnw,5.215777418746347,objective_reward,128,,429.53125,764.453125,
+T2.2,t22-target,PPO target-trained,,1.0,True,lw,6.998279718511532,objective_reward,128,,0.0,1517.96875,
+T2.2,t22-target,PPO target-trained,,2.0,True,ln,5.550623334453576,objective_reward,128,,484.6875,0.0,
+T2.2,t22-target,PPO target-trained,,2.0,True,lnpkw,3.2475419422898457,objective_reward,128,,237.65625,517.578125,
+T2.2,t22-target,PPO target-trained,,2.0,True,lnw,5.394305918023581,objective_reward,128,,445.3125,742.96875,
+T2.2,t22-target,PPO target-trained,,2.0,True,lw,7.140546396500573,objective_reward,128,,0.0,1655.46875,
+T2.2,t22-target,PPO target-trained,,3.0,True,ln,5.558905348619518,objective_reward,128,,488.4375,0.0,
+T2.2,t22-target,PPO target-trained,,3.0,True,lnpkw,2.974092326443786,objective_reward,128,,261.875,543.75,
+T2.2,t22-target,PPO target-trained,,3.0,True,lnw,5.224066079379121,objective_reward,128,,453.59375,783.203125,
+T2.2,t22-target,PPO target-trained,,3.0,True,lw,7.1291685561901685,objective_reward,128,,0.0,1516.015625,
+T2.2,,Ag heuristic (current),,0.0,True,ln,2.201093643408086,objective_reward,128,2691.093643408086,140.0,0.0,0.0
+T2.2,,Ag heuristic (current),,0.0,True,lnpkw,1.547281642395849,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.2,,Ag heuristic (current),,0.0,True,lnw,2.576825072288952,objective_reward,128,3068.934447288952,140.0,42.1875,0.0
+T2.2,,Ag heuristic (current),,0.0,True,lw,3.883869322901081,objective_reward,128,3886.330260401081,0.0,49.21875,0.0
+T2.2,,Ag heuristic (paper),,0.0,True,ln,1.0354786730188177,objective_reward,128,1315.4786730188173,80.0,0.0,0.0
+T2.2,,Ag heuristic (paper),,0.0,True,lnpkw,1.388749908495111,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.2,,Ag heuristic (paper),,0.0,True,lnw,2.222238477486631,objective_reward,128,2500.246289986631,78.75,47.65625,0.0
+T2.2,,Ag heuristic (paper),,0.0,True,lw,4.067712627975201,objective_reward,128,4070.681377975201,0.0,59.375,0.0
+T2.2,,No-action,,0.0,True,ln,0.1473558152885907,objective_reward,128,147.35581528859072,0.0,0.0,0.0
+T2.2,,No-action,,0.0,True,lnpkw,0.4045399732442908,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.2,,No-action,,0.0,True,lnw,0.1210735918402141,objective_reward,128,121.0735918402141,0.0,0.0,0.0
+T2.2,,No-action,,0.0,True,lw,2.770314694246605,objective_reward,128,2770.314694246605,0.0,0.0,0.0
+T2.2,,zero-shot (Qwen),no-think,0.0,True,ln,3.574323945181198,objective_reward,128,4571.823945181198,285.0,0.0,0.0
+T2.2,,zero-shot (Qwen),no-think,0.0,True,lnpkw,-0.2158982568633475,objective_reward,128,568.9650243866524,99.6875,91.015625,0.0
+T2.2,,zero-shot (Qwen),no-think,0.0,True,lnw,1.4625331046996426,objective_reward,128,2643.0799796996425,337.1875,7.8125,0.0
+T2.2,,zero-shot (Qwen),no-think,0.0,True,lw,2.244920444939597,objective_reward,128,2319.314976189597,0.0,1487.890625,0.0
+T2.2,,zero-shot (Qwen),think,0.0,True,ln,5.168858646311112,objective_reward,128,6482.999271311111,375.46875,0.0,0.0004595588235294
+T2.2,,zero-shot (Qwen),think,0.0,True,lnpkw,3.4566022715645746,objective_reward,128,5404.336646564575,239.0625,178.90625,0.0029206394096099
+T2.2,,zero-shot (Qwen),think,0.0,True,lnw,5.165617359304775,objective_reward,128,6557.355640554775,392.03125,392.578125,0.0055457780067155
+T2.2,,zero-shot (Qwen),think,0.0,True,lw,5.433245325566198,objective_reward,128,5487.854700566199,0.0,1092.1875,0.0028796073717948
+T2.3,t23-objectives,LLM-RL,no-think,2.0,True,nutrient_stewardship,-2.871641218846532,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,2.0,True,profit_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,2.0,True,water_stewardship,-2.2257143199054745,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,2.0,True,yield_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,3.0,True,nutrient_stewardship,-2.823467224982462,objective_reward,128,474.5401769104492,0.0,35.15625,0.0
+T2.3,t23-objectives,LLM-RL,no-think,3.0,True,profit_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,3.0,True,water_stewardship,-2.2257143199054745,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,3.0,True,yield_max,0.0919105921127845,objective_reward,128,781.2400329586684,0.0,1200.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,4.0,True,nutrient_stewardship,-1.507438685748036,objective_reward,128,2320.160502308248,44.375,120.703125,0.0
+T2.3,t23-objectives,LLM-RL,no-think,4.0,True,profit_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,t23-objectives,LLM-RL,no-think,4.0,True,water_stewardship,0.3190581488942329,objective_reward,128,5011.580564201137,478.75,132.03125,0.0
+T2.3,t23-objectives,LLM-RL,no-think,4.0,True,yield_max,0.5926544737944619,objective_reward,128,5037.563027252926,215.625,167.578125,0.0
+T2.3,t23-objectives,LLM-RL,think,2.0,True,nutrient_stewardship,0.782706221275084,objective_reward,128,7299.61550912412,188.125,373.4375,0.0
+T2.3,t23-objectives,LLM-RL,think,2.0,True,profit_max,0.7136415941797195,objective_reward,128,7317.867613027615,168.75,335.15625,0.0004340277777777
+T2.3,t23-objectives,LLM-RL,think,2.0,True,water_stewardship,0.5391345587956402,objective_reward,128,6420.655145013403,170.78125,307.8125,0.0
+T2.3,t23-objectives,LLM-RL,think,2.0,True,yield_max,0.8703030062182382,objective_reward,128,7397.575552855024,181.09375,429.6875,0.0
+T2.3,t23-objectives,LLM-RL,think,3.0,True,nutrient_stewardship,0.7960892782655272,objective_reward,128,7345.115268727321,216.875,346.09375,0.0
+T2.3,t23-objectives,LLM-RL,think,3.0,True,profit_max,0.6867703921114955,objective_reward,128,7038.915520447712,163.4375,361.71875,0.0
+T2.3,t23-objectives,LLM-RL,think,3.0,True,water_stewardship,0.7750405656291387,objective_reward,128,7573.837507719167,243.4375,357.03125,0.0
+T2.3,t23-objectives,LLM-RL,think,3.0,True,yield_max,0.8932054441293499,objective_reward,128,7592.246275099474,228.90625,385.15625,0.0
+T2.3,t23-objectives,LLM-RL,think,4.0,True,nutrient_stewardship,0.6031276886538968,objective_reward,128,6242.016366072161,180.15625,332.8125,0.0004340277777777
+T2.3,t23-objectives,LLM-RL,think,4.0,True,profit_max,0.6288699538585679,objective_reward,128,6716.000076547828,172.34375,419.921875,0.0
+T2.3,t23-objectives,LLM-RL,think,4.0,True,water_stewardship,0.6898831382671721,objective_reward,128,6897.866348402363,178.4375,282.03125,0.0
+T2.3,t23-objectives,LLM-RL,think,4.0,True,yield_max,0.8570375039736071,objective_reward,128,7284.81878377566,195.15625,404.6875,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,2.0,True,nutrient_stewardship,0.4589250009297972,objective_reward,128,7286.990437817895,390.0,519.53125,0.0459081940067693
+T2.3,t23-yield-only,LLM-RL,no-think,2.0,True,profit_max,0.5765825771154328,objective_reward,128,7516.303467981179,381.875,525.78125,0.0121527777777777
+T2.3,t23-yield-only,LLM-RL,no-think,2.0,True,water_stewardship,0.5660358730151069,objective_reward,128,7478.272084369334,383.125,525.0,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,2.0,True,yield_max,0.8854514897098602,objective_reward,128,7526.337662533811,381.875,526.5625,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,3.0,True,nutrient_stewardship,0.0631599793268223,objective_reward,128,7705.885360337969,562.5,285.15625,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,3.0,True,profit_max,0.4924031985259146,objective_reward,128,7633.825624970274,588.125,283.59375,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,3.0,True,water_stewardship,0.7549724275667103,objective_reward,128,7680.533651997562,593.125,280.46875,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,3.0,True,yield_max,0.8873569255659352,objective_reward,128,7542.533867310449,600.625,281.25,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,4.0,True,nutrient_stewardship,-0.7267951808781296,objective_reward,128,5728.539118601913,551.25,138.28125,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,4.0,True,profit_max,0.4506547053396646,objective_reward,128,7302.14702663715,537.5,294.140625,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,4.0,True,water_stewardship,0.6814489305880169,objective_reward,128,7208.082998775309,540.0,294.140625,0.0
+T2.3,t23-yield-only,LLM-RL,no-think,4.0,True,yield_max,0.841455704518496,objective_reward,128,7152.373488407216,544.375,249.609375,0.0
+T2.3,t23-yield-only,LLM-RL,think,2.0,True,nutrient_stewardship,-0.3857029710323352,objective_reward,128,3842.117351980235,285.15625,73.828125,0.0
+T2.3,t23-yield-only,LLM-RL,think,2.0,True,profit_max,0.6786761007502683,objective_reward,128,7172.06716887728,198.75,396.09375,0.0
+T2.3,t23-yield-only,LLM-RL,think,2.0,True,water_stewardship,0.3437376424553607,objective_reward,128,5441.009315647051,142.1875,315.234375,0.0
+T2.3,t23-yield-only,LLM-RL,think,2.0,True,yield_max,0.912534699649644,objective_reward,128,7756.544947021975,225.625,397.65625,0.0
+T2.3,t23-yield-only,LLM-RL,think,3.0,True,nutrient_stewardship,0.7705034633145676,objective_reward,128,7195.014027984129,195.3125,350.0,0.0
+T2.3,t23-yield-only,LLM-RL,think,3.0,True,profit_max,0.6731420203716747,objective_reward,128,7428.855610659235,248.28125,335.15625,0.0
+T2.3,t23-yield-only,LLM-RL,think,3.0,True,water_stewardship,0.7057646738119571,objective_reward,128,7034.536993656289,212.96875,246.875,0.0
+T2.3,t23-yield-only,LLM-RL,think,3.0,True,yield_max,0.9168033822458792,objective_reward,128,7792.828749089973,347.5,376.5625,0.0
+T2.3,t23-yield-only,LLM-RL,think,4.0,True,nutrient_stewardship,0.6304493571705613,objective_reward,128,6940.098743701276,452.1875,513.28125,0.0
+T2.3,t23-yield-only,LLM-RL,think,4.0,True,profit_max,0.44497034340104,objective_reward,128,7218.927606408841,310.625,670.3125,0.0
+T2.3,t23-yield-only,LLM-RL,think,4.0,True,water_stewardship,0.1893423491393865,objective_reward,128,7070.126493097922,334.375,669.140625,0.0
+T2.3,t23-yield-only,LLM-RL,think,4.0,True,yield_max,0.8983816154752753,objective_reward,128,7636.24373153984,328.75,697.265625,0.0
+T2.3,,Ag heuristic (current),,0.0,True,nutrient_stewardship,-1.2941177726101356,objective_reward,128,2258.392693383102,100.0,27.34375,0.0
+T2.3,,Ag heuristic (current),,0.0,True,profit_max,0.1820331343995116,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T2.3,,Ag heuristic (current),,0.0,True,water_stewardship,-1.5288364957295577,objective_reward,128,1431.985535017176,121.25,0.0,0.0
+T2.3,,Ag heuristic (current),,0.0,True,yield_max,0.2652127895893835,objective_reward,128,2254.3087115097605,153.28125,27.34375,0.0
+T2.3,,Ag heuristic (paper),,0.0,True,nutrient_stewardship,-2.169880909152216,objective_reward,128,1044.282498726216,60.0,25.78125,0.0
+T2.3,,Ag heuristic (paper),,0.0,True,profit_max,0.1633823421758954,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T2.3,,Ag heuristic (paper),,0.0,True,water_stewardship,-1.7615217076433116,objective_reward,128,1052.4174670269983,76.25,0.390625,0.0
+T2.3,,Ag heuristic (paper),,0.0,True,yield_max,0.2569991574610975,objective_reward,128,2184.492838419329,92.65625,60.9375,0.0
+T2.3,,No-action,,0.0,True,nutrient_stewardship,-2.871641218846532,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,,No-action,,0.0,True,profit_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,,No-action,,0.0,True,water_stewardship,-2.2257143199054745,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,,No-action,,0.0,True,yield_max,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T2.3,,zero-shot (Qwen),no-think,0.0,True,nutrient_stewardship,-2.403518020587511,objective_reward,128,518.2733430703415,318.59375,0.0,0.0
+T2.3,,zero-shot (Qwen),no-think,0.0,True,profit_max,-0.0247376418899774,objective_reward,128,576.116762685192,99.6875,87.109375,0.0
+T2.3,,zero-shot (Qwen),no-think,0.0,True,water_stewardship,-2.145028041196546,objective_reward,128,533.5364017526948,0.0,17.96875,0.0
+T2.3,,zero-shot (Qwen),no-think,0.0,True,yield_max,0.0447972489264848,objective_reward,128,380.7766158751216,636.71875,0.0,0.0
+T2.3,,zero-shot (Qwen),think,0.0,True,nutrient_stewardship,-1.0055996183405225,objective_reward,128,2623.9121943025766,302.34375,4.6875,0.0004595588235294
+T2.3,,zero-shot (Qwen),think,0.0,True,profit_max,0.3985324681659349,objective_reward,128,5345.592385660447,238.4375,177.734375,0.0023196778711484
+T2.3,,zero-shot (Qwen),think,0.0,True,water_stewardship,0.1353689634001279,objective_reward,128,4906.365977163804,303.4375,242.1875,0.0381676859445701
+T2.3,,zero-shot (Qwen),think,0.0,True,yield_max,0.509616161302725,objective_reward,128,4331.737371073163,367.8125,147.65625,0.1504956109046182
+T3.1,t31-cycles,LLM-RL,no-think,2.0,True,dssat,1.578580176115036,objective_reward,128,,7.1875,41.5625,0.0
+T3.1,t31-cycles,LLM-RL,no-think,2.0,True,wofost,3.608840566392326,objective_reward,128,4473.410878892326,238.4375,600.78125,0.0
+T3.1,t31-cycles,LLM-RL,no-think,3.0,True,dssat,1.5895849509239195,objective_reward,128,,8.75,47.5,0.0
+T3.1,t31-cycles,LLM-RL,no-think,3.0,True,wofost,2.987747991767941,objective_reward,128,3791.693304267941,216.09375,952.34375,0.0
+T3.1,t31-cycles,LLM-RL,no-think,4.0,True,dssat,1.4571751391887664,objective_reward,128,,4.375,31.25,0.0
+T3.1,t31-cycles,LLM-RL,no-think,4.0,True,wofost,2.08127069471074,objective_reward,128,2395.0206947107395,76.875,893.75,0.0
+T3.1,t31-cycles,LLM-RL,think,2.0,True,dssat,2.9408395808935164,objective_reward,128,,123.59375,0.0,0.0
+T3.1,t31-cycles,LLM-RL,think,2.0,True,wofost,4.714188030929535,objective_reward,128,5685.809124679536,274.6875,204.296875,0.023373447936867
+T3.1,t31-cycles,LLM-RL,think,3.0,True,dssat,1.7574045403599738,objective_reward,128,,25.3125,0.15625,0.9139699499591504
+T3.1,t31-cycles,LLM-RL,think,3.0,True,wofost,4.48810545490895,objective_reward,128,5395.25389240895,256.40625,194.53125,0.0131954264077425
+T3.1,t31-cycles,LLM-RL,think,5.0,True,dssat,4.449022078871727,objective_reward,128,,141.953125,43.671875,0.0587373621323529
+T3.1,t31-cycles,LLM-RL,think,5.0,True,wofost,3.4134732636109058,objective_reward,128,4163.356076110906,212.5,122.65625,0.1881602019814336
+T3.1,t31-dssat,LLM-RL,no-think,2.0,True,dssat,8.00614849805832,objective_reward,128,,179.21875,301.5625,0.0
+T3.1,t31-dssat,LLM-RL,no-think,2.0,True,wofost,1.1956466707364135,objective_reward,128,2325.8615144864134,301.09375,1527.734375,0.0
+T3.1,t31-dssat,LLM-RL,no-think,3.0,True,dssat,7.511180093765259,objective_reward,128,,173.90625,234.140625,0.0
+T3.1,t31-dssat,LLM-RL,no-think,3.0,True,wofost,0.3826818972671532,objective_reward,128,733.9123660171532,77.1875,1621.484375,0.0
+T3.1,t31-dssat,LLM-RL,no-think,4.0,True,dssat,7.83746351480484,objective_reward,128,,175.3125,309.375,0.0
+T3.1,t31-dssat,LLM-RL,no-think,4.0,True,wofost,0.453725016572735,objective_reward,128,1214.017985322735,189.375,1949.609375,0.0
+T3.1,t31-dssat,LLM-RL,think,2.0,True,dssat,6.583280960083008,objective_reward,128,,199.53125,130.78125,0.0
+T3.1,t31-dssat,LLM-RL,think,2.0,True,wofost,4.413277674530308,objective_reward,128,5684.410487030308,357.96875,364.84375,0.1221916340654851
+T3.1,t31-dssat,LLM-RL,think,3.0,True,dssat,6.57444832777977,objective_reward,128,,220.78125,128.4375,0.0
+T3.1,t31-dssat,LLM-RL,think,3.0,True,wofost,4.83133544429559,objective_reward,128,6416.60888179559,444.21875,610.15625,0.0973337031126553
+T3.1,t31-dssat,LLM-RL,think,4.0,True,dssat,7.759365933895111,objective_reward,128,,173.28125,312.8125,0.0009765625
+T3.1,t31-dssat,LLM-RL,think,4.0,True,wofost,4.5475837642577694,objective_reward,128,6135.29860800777,441.5625,844.921875,0.0290766486883214
+T3.1,t31-wofost,LLM-RL,no-think,2.0,True,dssat,1.2148183324337003,objective_reward,128,,1.40625,30.15625,0.0
+T3.1,t31-wofost,LLM-RL,no-think,2.0,True,wofost,6.0367881302409865,objective_reward,128,6783.702192740986,209.84375,249.21875,0.0
+T3.1,t31-wofost,LLM-RL,no-think,3.0,True,dssat,1.7634034572839736,objective_reward,128,,20.0,50.546875,0.0
+T3.1,t31-wofost,LLM-RL,no-think,3.0,True,wofost,6.074060648230931,objective_reward,128,7136.599710730931,296.09375,524.21875,0.0
+T3.1,t31-wofost,LLM-RL,no-think,4.0,True,dssat,1.158167933523655,objective_reward,128,,0.0,41.015625,0.0
+T3.1,t31-wofost,LLM-RL,no-think,4.0,True,wofost,6.051794100608097,objective_reward,128,6710.426913108097,184.375,266.40625,0.0
+T3.1,t31-wofost,LLM-RL,think,2.0,True,dssat,4.625983255028725,objective_reward,128,,213.359375,53.75,0.0024126838235294
+T3.1,t31-wofost,LLM-RL,think,2.0,True,wofost,6.324093598533805,objective_reward,128,7129.327973533806,224.375,398.4375,0.0
+T3.1,t31-wofost,LLM-RL,think,3.0,True,dssat,5.078803098917008,objective_reward,128,,167.421875,69.375,0.0951031454248366
+T3.1,t31-wofost,LLM-RL,think,3.0,True,wofost,6.46036142223922,objective_reward,128,7206.259859739221,208.90625,294.53125,0.0
+T3.1,t31-wofost,LLM-RL,think,4.0,True,dssat,2.013661967396736,objective_reward,128,,19.375,38.4375,0.0014073988970588
+T3.1,t31-wofost,LLM-RL,think,4.0,True,wofost,6.437269755611155,objective_reward,128,7386.254130611154,265.3125,407.8125,0.0
+T3.1,,Ag heuristic (current),,0.0,True,dssat,4.123217226266861,objective_reward,128,,116.0,80.0,0.0
+T3.1,,Ag heuristic (current),,0.0,True,wofost,2.576825072288952,objective_reward,128,3068.934447288952,140.0,42.1875,0.0
+T3.1,,Ag heuristic (paper),,0.0,True,dssat,7.35868060426712,objective_reward,128,,116.0,264.0,0.0
+T3.1,,Ag heuristic (paper),,0.0,True,wofost,2.222238477486631,objective_reward,128,2500.246289986631,78.75,47.65625,0.0
+T3.1,,No-action,,0.0,True,dssat,1.0737542921304704,objective_reward,128,,0.0,0.0,0.0
+T3.1,,No-action,,0.0,True,wofost,0.1210735918402141,objective_reward,128,121.0735918402141,0.0,0.0,0.0
+T3.1,,zero-shot (Qwen),no-think,0.0,True,dssat,1.757969358921051,objective_reward,128,,8.75,35.46875,0.0
+T3.1,,zero-shot (Qwen),no-think,0.0,True,wofost,1.4625331046996426,objective_reward,128,2643.0799796996425,337.1875,7.8125,0.0
+T3.1,,zero-shot (Qwen),think,0.0,True,dssat,1.0737542921304704,objective_reward,128,,0.0,0.0,1.0
+T3.1,,zero-shot (Qwen),think,0.0,True,wofost,5.026269964697668,objective_reward,128,6416.172308447668,391.25,410.546875,0.0071036277090964
+T3.2,t31-dssat-specialist,T3.1 specialist,think,2.0,True,dssat_profit,6.582329017877579,objective_reward,128,,199.53125,130.78125,0.0
+T3.2,t31-dssat-specialist,T3.1 specialist,think,3.0,True,dssat_profit,6.5734372708797455,objective_reward,128,,221.015625,128.4375,0.0
+T3.2,t31-dssat-specialist,T3.1 specialist,think,4.0,True,dssat_profit,7.747154230594635,objective_reward,128,,173.4375,313.125,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,2.0,True,wofost_wofost_lnpkw_nutrient,-1.0340257605850076,objective_reward,128,2507.484127567932,379.21875,12.890625,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,2.0,True,wofost_wofost_lnw_profit,0.7363321456125544,objective_reward,128,7050.3076127067125,220.46875,396.875,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,3.0,True,wofost_wofost_lnpkw_nutrient,-0.874799286037044,objective_reward,128,2829.3010093883804,247.1875,12.5,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,3.0,True,wofost_wofost_lnw_profit,0.758051761946323,objective_reward,128,7187.678257793746,208.4375,294.140625,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,4.0,True,wofost_wofost_lnpkw_nutrient,-0.8853136617292959,objective_reward,128,2914.4446316779813,277.1875,11.71875,0.0
+T3.2,t31-wofost-specialist,T3.1 specialist,think,4.0,True,wofost_wofost_lnw_profit,0.762723703302886,objective_reward,128,7434.870228074531,266.09375,407.8125,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,dssat_profit,8.073316740989686,objective_reward,128,,484.53125,500.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,dssat_yield,9817.50657081604,target_yield,128,,515.0,500.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,wofost_wofost_lnpk_profit,0.6921573127461573,objective_reward,128,6893.102783342337,130.3125,0.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,wofost_wofost_lnpkw_nutrient,0.518199444148161,objective_reward,128,6147.565545773274,195.0,195.3125,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,wofost_wofost_lnpkw_profit,0.6511272514014098,objective_reward,128,6497.120699411983,123.90625,200.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,wofost_wofost_lnw_profit,0.3108407698256315,objective_reward,128,3745.271543517868,313.125,143.75,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,wofost_wofost_lnw_yield,0.2983583216845242,objective_reward,128,2536.0457343184557,327.5,0.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,dssat_profit,8.005802194595336,objective_reward,128,,494.921875,660.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,dssat_yield,9771.770567893982,target_yield,128,,495.0,660.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,wofost_wofost_lnpk_profit,0.4772725702307453,objective_reward,128,5050.918409461335,205.78125,0.0,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,wofost_wofost_lnpkw_nutrient,-2.176144460700458,objective_reward,128,1132.8370332015031,205.78125,608.59375,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,wofost_wofost_lnpkw_profit,0.0043991546996578,objective_reward,128,119.26781494709192,0.0,1637.5,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,wofost_wofost_lnw_profit,-0.0024045675623825,objective_reward,128,61.4361757197479,0.0,1637.5,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,wofost_wofost_lnw_yield,0.6696895982378909,objective_reward,128,5692.361585022072,205.78125,608.59375,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,dssat_profit,7.668649716854095,objective_reward,128,,175.3125,185.3125,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,dssat_yield,8467.10975408554,target_yield,128,,175.3125,309.375,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,wofost_wofost_lnpk_profit,0.6726590790114823,objective_reward,128,6516.195921597599,107.34375,0.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,wofost_wofost_lnpkw_nutrient,0.7194853566643116,objective_reward,128,6958.886433388554,206.875,533.984375,0.0008680555555555
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,wofost_wofost_lnpkw_profit,0.4843983703004989,objective_reward,128,4661.468178804241,70.3125,291.796875,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,wofost_wofost_lnw_profit,0.1452796669334108,objective_reward,128,1538.744356433992,80.625,433.59375,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,wofost_wofost_lnw_yield,0.7652577430509164,objective_reward,128,6504.6908159327895,896.25,775.78125,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,dssat_profit,1.1267203620672226,objective_reward,128,,0.0,26.875,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,dssat_yield,7428.22744846344,target_yield,128,,280.0,130.625,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,wofost_wofost_lnpk_profit,0.073776817873992,objective_reward,128,627.1029519289323,0.0,0.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,wofost_wofost_lnpkw_nutrient,-3.954912654070716,objective_reward,128,1581.7793673544052,614.375,3.125,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,wofost_wofost_lnpkw_profit,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,wofost_wofost_lnw_profit,0.0745782256056361,objective_reward,128,643.9149176479077,0.0,200.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,wofost_wofost_lnw_yield,0.5072314926161379,objective_reward,128,4311.467687237172,1230.0,200.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,dssat_profit,5.812453958749771,objective_reward,128,,189.375,386.25,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,dssat_yield,6795.387389659882,target_yield,128,,206.484375,413.75,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,wofost_wofost_lnpk_profit,0.8179455840461219,objective_reward,128,8563.318714392037,214.375,0.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,wofost_wofost_lnpkw_nutrient,-0.3581271275162563,objective_reward,128,4085.578542773779,427.8125,50.0,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,wofost_wofost_lnpkw_profit,0.1848862865940532,objective_reward,128,2998.5646860494526,178.75,28.125,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,wofost_wofost_lnw_profit,0.3155708782894842,objective_reward,128,3497.0204342106163,231.875,62.109375,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,wofost_wofost_lnw_yield,0.7992947867982423,objective_reward,128,6794.005687785059,765.625,339.84375,0.0
+T3.2,t32-qwen,LLM-RL,think,1.0,False,dssat_profit,7.78656403040886,objective_reward,128,,246.015625,342.5,0.0009478400735294
+T3.2,t32-qwen,LLM-RL,think,1.0,False,dssat_yield,9141.24225616455,target_yield,128,,249.53125,403.125,0.0043083639705882
+T3.2,t32-qwen,LLM-RL,think,1.0,False,wofost_wofost_lnpk_profit,0.7318189322112965,objective_reward,128,7520.382798796019,197.1875,0.0,0.0
+T3.2,t32-qwen,LLM-RL,think,1.0,False,wofost_wofost_lnpkw_nutrient,0.7778957631082452,objective_reward,128,7278.331579435829,236.875,321.875,0.0
+T3.2,t32-qwen,LLM-RL,think,1.0,False,wofost_wofost_lnpkw_profit,0.7529429427520747,objective_reward,128,7577.007200892635,170.0,342.96875,0.0
+T3.2,t32-qwen,LLM-RL,think,1.0,False,wofost_wofost_lnw_profit,0.7099709978330436,objective_reward,128,6909.870669080871,243.4375,461.71875,0.0
+T3.2,t32-qwen,LLM-RL,think,1.0,False,wofost_wofost_lnw_yield,0.8127039680568895,objective_reward,128,6907.98372848356,242.5,473.4375,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,dssat_profit,5.933537757396698,objective_reward,128,,150.9375,159.375,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,dssat_yield,9633.875832557678,target_yield,128,,245.78125,361.875,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,wofost_wofost_lnpk_profit,0.6738854945375169,objective_reward,128,7224.198578568893,229.6875,0.0,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,wofost_wofost_lnpkw_nutrient,0.3561783651881005,objective_reward,128,5802.3255508620405,276.5625,230.859375,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,wofost_wofost_lnpkw_profit,0.7045529168038355,objective_reward,128,7264.344324082601,186.25,394.140625,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,wofost_wofost_lnw_profit,0.6869369104306489,objective_reward,128,7042.928582410515,336.25,541.796875,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,wofost_wofost_lnw_yield,0.8021266923964183,objective_reward,128,6818.076885369556,446.875,336.328125,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,dssat_profit,5.44248655796051,objective_reward,128,,175.78125,75.0,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,dssat_yield,6885.569808483124,target_yield,128,,219.21875,107.8125,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,wofost_wofost_lnpk_profit,0.6023893739605467,objective_reward,128,5831.833116164647,115.3125,0.0,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,wofost_wofost_lnpkw_nutrient,-1.1880069228978414,objective_reward,128,2236.3152491078395,132.5,0.78125,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,wofost_wofost_lnpkw_profit,0.4648742591202618,objective_reward,128,4562.896046272226,96.25,680.859375,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,wofost_wofost_lnw_profit,0.2436233922959838,objective_reward,128,3030.6035220158624,270.46875,263.28125,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,wofost_wofost_lnw_yield,0.6934041461059236,objective_reward,128,5893.935241900351,268.75,293.75,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,dssat_profit,7.08922353553772,objective_reward,128,,268.046875,313.046875,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,dssat_yield,9830.42200088501,target_yield,128,,495.0,519.53125,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,wofost_wofost_lnpk_profit,0.6275978206798917,objective_reward,128,6533.09710077908,132.5,0.0,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,wofost_wofost_lnpkw_nutrient,0.5384071004411038,objective_reward,128,5837.116448462789,138.4375,271.875,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,wofost_wofost_lnpkw_profit,0.6107448859975735,objective_reward,128,6140.433093479374,126.71875,338.28125,0.003427269345238
+T3.2,t32-qwen,LLM-RL,think,4.0,True,wofost_wofost_lnw_profit,0.668356300768112,objective_reward,128,6704.270744028952,285.3125,492.96875,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,wofost_wofost_lnw_yield,0.8337053746305326,objective_reward,128,7086.495684359526,446.25,421.875,0.0
+T3.2,,Ag heuristic (current),,0.0,True,dssat_profit,4.123217226266861,objective_reward,128,,116.0,80.0,0.0
+T3.2,,Ag heuristic (current),,0.0,True,dssat_yield,4533.217226266861,target_yield,128,,116.0,80.0,0.0
+T3.2,,Ag heuristic (current),,0.0,True,wofost_wofost_lnpk_profit,0.1946643804633238,objective_reward,128,2369.334733938253,121.25,0.0,0.0
+T3.2,,Ag heuristic (current),,0.0,True,wofost_wofost_lnpkw_nutrient,-1.2941177726101356,objective_reward,128,2258.392693383102,100.0,27.34375,0.0
+T3.2,,Ag heuristic (current),,0.0,True,wofost_wofost_lnpkw_profit,0.1820331343995116,objective_reward,128,2263.3363298958493,121.25,27.34375,0.0
+T3.2,,Ag heuristic (current),,0.0,True,wofost_wofost_lnw_profit,0.3031558908575237,objective_reward,128,3068.934447288952,140.0,42.1875,0.0
+T3.2,,Ag heuristic (current),,0.0,True,wofost_wofost_lnw_yield,0.4046301563751378,objective_reward,128,3439.356329188671,169.6875,42.1875,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,dssat_profit,7.35868060426712,objective_reward,128,,116.0,264.0,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,dssat_yield,7777.88060426712,target_yield,128,,116.0,264.0,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,wofost_wofost_lnpk_profit,0.1422785016767087,objective_reward,128,1644.3672642520246,80.0,0.0,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,wofost_wofost_lnpkw_nutrient,-2.169880909152216,objective_reward,128,1044.282498726216,60.0,25.78125,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,wofost_wofost_lnpkw_profit,0.1633823421758954,objective_reward,128,1796.367095995111,78.75,35.9375,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,wofost_wofost_lnw_profit,0.2614398208807801,objective_reward,128,2500.246289986631,78.75,47.65625,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,wofost_wofost_lnw_yield,0.4416239471089983,objective_reward,128,3753.803550426486,119.375,75.0,0.0
+T3.2,,No-action,,0.0,True,dssat_profit,1.0737542921304704,objective_reward,128,,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,dssat_yield,1073.7542921304705,target_yield,128,,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,wofost_wofost_lnpk_profit,0.073776817873992,objective_reward,128,627.1029519289323,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,wofost_wofost_lnpkw_nutrient,-2.871641218846532,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,wofost_wofost_lnpkw_profit,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,wofost_wofost_lnw_profit,0.0142439519812016,objective_reward,128,121.0735918402141,0.0,0.0,0.0
+T3.2,,No-action,,0.0,True,wofost_wofost_lnw_yield,0.0142439519812016,objective_reward,128,121.0735918402141,0.0,0.0,0.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,dssat_profit,1.0737542921304704,objective_reward,128,,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,dssat_yield,1073.7542921304705,target_yield,128,,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,wofost_wofost_lnpk_profit,0.073776817873992,objective_reward,128,627.1029519289323,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,wofost_wofost_lnpkw_nutrient,-2.871641218846532,objective_reward,128,404.5399732442908,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,wofost_wofost_lnpkw_profit,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,wofost_wofost_lnw_profit,0.0142439519812016,objective_reward,128,121.0735918402141,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),no-think,0.0,False,wofost_wofost_lnw_yield,0.0142439519812016,objective_reward,128,121.0735918402141,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,dssat_profit,1.0737542921304704,objective_reward,128,,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,dssat_yield,1073.7542921304705,target_yield,128,,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,wofost_wofost_lnpk_profit,0.073776817873992,objective_reward,128,627.1029519289323,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,wofost_wofost_lnpkw_nutrient,-2.871641218846532,objective_reward,128,404.5399732442908,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,wofost_wofost_lnpkw_profit,0.04759293802874,objective_reward,128,404.5399732442908,0.0,0.0,1.0
+T3.2,,zero-shot (Llama),think,0.0,False,wofost_wofost_lnw_profit,0.0151332782457914,objective_reward,128,130.8203650892275,0.625,0.0,0.9990776909722222
+T3.2,,zero-shot (Llama),think,0.0,False,wofost_wofost_lnw_yield,0.2361299505098135,objective_reward,128,2007.1045793334151,265.78125,0.0,0.6002625839999461
+T3.2,,zero-shot (Qwen),no-think,0.0,True,dssat_profit,1.7447309991121291,objective_reward,128,,8.75,35.625,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,dssat_yield,5924.550845623016,target_yield,128,,142.34375,122.03125,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,wofost_wofost_lnpk_profit,-0.061192181649739,objective_reward,128,591.8977059772184,68.75,0.0,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,wofost_wofost_lnpkw_nutrient,-2.410263923607778,objective_reward,128,509.67200097997033,317.1875,0.0,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,wofost_wofost_lnpkw_profit,-0.0253063313772636,objective_reward,128,564.9547770432587,93.90625,90.234375,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,wofost_wofost_lnw_profit,0.170379235986778,objective_reward,128,2625.528193387613,336.25,8.59375,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,wofost_wofost_lnw_yield,0.3148090377023526,objective_reward,128,2675.876820469997,653.90625,0.0,0.0
+T3.2,,zero-shot (Qwen),think,0.0,True,dssat_profit,1.0737542921304704,objective_reward,128,,0.0,0.0,1.0
+T3.2,,zero-shot (Qwen),think,0.0,True,dssat_yield,1795.8989191055298,target_yield,128,,23.59375,0.0,0.9285098805147058
+T3.2,,zero-shot (Qwen),think,0.0,True,wofost_wofost_lnpk_profit,0.5470664251820837,objective_reward,128,6882.603676547712,285.0,0.0,0.0004340277777777
+T3.2,,zero-shot (Qwen),think,0.0,True,wofost_wofost_lnpkw_nutrient,-1.0240193927784622,objective_reward,128,2595.354497230724,310.15625,5.859375,0.0014945481397687
+T3.2,,zero-shot (Qwen),think,0.0,True,wofost_wofost_lnpkw_profit,0.3905047864802717,objective_reward,128,5301.86881008231,243.28125,174.21875,0.0036504836309523
+T3.2,,zero-shot (Qwen),think,0.0,True,wofost_wofost_lnw_profit,0.5958702391517497,objective_reward,128,6452.006407789873,390.46875,409.375,0.0044994610424297
+T3.2,,zero-shot (Qwen),think,0.0,True,wofost_wofost_lnw_yield,0.5676603036102391,objective_reward,128,4825.112580687032,548.90625,200.390625,0.1165972488755117
+T3.1,t31-cycles,LLM-RL,no-think,2.0,True,cycles,11.442495692307691,objective_reward,130,,225.0,,0.0
+T3.1,t31-cycles,LLM-RL,no-think,3.0,True,cycles,11.285132461538462,objective_reward,130,,214.6153846153846,,0.0
+T3.1,t31-cycles,LLM-RL,no-think,4.0,True,cycles,11.442337153846154,objective_reward,130,,225.0,,0.0
+T3.1,t31-cycles,LLM-RL,think,2.0,True,cycles,11.359791461538462,objective_reward,130,,223.84615384615384,,0.0
+T3.1,t31-cycles,LLM-RL,think,3.0,True,cycles,11.33881623076923,objective_reward,130,,249.23076923076923,,0.0
+T3.1,t31-cycles,LLM-RL,think,5.0,True,cycles,11.357524615384616,objective_reward,130,,235.3846153846154,,0.0
+T3.1,t31-dssat,LLM-RL,no-think,2.0,True,cycles,8.70369969230769,objective_reward,130,,1009.0384615384615,,0.0
+T3.1,t31-dssat,LLM-RL,no-think,3.0,True,cycles,8.804257384615385,objective_reward,130,,980.3076923076924,,0.0
+T3.1,t31-dssat,LLM-RL,no-think,4.0,True,cycles,8.113276615384615,objective_reward,130,,1177.7307692307693,,0.0
+T3.1,t31-dssat,LLM-RL,think,2.0,True,cycles,9.41568046153846,objective_reward,130,,805.6153846153846,,0.0112426035502958
+T3.1,t31-dssat,LLM-RL,think,3.0,True,cycles,10.304142,objective_reward,130,,551.7692307692307,,0.2538461538461538
+T3.1,t31-dssat,LLM-RL,think,4.0,True,cycles,9.899084307692307,objective_reward,130,,667.5,,0.0127218934911242
+T3.1,t31-wofost,LLM-RL,no-think,2.0,True,cycles,11.092991253846153,objective_reward,130,,276.0,,0.0
+T3.1,t31-wofost,LLM-RL,no-think,3.0,True,cycles,11.020924092307691,objective_reward,130,,343.38461538461536,,0.0
+T3.1,t31-wofost,LLM-RL,no-think,4.0,True,cycles,7.731258923076923,objective_reward,130,,184.84615384615384,,0.0
+T3.1,t31-wofost,LLM-RL,think,2.0,True,cycles,10.023872769230769,objective_reward,130,,631.8461538461538,,0.0124260355029585
+T3.1,t31-wofost,LLM-RL,think,3.0,True,cycles,9.730680461538462,objective_reward,130,,715.6153846153846,,0.0029585798816568
+T3.1,t31-wofost,LLM-RL,think,4.0,True,cycles,10.584007384615385,objective_reward,130,,471.8076923076923,,0.2
+T3.1,,Ag heuristic (current),,0.0,True,cycles,4.271869384615385,objective_reward,130,,0.0,,0.0
+T3.1,,Ag heuristic (paper),,0.0,True,cycles,10.825809461538462,objective_reward,130,,165.0,,0.0
+T3.1,,No-action,,0.0,True,cycles,4.271869384615385,objective_reward,130,,0.0,,0.0
+T3.1,,zero-shot (Qwen),no-think,0.0,True,cycles,10.308541815384617,objective_reward,130,,344.4230769230769,,0.0
+T3.1,,zero-shot (Qwen),think,0.0,True,cycles,10.711218923076924,objective_reward,130,,435.46153846153845,,0.3319526627218935
+T3.2,t31-cycles-specialist,T3.1 specialist,think,2.0,True,cycles_profit,11.365290692307692,objective_reward,130,,221.53846153846155,,0.0
+T3.2,t31-cycles-specialist,T3.1 specialist,think,3.0,True,cycles_profit,11.346880638461538,objective_reward,130,,246.92307692307693,,0.0
+T3.2,t31-cycles-specialist,T3.1 specialist,think,5.0,True,cycles_profit,11.363165923076922,objective_reward,130,,236.42307692307693,,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,cycles_profit,9.505334307692308,objective_reward,130,,780.0,,0.0
+T3.2,t32-llama32,LLM-RL (Llama),no-think,1.0,False,cycles_yield,12235.334307692308,target_yield,130,,780.0,,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,cycles_profit,9.505334307692308,objective_reward,130,,780.0,,0.0
+T3.2,t32-llama32,LLM-RL (Llama),think,1.0,False,cycles_yield,12235.334307692308,target_yield,130,,780.0,,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,cycles_profit,9.969353538461538,objective_reward,130,,647.4230769230769,,0.0
+T3.2,t32-qwen,LLM-RL,no-think,2.0,True,cycles_yield,12235.334307692308,target_yield,130,,3825.0,,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,cycles_profit,4.271869384615385,objective_reward,130,,0.0,,0.0
+T3.2,t32-qwen,LLM-RL,no-think,3.0,True,cycles_yield,12235.334307692308,target_yield,130,,3900.0,,0.0
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,cycles_profit,3.4274496923076923,objective_reward,130,,2516.538461538461,,0.0029585798816568
+T3.2,t32-qwen,LLM-RL,no-think,4.0,True,cycles_yield,12235.334307692308,target_yield,130,,3357.692307692308,,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,cycles_profit,10.498795846153849,objective_reward,130,,496.1538461538461,,0.0
+T3.2,t32-qwen,LLM-RL,think,2.0,True,cycles_yield,12235.334307692308,target_yield,130,,528.4615384615385,,0.0
+T3.2,t32-qwen,LLM-RL,think,3.0,True,cycles_profit,10.27587276923077,objective_reward,130,,559.8461538461538,,0.0029585798816568
+T3.2,t32-qwen,LLM-RL,think,3.0,True,cycles_yield,12235.334307692308,target_yield,130,,780.0,,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,cycles_profit,10.870334307692309,objective_reward,130,,390.0,,0.0
+T3.2,t32-qwen,LLM-RL,think,4.0,True,cycles_yield,12235.334307692308,target_yield,130,,390.0,,0.0
+T3.2,,Ag heuristic (current),,0.0,True,cycles_profit,4.271869384615385,objective_reward,130,,0.0,,0.0
+T3.2,,Ag heuristic (current),,0.0,True,cycles_yield,4271.869384615385,target_yield,130,,0.0,,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,cycles_profit,10.825809461538462,objective_reward,130,,165.0,,0.0
+T3.2,,Ag heuristic (paper),,0.0,True,cycles_yield,11403.309461538462,target_yield,130,,165.0,,0.0
+T3.2,,No-action,,0.0,True,cycles_profit,4.271869384615385,objective_reward,130,,0.0,,0.0
+T3.2,,No-action,,0.0,True,cycles_yield,4271.869384615385,target_yield,130,,0.0,,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,cycles_profit,10.308541815384617,objective_reward,130,,344.4230769230769,,0.0
+T3.2,,zero-shot (Qwen),no-think,0.0,True,cycles_yield,12235.334307692308,target_yield,130,,877.1538461538462,,0.0
+T3.2,,zero-shot (Qwen),think,0.0,True,cycles_profit,10.67568046153846,objective_reward,130,,445.61538461538464,,0.3275147928994083
+T3.2,,zero-shot (Qwen),think,0.0,True,cycles_yield,12235.334307692308,target_yield,130,,514.3846153846154,,0.3650887573964497

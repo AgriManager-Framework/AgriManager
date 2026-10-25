@@ -1,0 +1,59 @@
+# E4 confirmatory suite: the WOFOST target cell of the T3.1 cross-simulator axis.
+#
+# T3.1 trains a policy on one simulator and evaluates it on the others, so its
+# eval side is one target cell per simulator. This is the WOFOST cell, rendered
+# on the same frozen maize_e4 base as every other WOFOST suite, so a T3.1
+# number is paired scenario for scenario with T2.1, T2.2, T2.3 and T3.2.
+#
+# The env block is copied from
+# experiments/t3_1_cross_simulator_maize_transfer/config/t31_cross_sim_wofost.yaml
+# and deliberately does NOT pin `observation_schema_name` or
+# `prompt_observation_fields`. The submitted T3.1 config leaves both at their
+# defaults, and pinning them here would silently evaluate a different prompt
+# from the one T3.1 trained against. The audit reports whether the resulting
+# prompt coincides with the T3.2 held-out lnw_profit cell rather than assuming
+# it either way.
+env_name: wofost_gym
+dataset_id: e4_t31_cross_sim_wofost
+validation_axis: simulator
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/maize_e4
+
+sampling:
+  generation_seed: 20260725
+  scenario_sets:
+    eval_base:
+      source_split: test
+      crops: [maize]
+      num_samples: 128
+
+  splits:
+    test_wofost:
+      role: test
+      validation_set: wofost
+      scenario_set: eval_base
+      labels:
+        simulator: wofost_gym
+        observation_schema: wofost_native
+        action_menu: lnw
+        action_schema: lnw
+        reward_formulation: profit_max
+
+env:
+  env_id: lnw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: profit_max
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+  include_crop_traits: false
+  include_variety_traits: false
+  require_think: false

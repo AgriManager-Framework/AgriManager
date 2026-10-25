@@ -1,0 +1,30 @@
+data:
+  inference_file: smoke_tests/wofost_gym/data/wofost_gym_smoke_llm/test.parquet
+  validation_axis: null
+
+runtime:
+  seed: 42
+  mode: no_action
+  num_trials: 1
+
+output:
+  dir: smoke_tests/wofost_gym/results/baseline_eval/no_action_default
+
+wandb:
+  enabled: true
+  project_name: agrimanager
+  entity: null
+  name: null
+  group: null
+  tags:
+    - baseline
+    - no_action
+  mode: null
+  step: 0
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

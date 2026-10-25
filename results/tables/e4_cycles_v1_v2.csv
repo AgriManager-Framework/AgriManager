@@ -1,0 +1,27 @@
+setting,cell,method,arm,target,v1,v2
+T3.1,t31-cycles,LLM-RL,no-think,cycles,11.654883791666668,11.389988435897434
+T3.1,t31-cycles,LLM-RL,think,cycles,11.584723033854168,11.352044102564102
+T3.1,t31-dssat,LLM-RL,no-think,cycles,8.731211,8.540411230769232
+T3.1,t31-dssat,LLM-RL,think,cycles,10.16498053125,9.872968923076924
+T3.1,t31-wofost,LLM-RL,no-think,cycles,10.3493345078125,9.948391423076924
+T3.1,t31-wofost,LLM-RL,think,cycles,10.4185938125,10.11285353846154
+T3.1,,Ag heuristic (current),,cycles,3.99523925,4.271869384615385
+T3.1,,Ag heuristic (paper),,cycles,10.828199375,10.825809461538462
+T3.1,,No-action,,cycles,3.99523925,4.271869384615385
+T3.1,,zero-shot (Qwen),no-think,cycles,10.945363140625,10.308541815384617
+T3.1,,zero-shot (Qwen),think,cycles,10.74275396875,10.711218923076924
+T3.2,t31-cycles-specialist,T3.1 specialist,think,cycles_profit,11.584723033854168,11.358445751282051
+T3.2,t32-qwen,LLM-RL,no-think,cycles_profit,5.953758177083333,5.889557538461538
+T3.2,t32-qwen,LLM-RL,no-think,cycles_yield,12470.74225,12235.334307692308
+T3.2,t32-qwen,LLM-RL,think,cycles_profit,10.81931646875,10.548334307692308
+T3.2,t32-qwen,LLM-RL,think,cycles_yield,12470.74225,12235.334307692308
+T3.2,,Ag heuristic (current),,cycles_profit,3.99523925,4.271869384615385
+T3.2,,Ag heuristic (current),,cycles_yield,3995.23925,4271.869384615385
+T3.2,,Ag heuristic (paper),,cycles_profit,10.828199375,10.825809461538462
+T3.2,,Ag heuristic (paper),,cycles_yield,11405.699375,11403.309461538462
+T3.2,,No-action,,cycles_profit,3.99523925,4.271869384615385
+T3.2,,No-action,,cycles_yield,3995.23925,4271.869384615385
+T3.2,,zero-shot (Qwen),no-think,cycles_profit,10.9678094375,10.308541815384617
+T3.2,,zero-shot (Qwen),no-think,cycles_yield,12470.74225,12235.334307692308
+T3.2,,zero-shot (Qwen),think,cycles_profit,10.82396490625,10.67568046153846
+T3.2,,zero-shot (Qwen),think,cycles_yield,12470.74225,12235.334307692308

@@ -1,0 +1,10 @@
+# OpenRouter free-model router configuration for smoke tests and development.
+model_provider: "openrouter"
+model_name: "openrouter/free"
+
+# Keep request concurrency conservative for free-tier rate limits.
+num_workers: 4
+timeout: 120
+app_title: "AgriManager"
+
+# Set OPENROUTER_API_KEY in the environment. Never store the key in this file.

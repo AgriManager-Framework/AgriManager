@@ -1,0 +1,101 @@
+# Frozen confirmatory test suite for T1.1 Chickpea.
+#
+# Renders the five weather-regime groups that the submitted T1.1 experiment
+# reports (in-distribution plus drought, wet, hot, and cold) from the frozen
+# pool that `prepare_t11_eval_pool.py --crop chickpea` already selected. Each group
+# holds 128 scenarios that no T1.1 training or validation split contains, which
+# is what makes this a test set rather than the reused validation set the
+# meta-review objected to.
+#
+# Byte-for-byte the same scenario selection as
+# `e4_t11_chickpea_weather_regime.yaml`: same frozen pool, same
+# `generation_seed`, same five 128-scenario groups. Only `llm_mode: false`
+# differs, which renders vector observations instead of prompts. Keeping the
+# selection identical is what makes the LLM-versus-numerical comparison paired
+# rather than merely distributional.
+#
+# The `env` block mirrors `weather_regime_chickpea_nn_without_traits.yaml`. Note
+# that `fert_amount` and `irrig_amount` are deliberately absent:
+# `scale_action_amounts_by_interval` already scales the WOFOST-Gym defaults by
+# `intvn_interval`, and setting them applied that scaling twice.
+#
+# Do not regenerate the source pool from this config; it consumes the pool that
+# `prepare_t11_eval_pool.py --crop chickpea` froze.
+
+env_name: wofost_gym
+dataset_id: e4_t11_chickpea_weather_regime_nn
+validation_axis: weather_regime
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/t11_chickpea_e4
+
+sampling:
+  generation_seed: 20260725
+  scenario_sets:
+    eval_id:
+      source_split: test_id
+      crops: [chickpea]
+      num_samples: 128
+    eval_drought:
+      source_split: test_drought
+      crops: [chickpea]
+      num_samples: 128
+    eval_wet:
+      source_split: test_wet
+      crops: [chickpea]
+      num_samples: 128
+    eval_hot:
+      source_split: test_hot
+      crops: [chickpea]
+      num_samples: 128
+    eval_cold:
+      source_split: test_cold
+      crops: [chickpea]
+      num_samples: 128
+
+  splits:
+    test_id:
+      role: test
+      validation_set: id
+      scenario_set: eval_id
+      labels:
+        weather_regime: id
+
+    test_drought:
+      role: test
+      validation_set: drought
+      scenario_set: eval_drought
+      labels:
+        weather_regime: drought
+
+    test_wet:
+      role: test
+      validation_set: wet
+      scenario_set: eval_wet
+      labels:
+        weather_regime: wet
+
+    test_hot:
+      role: test
+      validation_set: hot
+      scenario_set: eval_hot
+      labels:
+        weather_regime: hot
+
+    test_cold:
+      role: test
+      validation_set: cold
+      scenario_set: eval_cold
+      labels:
+        weather_regime: cold
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: false
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: profit_max
+  include_crop_traits: false

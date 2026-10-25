@@ -1,0 +1,102 @@
+# Numerical-policy rendering of the T1.3 price-regime suite.
+#
+# Byte-for-byte the same scenario selection as `e4_t13_price_regime.yaml`: same
+# frozen pool, same `generation_seed`, same groups. Only `llm_mode: false`
+# differs. This is a re-rendering of an already audited suite, not a new draw.
+#
+# The `env` block mirrors `price_regime_nn.yaml`. CyclesGym gates the valid-
+# action bonus on `llm_mode` itself, so it contributes nothing here regardless
+# of what the field says.
+
+env_name: cycles_gym
+dataset_id: e4_t13_price_regime_nn
+
+# Borrow the LLM suite's scenario draw. CyclesGym seeds every scenario and every
+# sampled price from a payload containing the dataset id, so without this the
+# rename alone produced 384 different scenarios with different prices and zero
+# overlap in scenario_id -- a suite that looks like a pair and is not one. The
+# dataset keeps its own identity above; only the draw is shared.
+scenario_seed_id: e4_t13_price_regime
+validation_axis: price_regime
+
+sampling:
+  generation_seed: 20260725
+  splits:
+    test:
+      role: test
+      validation_set: price_regime
+      labels:
+        validation_axis: price_regime
+        simulator: cycles_gym
+
+base_config:
+  env_id: CropPlanningRockSpringsRW-v1
+  cycles_gym_path: ../AgriManagerExternal/CyclesGym
+  llm_mode: false
+  objective_id: profit_max
+  valid_action_bonus: 0.1
+  invalid_action_fallback: heuristic
+  reward_scale: 1000.0
+  reward_params:
+    crop_planning_same_crop_penalty: 0.05
+    crop_planning_same_crop_penalty_cap: 0.4
+    crop_planning_cereal_run_penalty: 0.02
+    crop_planning_legume_break_bonus: 0.03
+    crop_planning_cereal_after_legume_bonus: 0.02
+    crop_planning_change_crop_bonus: 0.01
+  turn_num: 19
+  trajectory_group_labels:
+    validation_axis: price_regime
+    simulator: cycles_gym
+    observation_schema: cycles_native
+    action_menu: cycles_native
+    action_schema: cycles_native
+    reward_formulation: profit_max
+  env_kwargs:
+    rotation_crops:
+      - CornRM.100
+      - SoybeanMG.3
+    crop_price_sampling:
+      CornRM.100:
+        min: 220.0
+        mode: 250.0
+        max: 280.0
+      SoybeanMG.3:
+        min: 260.0
+        mode: 300.0
+        max: 340.0
+
+test_generation:
+  env_ids:
+    - CropPlanningRockSpringsRW-v1
+    - CropPlanningNewHollandRW-v1
+  year_windows:
+    - [1986, 2004]
+    - [1987, 2005]
+    - [1988, 2006]
+    - [1989, 2007]
+  seeds_per_combo: 16
+  seed_start: 300000
+  paired_price_regimes:
+    regimes:
+      id_test:
+        metadata:
+          regime_family: id
+      high_corn:
+        crop_price_sampling_overrides:
+          CornRM.100:
+            min: 380.0
+            mode: 430.0
+            max: 480.0
+        metadata:
+          regime_family: ood
+          shocked_crop: CornRM.100
+      high_soybean:
+        crop_price_sampling_overrides:
+          SoybeanMG.3:
+            min: 420.0
+            mode: 470.0
+            max: 520.0
+        metadata:
+          regime_family: ood
+          shocked_crop: SoybeanMG.3

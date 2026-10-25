@@ -1,0 +1,23 @@
+# TODO(authors): fill in the author list (family-names / given-names / affiliation)
+# once it is final. TODO(doi): add the proceedings or arXiv identifier.
+cff-version: 1.2.0
+message: "If you use AgriManager, please cite the paper below."
+title: "AgriManager"
+type: software
+authors:
+  - name: "TODO(authors)"
+repository-code: "https://github.com/AgriManager-Framework/AgriManager"
+license: Apache-2.0
+keywords:
+  - agriculture
+  - crop management
+  - reinforcement learning
+  - large language models
+  - benchmark
+preferred-citation:
+  type: conference-paper
+  title: "AgriManager: A Framework and Benchmark for LLM-RL Generalization in Agricultural Management"
+  authors:
+    - name: "TODO(authors)"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track"
+  year: 2026

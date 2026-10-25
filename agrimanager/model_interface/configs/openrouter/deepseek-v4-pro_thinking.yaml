@@ -1,0 +1,8 @@
+model_provider: "openrouter"
+model_name: "deepseek/deepseek-v4-pro"
+num_workers: 16
+timeout: 180
+app_title: "AgriManager"
+
+reasoning:
+  enabled: true

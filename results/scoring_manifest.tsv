@@ -1,0 +1,126 @@
+# Every checkpoint revision scored on the frozen test suite for the paper's tables:
+# the three scored seeds of each arm at their terminal revision, the untrained floors,
+# and the T3.1 specialists scored on the T3.2 suites (run names ending in --on-t32).
+# Columns: run, repo, revision, tier, extra evaluator arguments.
+# Repos are named under the release Hugging Face organization; <untrained-base> is a
+# directory made by entrypoints/tools/prepare_untrained_base.py.
+# Feed this file to entrypoints/tools/e4_score_worker.sh --queue (or e4_score_fanout.sh).
+baseline-qwen3-4b-untrained-no-think--t32	Qwen/Qwen3-4B-Instruct-2507	base-t32	t32	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False --suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+baseline-qwen3-4b-untrained-think--t32	Qwen/Qwen3-4B-Instruct-2507	base-t32	t32	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call --suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t31-cycles-think-r2--on-t32	agrimanager/schema-t31-cycles-think-r2	step-200	t32	--suite-group e4_t32_cycles_profit_v2
+schema-t31-cycles-think-r3--on-t32	agrimanager/schema-t31-cycles-think-r3	step-200	t32	--suite-group e4_t32_cycles_profit_v2
+schema-t31-cycles-think-r5--on-t32	agrimanager/schema-t31-cycles-think-r5	step-200	t32	--suite-group e4_t32_cycles_profit_v2
+schema-t31-dssat-think-r2--on-t32	agrimanager/schema-t31-dssat-think-r2	step-200	t32	--suite-group e4_t32_dssat_profit
+schema-t31-dssat-think-r3--on-t32	agrimanager/schema-t31-dssat-think-r3	step-200	t32	--suite-group e4_t32_dssat_profit
+schema-t31-dssat-think-r4--on-t32	agrimanager/schema-t31-dssat-think-r4	step-200	t32	--suite-group e4_t32_dssat_profit
+schema-t31-wofost-think-r2--on-t32	agrimanager/schema-t31-wofost-think-r2	step-200	t32	--suite-group e4_t32_wofost_heldout
+schema-t31-wofost-think-r3--on-t32	agrimanager/schema-t31-wofost-think-r3	step-200	t32	--suite-group e4_t32_wofost_heldout
+schema-t31-wofost-think-r4--on-t32	agrimanager/schema-t31-wofost-think-r4	step-200	t32	--suite-group e4_t32_wofost_heldout
+schema-t32-llama32-no-think-s1	agrimanager/schema-t32-llama32-no-think-s1	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-llama32-think-s1	agrimanager/schema-t32-llama32-think-s1	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-no-think-r2	agrimanager/schema-t32-qwen-no-think-r2	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-no-think-r3	agrimanager/schema-t32-qwen-no-think-r3	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-no-think-r4	agrimanager/schema-t32-qwen-no-think-r4	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-think-r2	agrimanager/schema-t32-qwen-think-r2	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-think-r3	agrimanager/schema-t32-qwen-think-r3	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+schema-t32-qwen-think-r4	agrimanager/schema-t32-qwen-think-r4	step-800	t32	--suite-group e4_t32_wofost_seen --suite-group e4_t32_wofost_heldout --suite-group e4_t32_dssat_yield --suite-group e4_t32_dssat_profit --suite-group e4_t32_cycles_yield_v2 --suite-group e4_t32_cycles_profit_v2
+baseline-qwen3-4b-untrained-no-think--t31	Qwen/Qwen3-4B-Instruct-2507	base-t31	t31	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False --suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+baseline-qwen3-4b-untrained-think--t31	Qwen/Qwen3-4B-Instruct-2507	base-t31	t31	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call --suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-no-think-r2	agrimanager/schema-t31-cycles-no-think-r2	step-75	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-no-think-r3	agrimanager/schema-t31-cycles-no-think-r3	step-92	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-no-think-r4	agrimanager/schema-t31-cycles-no-think-r4	step-65	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-think-r2	agrimanager/schema-t31-cycles-think-r2	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-think-r3	agrimanager/schema-t31-cycles-think-r3	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-cycles-think-r5	agrimanager/schema-t31-cycles-think-r5	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-no-think-r2	agrimanager/schema-t31-dssat-no-think-r2	step-114	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-no-think-r3	agrimanager/schema-t31-dssat-no-think-r3	step-76	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-no-think-r4	agrimanager/schema-t31-dssat-no-think-r4	step-78	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-think-r2	agrimanager/schema-t31-dssat-think-r2	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-think-r3	agrimanager/schema-t31-dssat-think-r3	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-dssat-think-r4	agrimanager/schema-t31-dssat-think-r4	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-no-think-r2	agrimanager/schema-t31-wofost-no-think-r2	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-no-think-r3	agrimanager/schema-t31-wofost-no-think-r3	step-180	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-no-think-r4	agrimanager/schema-t31-wofost-no-think-r4	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-think-r2	agrimanager/schema-t31-wofost-think-r2	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-think-r3	agrimanager/schema-t31-wofost-think-r3	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+schema-t31-wofost-think-r4	agrimanager/schema-t31-wofost-think-r4	step-200	t31	--suite-group e4_t31_cross_sim_wofost --suite-group e4_t31_cross_sim_dssat --suite-group e4_t31_cross_sim_cycles_v2
+baseline-qwen3-4b-untrained-no-think--t12	Qwen/Qwen3-4B-Instruct-2507	base-t12	t12	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-think--t12	Qwen/Qwen3-4B-Instruct-2507	base-t12	t12	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+schema-t12-crosscrop-16id-no-think-r2	agrimanager/schema-t12-crosscrop-16id-no-think-r2	step-21	t12	
+schema-t12-crosscrop-16id-no-think-r3	agrimanager/schema-t12-crosscrop-16id-no-think-r3	step-160	t12	
+schema-t12-crosscrop-16id-no-think-r4	agrimanager/schema-t12-crosscrop-16id-no-think-r4	step-19	t12	
+schema-t12-crosscrop-16id-think-r2	agrimanager/schema-t12-crosscrop-16id-think-r2	step-200	t12	
+schema-t12-crosscrop-16id-think-r3	agrimanager/schema-t12-crosscrop-16id-think-r3	step-200	t12	
+schema-t12-crosscrop-16id-think-r4	agrimanager/schema-t12-crosscrop-16id-think-r4	step-200	t12	
+schema-t12-crosscrop-4id-no-think-r2	agrimanager/schema-t12-crosscrop-4id-no-think-r2	step-18	t12	
+schema-t12-crosscrop-4id-no-think-r3	agrimanager/schema-t12-crosscrop-4id-no-think-r3	step-33	t12	
+schema-t12-crosscrop-4id-no-think-r4	agrimanager/schema-t12-crosscrop-4id-no-think-r4	step-13	t12	
+schema-t12-crosscrop-4id-think-r2	agrimanager/schema-t12-crosscrop-4id-think-r2	step-200	t12	
+schema-t12-crosscrop-4id-think-r3	agrimanager/schema-t12-crosscrop-4id-think-r3	step-200	t12	
+schema-t12-crosscrop-4id-think-r4	agrimanager/schema-t12-crosscrop-4id-think-r4	step-200	t12	
+schema-t12-crosscrop-8id-no-think-r2	agrimanager/schema-t12-crosscrop-8id-no-think-r2	step-13	t12	
+schema-t12-crosscrop-8id-no-think-r3	agrimanager/schema-t12-crosscrop-8id-no-think-r3	step-13	t12	
+schema-t12-crosscrop-8id-no-think-r4	agrimanager/schema-t12-crosscrop-8id-no-think-r4	step-134	t12	
+schema-t12-crosscrop-8id-think-r2	agrimanager/schema-t12-crosscrop-8id-think-r2	step-200	t12	
+schema-t12-crosscrop-8id-think-r3	agrimanager/schema-t12-crosscrop-8id-think-r3	step-200	t12	
+schema-t12-crosscrop-8id-think-r4	agrimanager/schema-t12-crosscrop-8id-think-r4	step-200	t12	
+baseline-qwen3-4b-untrained-no-think--t13	Qwen/Qwen3-4B-Instruct-2507	base-t13	t13	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-think--t13	Qwen/Qwen3-4B-Instruct-2507	base-t13	t13	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+schema-t13-price-no-think-r1	agrimanager/schema-t13-price-no-think-r1	step-54	t13	
+schema-t13-price-no-think-r2	agrimanager/schema-t13-price-no-think-r2	step-43	t13	
+schema-t13-price-no-think-r3	agrimanager/schema-t13-price-no-think-r3	step-110	t13	
+schema-t13-price-think-r1	agrimanager/schema-t13-price-think-r1	step-141	t13	
+schema-t13-price-think-r2	agrimanager/schema-t13-price-think-r2	step-154	t13	
+schema-t13-price-think-r3	agrimanager/schema-t13-price-think-r3	step-191	t13	
+baseline-qwen3-4b-untrained-no-think--t11	Qwen/Qwen3-4B-Instruct-2507	base-t11	t11	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-no-think--t11_chickpea	Qwen/Qwen3-4B-Instruct-2507	base-t11-chickpea	t11_chickpea	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-think--t11	Qwen/Qwen3-4B-Instruct-2507	base-t11	t11	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+baseline-qwen3-4b-untrained-think--t11_chickpea	Qwen/Qwen3-4B-Instruct-2507	base-t11-chickpea	t11_chickpea	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+schema-t11-chickpea-no-think-r2	agrimanager/schema-t11-chickpea-no-think-r2	step-18	t11_chickpea	
+schema-t11-chickpea-no-think-r3	agrimanager/schema-t11-chickpea-no-think-r3	step-60	t11_chickpea	
+schema-t11-chickpea-no-think-r4	agrimanager/schema-t11-chickpea-no-think-r4	step-124	t11_chickpea	
+schema-t11-chickpea-think-r2	agrimanager/schema-t11-chickpea-think-r2	step-200	t11_chickpea	
+schema-t11-chickpea-think-r3	agrimanager/schema-t11-chickpea-think-r3	step-200	t11_chickpea	
+schema-t11-chickpea-think-r4	agrimanager/schema-t11-chickpea-think-r4	step-200	t11_chickpea	
+schema-t11-potato-no-think-r2	agrimanager/schema-t11-potato-no-think-r2	step-14	t11	
+schema-t11-potato-no-think-r3	agrimanager/schema-t11-potato-no-think-r3	step-17	t11	
+schema-t11-potato-no-think-r4	agrimanager/schema-t11-potato-no-think-r4	step-27	t11	
+schema-t11-potato-think-r2	agrimanager/schema-t11-potato-think-r2	step-200	t11	
+schema-t11-potato-think-r3	agrimanager/schema-t11-potato-think-r3	step-200	t11	
+schema-t11-potato-think-r4	agrimanager/schema-t11-potato-think-r4	step-200	t11	
+baseline-qwen3-4b-untrained-no-think--t21	Qwen/Qwen3-4B-Instruct-2507	base-t21	t21	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-no-think--t22	Qwen/Qwen3-4B-Instruct-2507	base-t22	t22	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-think--t21	Qwen/Qwen3-4B-Instruct-2507	base-t21	t21	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+baseline-qwen3-4b-untrained-think--t22	Qwen/Qwen3-4B-Instruct-2507	base-t22	t22	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+schema-t21-observation-no-think-r2	agrimanager/schema-t21-observation-no-think-r2	step-116	t21	
+schema-t21-observation-no-think-r3	agrimanager/schema-t21-observation-no-think-r3	step-88	t21	
+schema-t21-observation-no-think-r4	agrimanager/schema-t21-observation-no-think-r4	step-92	t21	
+schema-t21-observation-think-r2	agrimanager/schema-t21-observation-think-r2	step-200	t21	
+schema-t21-observation-think-r3	agrimanager/schema-t21-observation-think-r3	step-200	t21	
+schema-t21-observation-think-r4	agrimanager/schema-t21-observation-think-r4	step-200	t21	
+schema-t22-family-a-no-think-r2	agrimanager/schema-t22-family-a-no-think-r2	step-99	t22	
+schema-t22-family-a-no-think-r3	agrimanager/schema-t22-family-a-no-think-r3	step-161	t22	
+schema-t22-family-a-no-think-r4	agrimanager/schema-t22-family-a-no-think-r4	step-141	t22	
+schema-t22-family-a-think-r2	agrimanager/schema-t22-family-a-think-r2	step-200	t22	
+schema-t22-family-a-think-r3	agrimanager/schema-t22-family-a-think-r3	step-200	t22	
+schema-t22-family-a-think-r4	agrimanager/schema-t22-family-a-think-r4	step-200	t22	
+schema-t22-family-b-no-think-r2	agrimanager/schema-t22-family-b-no-think-r2	step-66	t22	
+schema-t22-family-b-no-think-r3	agrimanager/schema-t22-family-b-no-think-r3	step-149	t22	
+schema-t22-family-b-no-think-r4	agrimanager/schema-t22-family-b-no-think-r4	step-187	t22	
+schema-t22-family-b-think-r2	agrimanager/schema-t22-family-b-think-r2	step-200	t22	
+schema-t22-family-b-think-r3	agrimanager/schema-t22-family-b-think-r3	step-200	t22	
+schema-t22-family-b-think-r4	agrimanager/schema-t22-family-b-think-r4	step-200	t22	
+baseline-qwen3-4b-untrained-no-think--t23	Qwen/Qwen3-4B-Instruct-2507	base-t23	t23	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-no-think --require-think False
+baseline-qwen3-4b-untrained-think--t23	Qwen/Qwen3-4B-Instruct-2507	base-t23	t23	--checkpoint-dir <untrained-base>/qwen3-4b-instruct-2507-think --require-think True --think-tag tool_call
+schema-t23-objectives-no-think-r2	agrimanager/schema-t23-objectives-no-think-r2	step-400	t23	
+schema-t23-objectives-no-think-r3	agrimanager/schema-t23-objectives-no-think-r3	step-400	t23	
+schema-t23-objectives-no-think-r4	agrimanager/schema-t23-objectives-no-think-r4	step-400	t23	
+schema-t23-objectives-think-r2	agrimanager/schema-t23-objectives-think-r2	step-400	t23	
+schema-t23-objectives-think-r3	agrimanager/schema-t23-objectives-think-r3	step-400	t23	
+schema-t23-objectives-think-r4	agrimanager/schema-t23-objectives-think-r4	step-400	t23	
+schema-t23-yield-only-no-think-r2	agrimanager/schema-t23-yield-only-no-think-r2	step-400	t23	
+schema-t23-yield-only-no-think-r3	agrimanager/schema-t23-yield-only-no-think-r3	step-400	t23	
+schema-t23-yield-only-no-think-r4	agrimanager/schema-t23-yield-only-no-think-r4	step-400	t23	
+schema-t23-yield-only-think-r2	agrimanager/schema-t23-yield-only-think-r2	step-400	t23	
+schema-t23-yield-only-think-r3	agrimanager/schema-t23-yield-only-think-r3	step-400	t23	
+schema-t23-yield-only-think-r4	agrimanager/schema-t23-yield-only-think-r4	step-400	t23	

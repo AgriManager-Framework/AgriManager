@@ -1,0 +1,125 @@
+# Mask-aware numerical PPO transfer for T2.2.
+#
+# The NN adapter exposes a canonical 17-action vocabulary:
+# no-op plus four levels each of N, P, K, and water. Each native WOFOST menu
+# supplies a legal-action mask, so MaskablePPO can train across changing action
+# menus without sampling illegal controls.
+
+env_name: wofost_gym
+dataset_id: t22_nn_masked_transfer
+validation_axis: action_menu
+
+source:
+  kind: weather_pool
+  path: agrimanager/weather_pool_maize
+
+sampling:
+  generation_seed: 42
+  scenario_sets:
+    train_base:
+      source_split: train
+      crops: [maize]
+      num_samples: 800
+
+    val_base:
+      source_split: val
+      crops: [maize]
+      num_samples: 128
+
+  splits:
+    train_lnpkw:
+      role: train
+      scenario_set: train_base
+      labels:
+        action_menu: lnpkw
+        action_schema: lnpkw
+      env:
+        env_id: lnpkw-v0
+
+    train_lnpk:
+      role: train
+      scenario_set: train_base
+      labels:
+        action_menu: lnpk
+        action_schema: lnpk
+      env:
+        env_id: lnpk-v0
+
+    train_lw:
+      role: train
+      scenario_set: train_base
+      labels:
+        action_menu: lw
+        action_schema: lw
+      env:
+        env_id: lw-v0
+
+    val_lnpkw:
+      role: validation
+      validation_set: lnpkw
+      scenario_set: val_base
+      labels:
+        action_menu: lnpkw
+        action_schema: lnpkw
+      env:
+        env_id: lnpkw-v0
+
+    val_lnpk:
+      role: validation
+      validation_set: lnpk
+      scenario_set: val_base
+      labels:
+        action_menu: lnpk
+        action_schema: lnpk
+      env:
+        env_id: lnpk-v0
+
+    val_lnw:
+      role: validation
+      validation_set: lnw
+      scenario_set: val_base
+      labels:
+        action_menu: lnw
+        action_schema: lnw
+      env:
+        env_id: lnw-v0
+
+    val_ln:
+      role: validation
+      validation_set: ln
+      scenario_set: val_base
+      labels:
+        action_menu: ln
+        action_schema: ln
+      env:
+        env_id: ln-v0
+
+    val_lw:
+      role: validation
+      validation_set: lw
+      scenario_set: val_base
+      labels:
+        action_menu: lw
+        action_schema: lw
+      env:
+        env_id: lw-v0
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: false
+  nn_action_space: canonical_masked
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  # fert_amount/irrig_amount are intentionally unset. `scale_action_amounts_by_interval`
+  # already multiplies the WOFOST-Gym defaults (2.0 kg/ha, 0.5 cm per day) by
+  # `intvn_interval`, giving 20 kg/ha and 5 cm per decision -- the same amounts every
+  # LLM config gets. Setting them here applied that scaling a second time (200/50).
+  objective_id: profit_max
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+  include_crop_traits: false

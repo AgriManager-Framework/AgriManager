@@ -1,0 +1,87 @@
+env_name: wofost_gym
+dataset_id: e4_t32_wofost_heldout
+validation_axis: schema_tuple
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/maize_e4
+
+sampling:
+  generation_seed: 20260725
+  scenario_sets:
+    eval_base:
+      source_split: test
+      crops: [maize]
+      num_samples: 128
+
+  splits:
+    test_wofost_lnw_profit:
+      role: test
+      validation_set: heldout_wofost_lnw_profit
+      scenario_set: eval_base
+      labels:
+        schema_tuple: wofost_s1_lnw_profit
+        simulator: wofost_gym
+        observation_schema: S1_full_current
+        action_menu: lnw
+        action_schema: lnw
+        reward_formulation: profit_max
+        callback_family: t22_t31_callback
+      env:
+        env_id: lnw-v0
+        objective_id: profit_max
+        prompt_objective_id: profit_max
+
+    test_wofost_lnpkw_nutrient:
+      role: test
+      validation_set: heldout_wofost_lnpkw_nutrient
+      scenario_set: eval_base
+      labels:
+        schema_tuple: wofost_s1_lnpkw_nutrient
+        simulator: wofost_gym
+        observation_schema: S1_full_current
+        action_menu: lnpkw
+        action_schema: lnpkw
+        reward_formulation: nutrient_stewardship
+        callback_family: t23_callback
+      env:
+        env_id: lnpkw-v0
+        objective_id: nutrient_stewardship
+        prompt_objective_id: nutrient_stewardship
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: profit_max
+  prompt_objective_id: profit_max
+  y_ref: 8500.0
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+    c_w: 0.05
+    tau_y: 0.80
+    water_budget_mm: 500.0
+    lambda_i: 0.10
+    beta_y: 4.0
+    beta_budget: 2.0
+    budget_n_kg_ha: 400.0
+    budget_p_kg_ha: 200.0
+    budget_k_kg_ha: 200.0
+    terminal_nutrient_min: 8.0
+    terminal_nutrient_max: 50.0
+    beta_application: 0.35
+    beta_low: 0.30
+    beta_high: 0.50
+  include_crop_traits: false
+  require_think: false
+  thinking_mode: grounding_decision
+  think_tag: tool_call
+  observation_schema_name: S1_full_current
+  prompt_observation_fields: [FIN, DVS, WSO, NAVAIL, PAVAIL, KAVAIL, SM, TOTN, TOTP, TOTK, TOTIRRIG, IRRAD, TEMP, RAIN, DAYS]
+

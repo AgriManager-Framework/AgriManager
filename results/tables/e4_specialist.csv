@@ -1,0 +1,9 @@
+comparison,target,n_seeds_a,n_seeds_b,mean_diff,propagated_sd,diff_in_prop_sd,scenario_sem,n_scenarios,all_a_seeds_above_all_b
+T3.2 unified think - T3.1 wofost specialist (think),wofost_wofost_lnpkw_nutrient,3,3,0.8335724170275702,0.9526979065189534,0.8749598496267786,0.0704726710378765,128,False
+T3.2 unified think - T3.1 wofost specialist (think),wofost_wofost_lnw_profit,3,3,-0.2193970024556728,0.2511507651599619,-0.8735669282788583,0.0127438712344611,128,False
+T3.2 unified think - T3.1 dssat specialist (think),dssat_profit,3,3,-0.8125575561523446,1.081895860088024,-0.7510496953803245,0.0753840196818294,128,False
+T3.2 unified no-think - T3.1 wofost specialist (think),wofost_wofost_lnpkw_nutrient,3,3,-0.266471905523771,2.449343124985972,-0.1087932118638123,0.0767845584196071,128,False
+T3.2 unified no-think - T3.1 wofost specialist (think),wofost_wofost_lnw_profit,3,3,-0.573892946677744,0.1246764694489894,-4.603057411026131,0.0155516154041065,128,False
+T3.2 unified no-think - T3.1 dssat specialist (think),dssat_profit,3,3,-2.098365493893624,3.4383355967525584,-0.6102852484427319,0.1006607945452694,128,False
+T3.2 unified think - T3.1 cycles specialist (think),cycles_profit,3,3,-0.8101114435897419,0.3004798114569381,-2.6960594778788964,0.0105443645304978,130,False
+T3.2 unified no-think - T3.1 cycles specialist (think),cycles_profit,3,3,-5.468888212820511,3.558358350129767,-1.5369132826717888,0.0269247225153178,130,False

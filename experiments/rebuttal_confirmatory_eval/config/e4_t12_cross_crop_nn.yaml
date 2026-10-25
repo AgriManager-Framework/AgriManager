@@ -1,0 +1,61 @@
+# Numerical-policy rendering of the T1.2 cross-crop suite.
+#
+# Byte-for-byte the same scenario selection as `e4_t12_cross_crop.yaml`: same
+# frozen source pool, same `generation_seed`, same groups and group sizes. Only
+# `llm_mode: false` differs, which renders vector observations instead of
+# prompts. Keeping the selection identical is what makes the LLM-versus-
+# numerical comparison paired rather than merely distributional, and it is why
+# this is a re-rendering of an audited suite rather than a new test set.
+#
+# The `env` block mirrors `cross_crop_{4,8,16}id_nn_traits_v1_23d.yaml`.
+# `valid_action_bonus` stays at 0.1: those training configs leave it unset and
+# WOFOSTGym's default is 0.1, so dropping it here would not have matched them --
+# it would only have hidden that the value is the same either way.
+
+env_name: wofost_gym
+dataset_id: e4_t12_cross_crop_nn
+validation_axis: crop
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/t12_cross_crop_e4
+
+sampling:
+  generation_seed: 20260725
+  splits:
+    test_id_crops:
+      role: test
+      validation_set: seen_id_crops
+      source_split: test
+      labels:
+        crop_regime: id
+      crop_budgets:
+        cotton: 128
+        millet: 128
+        rapeseed: 128
+        rice: 128
+
+    test_heldout_crops:
+      role: test
+      validation_set: heldout_crops
+      source_split: test
+      labels:
+        crop_regime: heldout
+      crop_budgets:
+        barley: 128
+        groundnut: 128
+        pigeonpea: 128
+        seed_onion: 128
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: false
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  valid_action_bonus: 0.1
+  objective_id: profit_max
+  include_crop_traits: true
+  crop_traits_dir: agrimanager/env/wofost_gym/crop_traits
+  trait_schema: traits_v1_23d

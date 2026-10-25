@@ -1,0 +1,116 @@
+# E4 confirmatory suite: the T2.3 reward-formulation axis.
+#
+# T2.3 trains on three objectives and holds a fourth out entirely:
+#
+#   seen      yield_max, profit_max, water_stewardship
+#   held-out  nutrient_stewardship
+#
+# so the suite carries its own seen control rather than needing a separate
+# file. `env_id` is pinned to lnpkw-v0 in every split, exactly as in
+# experiments/t2_3_reward_formulation_shift/config/t23_reward_formulation_shift.yaml,
+# so the only thing that varies across the four splits is what the policy is
+# being managed for.
+#
+# The scenario base is the same frozen maize_e4 test block the T2.1, T2.2 and
+# WOFOST T3.2 suites render, so a T2.3 number is paired scenario for scenario
+# with every other WOFOST E4 number.
+#
+# The submitted T2.3 config points `y_ref_map_path` at
+# ../analysis/t23_y_ref/calibrated_y_ref.json with `require_y_ref_map_file:
+# false`. That file does not exist anywhere in the repository, so the submitted
+# runs resolved to the scalar `y_ref: 8500.0` below. Naming the path here would
+# imply a calibration that never loaded, so it is omitted and the scalar is
+# stated outright.
+env_name: wofost_gym
+dataset_id: e4_t23_reward_formulation
+validation_axis: reward_formulation
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/maize_e4
+
+sampling:
+  generation_seed: 20260725
+  scenario_sets:
+    eval_base:
+      source_split: test
+      crops: [maize]
+      num_samples: 128
+
+  splits:
+    test_yield_max:
+      role: test
+      validation_set: seen_yield_max
+      scenario_set: eval_base
+      labels:
+        reward_formulation: yield_max
+        reward_regime: seen
+      env:
+        objective_id: yield_max
+        prompt_objective_id: yield_max
+
+    test_profit_max:
+      role: test
+      validation_set: seen_profit_max
+      scenario_set: eval_base
+      labels:
+        reward_formulation: profit_max
+        reward_regime: seen
+      env:
+        objective_id: profit_max
+        prompt_objective_id: profit_max
+
+    test_water_stewardship:
+      role: test
+      validation_set: seen_water_stewardship
+      scenario_set: eval_base
+      labels:
+        reward_formulation: water_stewardship
+        reward_regime: seen
+      env:
+        objective_id: water_stewardship
+        prompt_objective_id: water_stewardship
+
+    test_nutrient_stewardship:
+      role: test
+      validation_set: heldout_nutrient_stewardship
+      scenario_set: eval_base
+      labels:
+        reward_formulation: nutrient_stewardship
+        reward_regime: heldout
+      env:
+        objective_id: nutrient_stewardship
+        prompt_objective_id: nutrient_stewardship
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: yield_max
+  prompt_objective_id: yield_max
+  y_ref: 8500.0
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+    c_w: 0.05
+    tau_y: 0.80
+    water_budget_mm: 500.0
+    lambda_i: 0.10
+    beta_y: 4.0
+    beta_budget: 2.0
+    budget_n_kg_ha: 400.0
+    budget_p_kg_ha: 200.0
+    budget_k_kg_ha: 200.0
+    terminal_nutrient_min: 8.0
+    terminal_nutrient_max: 50.0
+    beta_application: 0.35
+    beta_low: 0.30
+    beta_high: 0.50
+  include_crop_traits: false
+  include_variety_traits: false
+  require_think: false

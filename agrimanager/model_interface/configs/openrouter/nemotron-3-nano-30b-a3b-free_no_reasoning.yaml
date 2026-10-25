@@ -1,0 +1,15 @@
+# OpenRouter configuration for a stable, zero-cost evaluation smoke model.
+model_provider: "openrouter"
+model_name: "nvidia/nemotron-3-nano-30b-a3b:free"
+
+num_workers: 4
+timeout: 120
+app_title: "AgriManager"
+
+# Preserve the benchmark's no-think action format and reserve output tokens for
+# the final <answer> instead of exposed chain-of-thought.
+reasoning:
+  effort: "none"
+  exclude: true
+
+# Set OPENROUTER_API_KEY in the environment. Never store the key in this file.

@@ -1,0 +1,69 @@
+# E4 confirmatory suite: the CyclesGym target cell of the T3.1 cross-simulator axis.
+#
+# The submitted T3.1 Cycles cell trains on years 1980-1995 with seeds from 42
+# and validates on 1996-2003 with seeds from 100042. This suite keeps the
+# submitted validation year range and moves only the stochastic seed block to
+# 200042, so no new weather-year distribution is introduced. That is the same
+# block the T3.2 Cycles suites use, so the T3.1 and T3.2 Cycles numbers are
+# paired over identical scenarios; the audit checks that rather than stating it.
+#
+# The env block is copied from
+# experiments/t3_1_cross_simulator_maize_transfer/config/t31_cross_sim_cycles_gym.yaml.
+env_name: cycles_gym
+dataset_id: e4_t31_cross_sim_cycles
+validation_axis: simulator
+
+sampling:
+  generation_seed: 20260725
+  splits:
+    test:
+      role: test
+      validation_set: cycles
+      labels:
+        simulator: cycles_gym
+        observation_schema: cycles_native
+        action_menu: cycles_native
+        action_schema: cycles_native
+        reward_formulation: profit_max
+
+base_config:
+  env_id: CornShortRockSpringsFW-v1
+  cycles_gym_path: ../AgriManagerExternal/CyclesGym
+  llm_mode: true
+  objective_id: profit_max
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+  include_crop_traits: false
+  require_think: false
+  thinking_mode: grounding_decision
+  think_tag: tool_call
+  turn_num: 26
+  trajectory_group_labels:
+    simulator: cycles_gym
+    observation_schema: cycles_native
+    action_menu: cycles_native
+    action_schema: cycles_native
+    reward_formulation: profit_max
+  env_kwargs:
+    delta: 10
+    n_actions: 11
+    maxN: 150
+    start_year: 1996
+    end_year: 1996
+
+test_generation:
+  env_ids: [CornShortRockSpringsFW-v1]
+  year_windows:
+    - [1996, 1996]
+    - [1997, 1997]
+    - [1998, 1998]
+    - [1999, 1999]
+    - [2000, 2000]
+    - [2001, 2001]
+    - [2002, 2002]
+    - [2003, 2003]
+  seeds_per_combo: 16
+  seed_start: 200042

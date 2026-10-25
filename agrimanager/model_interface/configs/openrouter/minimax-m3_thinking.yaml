@@ -1,0 +1,8 @@
+model_provider: "openrouter"
+model_name: "minimax/minimax-m3"
+num_workers: 16
+timeout: 180
+app_title: "AgriManager"
+
+reasoning:
+  enabled: true

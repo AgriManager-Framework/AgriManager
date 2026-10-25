@@ -1,0 +1,35 @@
+defaults:
+  - override hydra/job_logging: console_only
+
+data:
+  inference_file: smoke_tests/wofost_gym/data/wofost_gym_smoke_nn/val.parquet
+  inference_sets: {}
+  validation_axis: null
+  # Keys applied to every env config loaded from the parquet, for the case where
+  # a policy needs a different environment *wrapper* than the suite declares.
+  # E6's mask-aware policies act on a canonical action space, while the frozen
+  # T2.2 suite was built for E7's native-width policies and predates them.
+  # Keys that identify a scenario are refused rather than overridden, so this
+  # can change how an episode is driven but never which episode is run.
+  env_overrides: {}
+
+agent:
+  path: null  # path to agent.zip — override via CLI
+  vecnormalize_path: null
+
+runtime:
+  seed: 0
+  device: auto
+  split_by_group: null
+  deterministic: false
+  num_repeats: 1
+
+output:
+  dir: smoke_tests/wofost_gym/results/nn_eval/wofost_nn_default
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

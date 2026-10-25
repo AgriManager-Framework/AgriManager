@@ -1,0 +1,90 @@
+# Numerical-policy variant of the frozen T2.2 test suite.
+#
+# Byte-for-byte the same scenario selection as `e4_t22_action_menu.yaml` — same
+# frozen source pool, same `generation_seed: 20260725`, same 128-scenario
+# `eval_base`, same four target menus. The only difference is `llm_mode: false`,
+# which renders vector observations instead of prompts so numerical policies can
+# be evaluated on it.
+#
+# The point of keeping the selection identical is that the LLM policies and the
+# numerical policies are then scored on exactly the same held-out scenarios, and
+# the comparison between them is paired rather than merely distributional.
+#
+# Do not regenerate the source pool from this config; it consumes the pool that
+# `prepare_maize_eval_pool.py` already froze.
+
+env_name: wofost_gym
+dataset_id: e4_t22_action_menu_nn
+validation_axis: action_menu
+
+source:
+  kind: weather_pool
+  path: experiments/rebuttal_confirmatory_eval/data/source_pools/maize_e4
+
+sampling:
+  generation_seed: 20260725
+  scenario_sets:
+    eval_base:
+      source_split: test
+      crops: [maize]
+      num_samples: 128
+
+  splits:
+    test_lnw:
+      role: test
+      validation_set: lnw
+      scenario_set: eval_base
+      labels:
+        action_menu: lnw
+        action_schema: lnw
+      env:
+        env_id: lnw-v0
+
+    test_ln:
+      role: test
+      validation_set: ln
+      scenario_set: eval_base
+      labels:
+        action_menu: ln
+        action_schema: ln
+      env:
+        env_id: ln-v0
+
+    test_lw:
+      role: test
+      validation_set: lw
+      scenario_set: eval_base
+      labels:
+        action_menu: lw
+        action_schema: lw
+      env:
+        env_id: lw-v0
+
+    test_lnpkw:
+      role: test
+      validation_set: lnpkw
+      scenario_set: eval_base
+      labels:
+        action_menu: lnpkw
+        action_schema: lnpkw
+      env:
+        env_id: lnpkw-v0
+
+env:
+  env_id: lnpkw-v0
+  wofost_gym_path: ../AgriManagerExternal/WOFOSTGym
+  llm_mode: false
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  # fert_amount/irrig_amount are intentionally unset. `scale_action_amounts_by_interval`
+  # already multiplies the WOFOST-Gym defaults (2.0 kg/ha, 0.5 cm per day) by
+  # `intvn_interval`, giving 20 kg/ha and 5 cm per decision -- the same amounts every
+  # LLM config gets. Setting them here applied that scaling a second time (200/50).
+  objective_id: profit_max
+  reward_params:
+    cost_n: 3.5
+    cost_p: 5.5
+    cost_k: 2.25
+    cost_water: 0.05
+  include_crop_traits: false

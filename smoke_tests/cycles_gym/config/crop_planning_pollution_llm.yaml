@@ -1,0 +1,67 @@
+# Crop-planning smoke config for the pollution-penalized objective.
+#
+# Same rotation as crop_planning_llm.yaml; only the objective changes. The
+# episode return is cumulative gross revenue minus a per-season penalty on
+# nitrogen lost to water and air (agrimanager/env/cycles_gym/n_loss.py). The
+# weights below repeat the code defaults, which are illustrative placeholders
+# in dollars per kg N/ha, not calibrated damage costs. Not used in the paper.
+env_name: cycles_gym
+dataset_id: cycles_gym_crop_planning_pollution_smoke_llm
+
+base_config:
+  cycles_gym_path: ../AgriManagerExternal/CyclesGym
+  llm_mode: true
+  require_think: true
+  thinking_mode: grounding_decision
+  think_tag: tool_call
+  valid_action_bonus: 0.1
+  reward_scale: 1000.0
+  turn_num: 19
+  objective_id: pollution_penalized_revenue
+  reward_params:
+    n_loss_cost_no3_leaching_usd_per_kg_n: 10.0
+    n_loss_cost_nh4_leaching_usd_per_kg_n: 10.0
+    n_loss_cost_nh3_volatilization_usd_per_kg_n: 10.0
+    n_loss_cost_n2o_emission_usd_per_kg_n: 10.0
+    n_loss_include_bypass: true
+  env_kwargs:
+    rotation_crops:
+      - CornRM.100
+      - SoybeanMG.3
+    crop_price_sampling:
+      CornRM.100:
+        min: 160.0
+        mode: 178.34
+        max: 205.0
+      SoybeanMG.3:
+        min: 320.0
+        mode: 363.4
+        max: 410.0
+
+train_generation:
+  env_ids:
+    - CropPlanningRockSpringsRW-v1
+    - CropPlanningNewHollandRW-v1
+  year_windows:
+    - [1980, 1998]
+    - [1981, 1999]
+  seeds_per_combo: 1
+  seed_start: 0
+
+val_generation:
+  env_ids:
+    - CropPlanningRockSpringsRW-v1
+    - CropPlanningNewHollandRW-v1
+  year_windows:
+    - [1982, 2000]
+  seeds_per_combo: 1
+  seed_start: 100
+
+test_generation:
+  env_ids:
+    - CropPlanningRockSpringsRW-v1
+    - CropPlanningNewHollandRW-v1
+  year_windows:
+    - [1983, 2001]
+  seeds_per_combo: 1
+  seed_start: 200
