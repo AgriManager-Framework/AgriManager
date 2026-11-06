@@ -1,27 +1,61 @@
 # AgriManager
 
+**A Framework and Benchmark for LLM-RL Generalization in Agricultural Management**
+
+[Website](TODO(website-url)) · [Paper](TODO(paper-url)) · [Models & Data](https://huggingface.co/AgriManager-Framework) · [Training logs](https://wandb.ai/agrimanager) · [Docs](docs/README.md)
+
 ![AgriManager overview](assets/main_diagram.png)
 
-AgriManager is a framework and benchmark for training and evaluating
-prompt-conditioned language-model policies for crop management. It puts three
-crop simulators (DSSAT, WOFOST and Cycles) behind one text interface, trains
-policies with reinforcement learning (GRPO on VeRL), and scores them on a
-frozen held-out test suite.
+Farms differ in what a manager can observe, which actions are available, and
+which objective counts. AgriManager studies whether one language-model policy
+trained with reinforcement learning can generalize across these differences.
+We call a change in the observation, action or objective schema between
+training and deployment a **schema shift**, written
+Σ = (Σ<sub>O</sub>, Σ<sub>A</sub>, Σ<sub>R</sub>), and study it alongside the
+familiar **distribution shift** in weather, crops and prices.
 
-The benchmark asks whether such policies generalize under two kinds of shift:
-
-- **distributional shift** inside a fixed task interface (new weather, crops,
-  prices), and
-- **schema shift**, where the policy-facing schema changes between training
-  and deployment: which variables are observed, which actions are available,
-  which objective is rewarded, and, across simulators, the dynamics.
-
-Eight settings arranged in three tiers test this. Every setting has a frozen
-test suite with manifests, generation configs, seeds and disjointness audits.
+- **Framework.** Three process-based crop simulators (DSSAT, WOFOST and
+  Cycles) behind one text interface. The schema is written in the prompt, so a
+  single policy can read a new observation set, action menu or objective. RL
+  training runs on VeRL (GRPO by default; DrGRPO and PPO also tested) with
+  Qwen and Llama backbones.
+- **Benchmark.** Eight settings in three tiers: Within Schema (weather, crop,
+  price), Single-Axis Schema (observation, action menu, objective) and
+  Compositional Schema (cross-simulator transfer, unified policy). Every
+  setting has a frozen held-out test suite with manifests, generation configs,
+  seeds and disjointness audits.
+- **Unified training and evaluation.** LLM agents and neural-network policies
+  (PPO, A2C, DQN, MaskablePPO) are trained in one framework on the same
+  simulators, and every policy, scripted baselines included, is scored on the
+  same held-out scenarios and reported in the same tables. A new policy of any
+  kind can be compared directly with everything in the paper.
 
 This repository accompanies the NeurIPS 2026 Evaluations and Datasets track
 paper *AgriManager: A Framework and Benchmark for LLM-RL Generalization in
 Agricultural Management* (`TODO(paper-url)`: proceedings and arXiv links).
+
+## Models, training curves and test sets
+
+Every checkpoint scored in the paper, its training run, and the test split it
+was scored on. Models and datasets are on the
+[AgriManager-Framework](https://huggingface.co/AgriManager-Framework) Hugging Face
+organization; training curves are on [Weights & Biases](https://wandb.ai/agrimanager).
+
+| Tier | Setting | Models | Training curves | Test set |
+|---|---|---|---|---|
+| Tier 1 · Within Schema | T1.1 Weather regime | [Models](https://huggingface.co/collections/AgriManager-Framework/t11-weather-regime-6ade3b9d93dd1f22d1a1a49b) | [Training curves](https://wandb.ai/agrimanager/t1-1-weather-regime) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main) |
+|  | T1.2 Crop variety | [Models](https://huggingface.co/collections/AgriManager-Framework/t12-crop-variety-6ade3b9fffe165f18441da59) | [Training curves](https://wandb.ai/agrimanager/t1-2-crop-variety) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main/e4_t12_cross_crop) |
+|  | T1.3 Price regime | [Models](https://huggingface.co/collections/AgriManager-Framework/t13-price-regime-6ade3ba1f90654ac2bd63ca7) | [Training curves](https://wandb.ai/agrimanager/t1-3-price-regime) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main/e4_t13_price_regime) |
+| Tier 2 · Single-Axis Schema | T2.1 Observation schema | [Models](https://huggingface.co/collections/AgriManager-Framework/t21-observation-schema-6ade3ba28e3e2ca978d0ba6d) | [Training curves](https://wandb.ai/agrimanager/t2-1-observation-schema) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main/e4_t21_observation_schema) |
+|  | T2.2 Action menu | [Models](https://huggingface.co/collections/AgriManager-Framework/t22-action-menu-6ade3ba2d49bbdd8dd7ef3ba) | [Training curves](https://wandb.ai/agrimanager/t2-2-action-menu) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main/e4_t22_action_menu) |
+|  | T2.3 Objective | [Models](https://huggingface.co/collections/AgriManager-Framework/t23-objective-6ade3ba4f90654ac2bd63df8) | [Training curves](https://wandb.ai/agrimanager/t2-3-objective) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main/e4_t23_reward_formulation) |
+| Tier 3 · Compositional Schema | T3.1 Cross-simulator transfer | [Models](https://huggingface.co/collections/AgriManager-Framework/t31-cross-simulator-transfer-6ade3ba5b04b81f86ad2e4c7) | [Training curves](https://wandb.ai/agrimanager/t3-1-cross-simulator) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main) |
+|  | T3.2 Unified policy | [Models](https://huggingface.co/collections/AgriManager-Framework/t32-unified-policy-6ade3ba7acc7c9c710e0bb0b) | [Training curves](https://wandb.ai/agrimanager/t3-2-unified-policy) | [Test set](https://huggingface.co/datasets/AgriManager-Framework/agrimanager-test-suite/tree/main) |
+| Exploratory | Other backbones and RL algorithms | [Models](https://huggingface.co/collections/AgriManager-Framework/exploratory-backbones-and-rl-algorithms-6ade3ba8d49bbdd8dd7ef45f) | [Training curves](https://wandb.ai/agrimanager/exploratory-backbones-algorithms) | — |
+
+Per-run results (every scored episode) are in the `schema-results-*` datasets of the
+[Datasets collection](https://huggingface.co/collections/AgriManager-Framework/datasets-6ade3ba9f90654ac2bd63e95); the tables behind every
+number in the paper are in [`results/tables/`](results/tables/).
 
 ## Where to start
 

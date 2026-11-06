@@ -18,6 +18,7 @@ from .crop_trait_schemas import crop_variety_trait_key, resolve_crop_trait_artif
 from .crop_traits_observation import crop_variety_from_env_config
 from .env_config import DEFAULT_CROP_TRAITS_DIR, REPO_ROOT, WOFOSTEnvConfig
 from .prompt import WOFOSTPromptGenerator
+from agrimanager.env.base.action_parser import resolve_action_parser
 
 
 def _resolve_wofost_gym_path(configured_path: str) -> str:
@@ -480,6 +481,7 @@ class WOFOSTEnv(BaseEnv):
             output_vars=self.prompt_observation_fields,
             field_aliases=getattr(config, "prompt_field_aliases", None),
         )
+        self.prompt_generator.action_parser = resolve_action_parser(config)
         self._maybe_load_crop_traits(config)
 
         # LLM mode: if True, return natural language prompts instead of numpy arrays

@@ -8,6 +8,12 @@ for LLM-based agents in gym_dssat_pdi environments.
 from typing import Dict, List, Tuple, Optional, Union
 import numpy as np
 
+from agrimanager.env.base.action_parser import (
+    LEGACY,
+    STRICT,
+    names_too_many_amounts,
+    no_action_with_amount,
+)
 from agrimanager.env.base.objective_prompt import (
     build_management_objective_block,
     cropgrowth_system_prompt,
@@ -549,8 +555,11 @@ class DSSATPromptGenerator:
         if m is None:
             return None
         txt = m.group(m.lastindex).strip().lower()
+        strict = getattr(self, "action_parser", STRICT) != LEGACY
 
         if "do nothing" in txt or "take no action" in txt:
+            if strict and no_action_with_amount(txt):
+                return None
             return 0
 
         if self.enable_pests and "pesticide" in txt:
@@ -558,6 +567,14 @@ class DSSATPromptGenerator:
 
         nitrogen_amount = self._extract_nitrogen_amount(txt)
         irrigation_amount = self._extract_irrigation_amount(txt)
+
+        # Strict: at most one amount per input named in the answer (nitrogen,
+        # irrigation, or both for a combined action); a list or range of
+        # candidate amounts is not an action.
+        if strict:
+            inputs_named = int(nitrogen_amount is not None) + int(irrigation_amount is not None)
+            if names_too_many_amounts(txt, allowed=max(1, inputs_named)):
+                return None
 
         if nitrogen_amount is not None and irrigation_amount is not None:
             anfer = self._nearest_action_amount(nitrogen_amount, self.fert_amount, self.num_fert)

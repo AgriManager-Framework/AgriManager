@@ -25,7 +25,7 @@ Pool structure (local or HuggingFace repo)::
 
 Usage::
 
-    pool_dir = ensure_pool("agrimanager/wofost-weather-pool")
+    pool_dir = ensure_pool("AgriManager-Framework/wofost-weather-pool")
     pool = load_pool(pool_dir / "train")
     scenarios = sample_scenarios(pool, crops=["wheat", "maize"], num_samples=100, seed=42)
 """
@@ -43,13 +43,31 @@ import pandas as pd
 # Default download location: repo-local hidden cache directory.
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_POOL_DIR = _REPO_ROOT / ".cache" / "wofost_gym" / "weather_pool_20crop_3200_val128_test512"
-DEFAULT_POOL_REPO_ID = "agrimanager/wofost-weather-pool"
+DEFAULT_POOL_REPO_ID = "AgriManager-Framework/wofost-weather-pool"
 METEO_CACHE_ARCHIVE_NAME = "meteo_cache.tar.gz"
+
+# The three WOFOST weather pools were first published under the owner
+# ``agrimanager`` and now live in the release organization. Frozen test suites
+# and older configs still name the first owner, as a repo ID or as a cache
+# directory ``.cache/wofost_gym/agrimanager__<pool>``; downloads resolve to the
+# release copy (same data files), while the local directory keeps the name the
+# suite records.
+LEGACY_POOL_OWNER = "agrimanager"
+RELEASE_POOL_OWNER = "AgriManager-Framework"
+RELEASED_POOL_NAMES = frozenset({"wofost-weather-pool", "wofost-weather-regime-pool", "weather_pool_maize"})
 
 
 # ---------------------------------------------------------------------------
 # Download / locate pool
 # ---------------------------------------------------------------------------
+
+def resolve_pool_repo_id(repo_id: str) -> str:
+    """Map a first-owner weather-pool repo ID to its release-organization copy."""
+    owner, sep, name = repo_id.partition("/")
+    if sep and owner == LEGACY_POOL_OWNER and name in RELEASED_POOL_NAMES:
+        return f"{RELEASE_POOL_OWNER}/{name}"
+    return repo_id
+
 
 def download_pool(
     repo_id: str,
@@ -63,6 +81,7 @@ def download_pool(
     """
     from huggingface_hub import snapshot_download
 
+    repo_id = resolve_pool_repo_id(repo_id)
     local_dir = Path(local_dir)
     if local_dir.exists() and _looks_like_pool_dir(local_dir):
         if _should_refresh_legacy_default_pool(repo_id, local_dir):
@@ -127,18 +146,21 @@ def ensure_pool(
 
     # Treat namespace/name strings as HuggingFace repo IDs.
     if _looks_like_hf_repo_id(pool_path):
+        # The cache directory follows the ID as given; the download follows the
+        # release copy (see LEGACY_POOL_OWNER).
         cached_dir = Path(local_dir) if local_dir is not None else _default_local_dir_for_repo(pool_path)
+        repo_id = resolve_pool_repo_id(pool_path)
         if cached_dir.is_dir() and _looks_like_pool_dir(cached_dir):
-            if _should_refresh_legacy_default_pool(pool_path, cached_dir):
-                return download_pool(pool_path, local_dir=cached_dir, revision=revision)
+            if _should_refresh_legacy_default_pool(repo_id, cached_dir):
+                return download_pool(repo_id, local_dir=cached_dir, revision=revision)
             _ensure_pool_meteo_cache(cached_dir)
             return cached_dir
-        return download_pool(pool_path, local_dir=cached_dir, revision=revision)
+        return download_pool(repo_id, local_dir=cached_dir, revision=revision)
 
     raise FileNotFoundError(
         f"Weather pool not found at '{pool_path}'. "
         f"Provide a local directory with per-crop parquet files, "
-        f"or a HuggingFace repo ID (e.g. 'agrimanager/wofost-weather-pool')."
+        f"or a HuggingFace repo ID (e.g. 'AgriManager-Framework/wofost-weather-pool')."
     )
 
 
@@ -219,7 +241,7 @@ def _looks_like_hf_repo_id(pool_path: str) -> bool:
 
 
 def _default_local_dir_for_repo(repo_id: str) -> Path:
-    if repo_id == DEFAULT_POOL_REPO_ID:
+    if resolve_pool_repo_id(repo_id) == DEFAULT_POOL_REPO_ID:
         return DEFAULT_POOL_DIR
     slug = repo_id.replace("/", "__")
     return _REPO_ROOT / ".cache" / "wofost_gym" / slug
@@ -232,8 +254,9 @@ def ensure_weather_caches(env_configs) -> List[str]:
     (``.cache/wofost_gym/<owner>__<name>/meteo_cache``) and WOFOST runs in
     cache-only mode, so scoring a suite on a fresh checkout fails until that
     pool has been downloaded. Each missing cache under ``.cache/wofost_gym`` is
-    fetched once from the Hugging Face repository its directory name encodes.
-    Returns the repository ids that were fetched.
+    fetched once from the Hugging Face repository its directory name encodes
+    (a first-owner ``agrimanager__<pool>`` directory is filled from the release
+    copy, keeping the directory name). Returns the repository ids fetched.
     """
     cache_root = (_REPO_ROOT / ".cache" / "wofost_gym").resolve()
     fetched: List[str] = []
@@ -257,6 +280,7 @@ def ensure_weather_caches(env_configs) -> List[str]:
             repo_id = pool_dir.name.replace("__", "/", 1)
         else:
             continue
+        repo_id = resolve_pool_repo_id(repo_id)
         if path.is_dir():
             path.rmdir()  # empty placeholder left by an earlier run; extraction skips existing dirs
         print(f"Weather cache {raw} is missing; fetching the pool {repo_id} ...", flush=True)

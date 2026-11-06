@@ -1997,6 +1997,23 @@ class AgriTrainer:
             default_backend=self.config.trainer.logger,
             config=OmegaConf.to_container(self.config, resolve=True),
         )
+        if "file" in (self.config.trainer.logger or []):
+            # VeRL's "file" backend writes each record with json.dumps, which
+            # rejects NumPy scalars, and never flushes, so a run that ends
+            # early (rollout filter, crash) can leave the file empty.
+            _tracking_log = logger.log
+            _file_backend = logger.logger.get("file")
+
+            def _log_plain_scalars(data, step, backend=None):
+                plain = {
+                    key: (value.item() if isinstance(value, np.generic) else value)
+                    for key, value in data.items()
+                }
+                _tracking_log(data=plain, step=step, backend=backend)
+                if _file_backend is not None and hasattr(_file_backend, "fp"):
+                    _file_backend.fp.flush()
+
+            logger.log = _log_plain_scalars
 
         self.global_steps = 0
 

@@ -11,7 +11,7 @@ The front matter is Hugging Face card metadata.
 
 ````markdown
 ---
-license: {apache-2.0 for Qwen3-based checkpoints; llama3.2 for schema-t32-llama32-*; other (qwen-research) for t32-diffmodels-qwen25-3b-*}
+license: {apache-2.0 for Qwen3-based checkpoints; llama3.2 for Llama-3.2-3B-AgriManager-t32-unified-*; other (qwen-research) for t32-diffmodels-qwen25-3b-*}
 base_model: Qwen/Qwen3-4B-Instruct-2507
 library_name: transformers
 pipeline_tag: text-generation

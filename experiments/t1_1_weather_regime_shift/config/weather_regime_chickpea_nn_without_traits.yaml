@@ -4,7 +4,7 @@ validation_axis: weather_regime
 # Dataset records include split/weather_regime trajectory group labels.
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-regime-pool
+  path: AgriManager-Framework/wofost-weather-regime-pool
 sampling:
   generation_seed: 42
   splits:

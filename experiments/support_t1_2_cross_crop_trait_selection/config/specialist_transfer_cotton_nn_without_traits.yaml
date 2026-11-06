@@ -2,7 +2,7 @@ env_name: wofost_gym
 dataset_id: specialist_transfer_cotton_nn_without_traits
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-pool
+  path: AgriManager-Framework/wofost-weather-pool
 sampling:
   generation_seed: 42
   splits:

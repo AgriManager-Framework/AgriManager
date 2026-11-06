@@ -52,7 +52,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--crop", default="wheat")
     parser.add_argument("--varieties", nargs="+", default=DEFAULT_VARIETIES)
-    parser.add_argument("--pool", default="agrimanager/wofost-weather-pool")
+    parser.add_argument("--pool", default="AgriManager-Framework/wofost-weather-pool")
     parser.add_argument("--pool-revision", default="main")
     parser.add_argument("--pool-split", default="train", choices=["train", "val", "test"])
     parser.add_argument("--num-scenarios", type=int, default=64)

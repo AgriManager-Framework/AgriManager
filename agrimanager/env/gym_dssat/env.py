@@ -18,6 +18,7 @@ from agrimanager.env.base import BaseEnv
 from agrimanager.env.base.objective_prompt import profit_cost_params, profit_reward_scale
 from .env_config import DSSATEnvConfig
 from .prompt import DSSATPromptGenerator
+from agrimanager.env.base.action_parser import resolve_action_parser
 
 
 def _ensure_legacy_gym_imports() -> None:
@@ -508,6 +509,7 @@ class DSSATEnv(BaseEnv):
             self.prompt_generator = RicePromptGenerator(**_think_kwargs)
         else:
             self.prompt_generator = DSSATPromptGenerator(crop_name=crop_name, **_think_kwargs)
+        self.prompt_generator.action_parser = resolve_action_parser(config)
         self.llm_mode = getattr(config, "llm_mode", True)
 
         # Reward key default

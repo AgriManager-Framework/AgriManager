@@ -164,7 +164,7 @@ class VLLMOfflineModel(BaseModel):
             )
 
         # Build extra kwargs for the chat template (e.g. reasoning_effort)
-        template_kwargs = {}
+        template_kwargs = dict(getattr(self.config, "chat_template_kwargs", None) or {})
         if getattr(self.config, "reasoning_effort", None):
             template_kwargs["reasoning_effort"] = self.config.reasoning_effort
 

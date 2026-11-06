@@ -867,7 +867,16 @@ def main(config) -> None:
             gamma=gamma,
         )
 
-    tensorboard_log = str((experiment_dir / "tensorboard").resolve())
+    # TensorBoard comes with the GPU install only (install.sh --cpu leaves it
+    # out), and Stable-Baselines3 refuses a log directory without it. The
+    # validation history is written to validation_history.jsonl either way.
+    try:
+        import tensorboard  # noqa: F401
+
+        tensorboard_log = str((experiment_dir / "tensorboard").resolve())
+    except ImportError:
+        tensorboard_log = None
+        print("[nn_ppo] tensorboard is not installed; skipping TensorBoard logs", flush=True)
     algorithm_name = resolve_algorithm_name(agent_cfg)
     if resume_checkpoint_dir is not None:
         resume_model_path = resume_checkpoint_dir / "agent.zip"

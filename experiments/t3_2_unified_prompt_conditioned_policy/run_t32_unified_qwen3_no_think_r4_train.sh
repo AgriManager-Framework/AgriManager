@@ -16,7 +16,8 @@
 #
 # Poolable with R1 on the data axis: the only commit touching the T3.2 configs
 # since 2026-05-04 is `a036023`, which renamed the weather pool to its
-# public `agrimanager/` name. Those two datasets share all 17 data files
+# public name (its release copy `AgriManager-Framework/weather_pool_maize` keeps
+# the same data files). Those two datasets share all 17 data files
 # byte for byte and differ only in README, .gitattributes and an added
 # croissant_rai.json, so the rename moved no data.
 #
@@ -241,6 +242,7 @@ VAL_SET_OVERRIDES=(
 exec bash entrypoints/train/train.sh \
     --log-file "$LOG_FILE" \
     --config-name agri_grpo \
+    "+data.env_config_overrides.action_parser=legacy" \
     "data.train_files=${TRAIN_FILES}" \
     "data.val_files=null" \
     "data.seed=${TRAIN_SEED}" \

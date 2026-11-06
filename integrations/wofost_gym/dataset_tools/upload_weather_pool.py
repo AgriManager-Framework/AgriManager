@@ -9,7 +9,7 @@ from pathlib import Path
 from huggingface_hub import HfApi
 
 
-DEFAULT_REPO_ID = "agrimanager/wofost-weather-pool"
+DEFAULT_REPO_ID = "AgriManager-Framework/wofost-weather-pool"
 DEFAULT_ARCHIVE_NAME = "meteo_cache.tar.gz"
 REMOTE_DIRS = ("backups", "meteo_cache")
 REMOTE_FILES = (DEFAULT_ARCHIVE_NAME,)

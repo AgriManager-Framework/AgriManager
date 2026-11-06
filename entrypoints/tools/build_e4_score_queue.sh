@@ -48,7 +48,7 @@ from huggingface_hub import HfApi
 
 project_root = Path(sys.argv[1])
 api = HfApi(token=os.environ.get("HF_TOKEN"))
-OWNER = os.environ.get("HF_OWNER", "agrimanager")
+OWNER = os.environ.get("HF_OWNER", "AgriManager-Framework")
 
 # Tier is derived from the run name and must match SUITE_GROUPS in
 # agrimanager/checkpoint/evaluate.py. Chickpea is its own tier there rather than

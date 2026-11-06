@@ -3,7 +3,7 @@ dataset_id: weather_regime_chickpea_llm_without_traits_no_think_kimi_smoke
 validation_axis: weather_regime
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-regime-pool
+  path: AgriManager-Framework/wofost-weather-regime-pool
 sampling:
   generation_seed: 42
   splits:

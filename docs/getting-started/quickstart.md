@@ -17,7 +17,7 @@ The script does three things:
 
 1. builds a tiny dataset from `smoke_tests/wofost_gym/config/quickstart_maize_cpu.yaml`:
    eight training and eight validation maize scenarios sampled with
-   `generation_seed: 42` from the public pool `agrimanager/weather_pool_maize`
+   `generation_seed: 42` from the public pool `AgriManager-Framework/weather_pool_maize`
    (the first run downloads about 0.25 GB into `.cache/wofost_gym/`);
 2. rolls out the **no-action** policy and the **scripted agronomic reference**
    (`ag_heuristic` mode) on the eight validation scenarios, with the WOFOST

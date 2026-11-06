@@ -1,0 +1,18 @@
+# vLLM offline config for the small demo's evaluations (untrained and trained
+# model). The model path is set on the command line (model.path=...).
+#
+# chat_template_kwargs.enable_thinking=false makes a hybrid Qwen3 checkpoint
+# answer directly, exactly as the trainer prompts it
+# (data.apply_chat_template_kwargs.enable_thinking=False). Chat templates that do
+# not use the variable ignore it.
+model_provider: "vllm_offline"
+model_name: "Qwen/Qwen3-0.6B"
+
+tensor_parallel_size: 1
+gpu_memory_utilization: 0.5
+trust_remote_code: true
+dtype: "auto"
+tokenizer_mode: "auto"
+max_model_len: 4096
+chat_template_kwargs:
+  enable_thinking: false

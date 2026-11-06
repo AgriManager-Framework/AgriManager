@@ -91,9 +91,9 @@ interval `10` days; horizon `24` turns; `scale_action_amounts_by_interval=true`;
 
 | Source | Use |
 | --- | --- |
-| `agrimanager/wofost-weather-pool` | General WOFOST 20-crop weather source (cross-crop experiments). |
-| `agrimanager/wofost-weather-regime-pool` | WOFOST weather-regime source for T1.1. |
-| `agrimanager/weather_pool_maize` | Maize-only WOFOST source for schema-shift experiments. |
+| `AgriManager-Framework/wofost-weather-pool` | General WOFOST 20-crop weather source (cross-crop experiments). |
+| `AgriManager-Framework/wofost-weather-regime-pool` | WOFOST weather-regime source for T1.1. |
+| `AgriManager-Framework/weather_pool_maize` | Maize-only WOFOST source for schema-shift experiments. |
 | CycleGym deterministic generators | CycleGym crop-planning / crop-growth datasets (fixed locations, year windows, price regimes, seed `42`). |
 | DSSAT-Gym deterministic generators | DSSAT maize datasets (fixed environment parameters, seed `42`). |
 
@@ -118,7 +118,7 @@ validate on drought, wet, hot, and cold regimes.
 | Train | `1600` normal viable weather scenarios per crop |
 | Validation | `640` per crop: `128` each for `id`, `drought`, `wet`, `hot`, `cold` |
 | Test | `640` per crop (chickpea, potato): `128` each for `id`, `drought`, `wet`, `hot`, `cold`, regrouped from unused pool scenarios by a predeclared rule ([test_suite.md](test_suite.md#how-each-part-was-built)) |
-| Dataset source | `agrimanager/wofost-weather-regime-pool`, split `train` plus named `val_*`, seed `42` |
+| Dataset source | `AgriManager-Framework/wofost-weather-regime-pool`, split `train` plus named `val_*`, seed `42` |
 | Fixed factors | Crop, variety, simulator, observation schema, action menu, reward |
 | Methods | LLM think, LLM no-think, PPO `n1` (and `n8`, one seed, appendix); DQN and A2C on potato |
 | Main metrics | Gain over no-action in profit (this setting is not normalized: the scripted reference is at or below no-action), final WSO |
@@ -145,7 +145,7 @@ on both ID crops and held-out crops.
 | Train | `1600` total: `400` per crop (`4ID`), `200` per crop (`8ID`), or `100` per crop (`16ID`) |
 | Validation | `768` total: `384` ID-crop rows + `384` held-out-crop rows |
 | Test | `1024`: `128` each for 4 seen and 4 held-out crops, from the pool's public `test` split; shared by 4ID, 8ID and 16ID |
-| Dataset source | `agrimanager/wofost-weather-pool`, train and pool validation splits, seed `42` |
+| Dataset source | `AgriManager-Framework/wofost-weather-pool`, train and pool validation splits, seed `42` |
 | Fixed factors | Simulator, observation schema, action menu, reward |
 | Methods | LLM think, LLM no-think, trait-conditioned PPO `n1` and `n8` where the trait input is a fixed vector |
 | Main metrics | Per-crop target profit (ID and held-out), crop-level OOD gaps, final WSO |
@@ -202,7 +202,7 @@ superset, and an anonymous-label rename.
 | Environment | WOFOST-Gym, maize |
 | Train | `1600` maize rows rendered only with `S1_full_current` |
 | Validation | `1024` rows: `128` each for `S1_full_current`, four `S2_component_leave_one_out` masks, `S3_domain_synonym_rename`, `S4_compact_growth_superset`, `S5_anonymous_label_rename` |
-| Dataset source | `agrimanager/weather_pool_maize`; reuse the same `128` base maize scenarios across schema conditions, seed `42` |
+| Dataset source | `AgriManager-Framework/weather_pool_maize`; reuse the same `128` base maize scenarios across schema conditions, seed `42` |
 | Fixed factors | Action menu, `profit_max` reward, simulator backend |
 | Test | `1024`: the same `128` frozen maize scenarios rendered under all eight variants |
 | Methods | LLM think, LLM no-think. The fixed-interface PPO cannot run when the observation layout changes, so it is not run here |
@@ -231,7 +231,7 @@ along with the action menu.
 | Environment | WOFOST-Gym annual native action modes |
 | Train | Family A: `1600` rows, `800` each `lnpkw-v0` / `lnpk-v0`. Family B: `1600` rows, `800` each `lnpk-v0` / `lw-v0` |
 | Validation | Family A and Family B: `640` rows, `128` per mode across `lnpkw-v0`, `lnpk-v0`, `lnw-v0`, `ln-v0`, `lw-v0` |
-| Dataset source | `agrimanager/weather_pool_maize`; validation covers training and held-out menus on the same base maize scenarios, seed `42` |
+| Dataset source | `AgriManager-Framework/weather_pool_maize`; validation covers training and held-out menus on the same base maize scenarios, seed `42` |
 | Fixed factors | Observation schema, unified profit objective, crop/weather protocol |
 | Test | `512`: the frozen maize scenarios under `lnpkw`, `lnw`, `ln`, `lw` (`128` each), shared by both families |
 | Methods | LLM think, LLM no-think; schema-capable neural baselines: MaskablePPO over a shared 17-action vocabulary with legal-action masks (per family), and target-trained PPO per test menu. The fixed-interface PPO cannot run on a changed menu |
@@ -272,7 +272,7 @@ definitions are in [reward_objectives.md](reward_objectives.md).
 | Environment | WOFOST-Gym, maize, `lnpkw-v0` |
 | Train | `1600` maize rows balanced `534` `yield_max`, `533` `profit_max`, `533` `water_stewardship` |
 | Validation | `512` rows: `128` each for the three seen objectives plus held-out `nutrient_stewardship` |
-| Dataset source | `agrimanager/weather_pool_maize`; validation rows carry `reward_formulation` and `validation_set` labels, seed `42` |
+| Dataset source | `AgriManager-Framework/weather_pool_maize`; validation rows carry `reward_formulation` and `validation_set` labels, seed `42` |
 | Fixed factors | Maize, `lnpkw-v0`, observation schema, action menu, simulator backend |
 | Test | `512`: the frozen maize scenarios under the four objectives (`128` each) |
 | Methods | LLM think, LLM no-think, each trained multi-objective and yield-only. No neural results |
@@ -337,7 +337,7 @@ mixed-simulator training.
 | Train | `1600` maize rows per source simulator (single-source specialists) |
 | Validation | `128` rows per target simulator (training-time monitoring) |
 | Test | WOFOST `128` (frozen maize base), DSSAT `128` (seeds `200042`–`200169`), Cycles `130` (weather years 2004–2016, rebuilt) |
-| Dataset sources | WOFOST `agrimanager/weather_pool_maize`; DSSAT deterministic `maize-irrigation-v0`; CycleGym deterministic CornShort year-windows; seed `42` |
+| Dataset sources | WOFOST `AgriManager-Framework/weather_pool_maize`; DSSAT deterministic `maize-irrigation-v0`; CycleGym deterministic CornShort year-windows; seed `42` |
 | Methods | LLM think, LLM no-think. No neural baseline: the fixed-interface PPO cannot run across simulators |
 | Main metrics | Target profit score, target-normalized score, transfer gap |
 
@@ -376,7 +376,7 @@ those tuples is seen in another context.
 | Train | `3200` rendered rows: `8` tuples x `400` rows |
 | Validation | `128` rows per named validation tuple (training-time monitoring) |
 | Test | `1156`: seven tuples of `128` and the two Cycles tuples of `130` (rebuilt suites); held-out tuples also scored for the matching T3.1 specialists |
-| Dataset sources | WOFOST `agrimanager/weather_pool_maize`; DSSAT and CycleGym deterministic generators; seed `42` |
+| Dataset sources | WOFOST `AgriManager-Framework/weather_pool_maize`; DSSAT and CycleGym deterministic generators; seed `42` |
 | Methods | LLM think, LLM no-think (Qwen, three seeds); Llama-3.2 and other backbones as single-seed exploratory runs. No neural baseline |
 | Main metrics | Target-normalized score on held-out schema tuples, gap to relevant specialists |
 

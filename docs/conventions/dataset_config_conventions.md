@@ -27,7 +27,7 @@ validation_axis: weather_regime
 
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-regime-pool
+  path: AgriManager-Framework/wofost-weather-regime-pool
 
 sampling:
   generation_seed: 42

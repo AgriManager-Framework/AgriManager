@@ -173,6 +173,7 @@ export PYTHONPATH="$PROJECT_ROOT:$PROJECT_ROOT/verl:$WOFOST_GYM_PATH:$WOFOST_GYM
 exec bash entrypoints/train/train.sh \
     --log-file "$LOG_FILE" \
     --config-name agri_grpo \
+    "+data.env_config_overrides.action_parser=legacy" \
     "data.train_files=${TRAIN_FILES_ARG}" \
     "data.val_files=null" \
     "data.seed=${TRAIN_SEED}" \

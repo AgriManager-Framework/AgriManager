@@ -3,7 +3,7 @@ dataset_id: cross_crop_4id_4ood
 
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-pool
+  path: AgriManager-Framework/wofost-weather-pool
 
 sampling:
   generation_seed: 42

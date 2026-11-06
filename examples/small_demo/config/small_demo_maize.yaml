@@ -1,0 +1,48 @@
+# Small demo task: WOFOST maize, the same environment as the CPU quickstart
+# (smoke_tests/wofost_gym/config/quickstart_maize_cpu.yaml), with a little more data.
+#
+#   train  128 scenarios from the training split of the public maize pool
+#   val     16 scenarios from the pool's held-out split (training-curve checks)
+#   test    64 other scenarios from the same held-out split (final scores)
+#
+# val and test are disjoint slices of one draw from the pool's `val` split, whose
+# sites do not occur in the training split. This is a demo, not a paper test
+# suite: the paper's frozen test suites are described in docs/guides/evaluation.md.
+env_name: wofost_gym
+dataset_id: small_demo_maize
+
+source:
+  kind: weather_pool
+  path: AgriManager-Framework/weather_pool_maize
+
+sampling:
+  generation_seed: 42
+  scenario_sets:
+    heldout:
+      source_split: val
+      crops: [maize]
+      num_samples: 80
+  splits:
+    train:
+      role: train
+      crops: [maize]
+      num_samples: 128
+    val:
+      role: validation
+      validation_set: val
+      scenario_set: heldout
+      scenario_slice: {start: 0, stop: 16}
+    test:
+      role: test
+      scenario_set: heldout
+      scenario_slice: {start: 16, stop: 80}
+
+env:
+  env_id: lnpkw-v0
+  llm_mode: true
+  intvn_interval: 10
+  turn_num: 24
+  scale_action_amounts_by_interval: true
+  objective_id: profit_max
+  include_crop_traits: false
+  require_think: false

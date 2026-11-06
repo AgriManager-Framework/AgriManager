@@ -3,7 +3,7 @@ dataset_id: cross_crop_8id_llm_traits_v1_23d_think
 validation_axis: crop
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-pool
+  path: AgriManager-Framework/wofost-weather-pool
 sampling:
   generation_seed: 42
   splits:

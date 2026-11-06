@@ -24,6 +24,7 @@ bash entrypoints/eval/eval.sh \
     "data.validation_axis=schema_tuple" \
     "data.max_samples=null" \
     "model.config=${MODEL_CONFIG}" \
+    "+data.env_config_overrides.action_parser=legacy" \
     "runtime.temperature=0" \
     "runtime.max_tokens=4096" \
     "runtime.max_retries=2" \

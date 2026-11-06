@@ -3,7 +3,7 @@ dataset_id: wofost_gym_smoke_nn
 
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-pool
+  path: AgriManager-Framework/wofost-weather-pool
 
 sampling:
   generation_seed: 42

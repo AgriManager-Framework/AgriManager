@@ -7,7 +7,7 @@ dataset_id: quickstart_maize_cpu
 
 source:
   kind: weather_pool
-  path: agrimanager/weather_pool_maize
+  path: AgriManager-Framework/weather_pool_maize
 
 sampling:
   generation_seed: 42

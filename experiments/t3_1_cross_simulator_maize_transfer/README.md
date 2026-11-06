@@ -20,7 +20,7 @@ config/t31_cross_sim_cycles_gym.yaml
 ```
 
 Each config materializes `train.parquet` and `val.parquet`.
-The WOFOST config uses `agrimanager/weather_pool_maize`, matching the T2.3 reward
+The WOFOST config uses `AgriManager-Framework/weather_pool_maize`, matching the T2.3 reward
 formulation shift data source. DSSAT and CycleGym use deterministic seed
 generators. The paper-facing split sizes are:
 

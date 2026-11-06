@@ -224,6 +224,7 @@ cd "$PROJECT_ROOT"
 exec bash entrypoints/train/train.sh \
     --log-file "$LOG_FILE" \
     --config-name agri_grpo \
+    "+data.env_config_overrides.action_parser=legacy" \
     "data.train_files=${TRAIN_FILE}" \
     "${VAL_OVERRIDES[@]}" \
     "data.seed=${TRAIN_SEED}" \

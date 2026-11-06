@@ -15,16 +15,16 @@ runtime with its own guide.
 | Train a language-model policy (GRPO) | one or more CUDA GPUs; paper runs used multi-GPU nodes | `install.sh --gpu` |
 | Train a numeric baseline (PPO, MaskablePPO, A2C, DQN) | CPU node | `install.sh --cpu` |
 | Any Cycles setting (T1.3, Cycles parts of T3.1 and T3.2) | CPU for the simulator | CycleGym, installed by `install.sh` |
-| Any DSSAT setting (DSSAT parts of T3.1 and T3.2) | Linux, GCC 11.x for the build; 1 to 2 hours to build | [DSSAT runtime](install_dssat.md) |
+| Any DSSAT setting (DSSAT parts of T3.1 and T3.2) | Linux, GCC 11 with Fortran (or let Spack build it), a Spack path of at most 37 characters; 20 to 40 minutes to build on 16 cores, plus about 15 if Spack builds GCC | [DSSAT runtime](install_dssat.md) |
 
 Disk for the WOFOST weather pools (downloaded on first use into
 `.cache/wofost_gym/` at the repository root, measured 2026-10-24):
 
 | Pool | Used by | Download | On disk after extraction |
 |---|---|---:|---:|
-| `agrimanager/weather_pool_maize` | T2.1, T2.2, T2.3, WOFOST parts of T3.1 and T3.2, quickstart | 0.25 GB | about 0.95 GB |
-| `agrimanager/wofost-weather-regime-pool` | T1.1 | 0.29 GB | not measured |
-| `agrimanager/wofost-weather-pool` (20 crops) | T1.2, the WOFOST smoke tests | 17.6 GB | about 65 GB (archive plus extracted cache) |
+| `AgriManager-Framework/weather_pool_maize` | T2.1, T2.2, T2.3, WOFOST parts of T3.1 and T3.2, quickstart | 0.25 GB | about 0.95 GB |
+| `AgriManager-Framework/wofost-weather-regime-pool` | T1.1 | 0.29 GB | not measured |
+| `AgriManager-Framework/wofost-weather-pool` (20 crops) | T1.2, the WOFOST smoke tests | 17.6 GB | about 65 GB (archive plus extracted cache) |
 
 If the repository sits on a small disk, make `.cache` a symbolic link to a
 larger one before the first run.
@@ -106,7 +106,7 @@ Most users need none of these. They override defaults or enable a provider.
 | `AGRI_USE_LOCKFILE`, `AGRI_PIP_CONSTRAINT` | install | Skip the lock file, or use another constraint file |
 | `WOFOST_GYM_PATH` | runtime | WOFOST-Gym checkout to use; default `../AgriManagerExternal/WOFOSTGym`. A `wofost_gym_path` in a dataset config takes precedence |
 | `CYCLES_GYM_PATH` | runtime | CycleGym checkout to use; default `../AgriManagerExternal/CyclesGym` |
-| `DSSAT_GYM_PATH` | runtime, DSSAT only | Root of the DSSAT-Gym runtime that contains `bin/run_dssat`; default `spack/gym-dssat-pdi` |
+| `DSSAT_GYM_PATH` | runtime, DSSAT only | Root of the DSSAT-Gym runtime (the Spack view that contains `bin/run_dssat`); default `spack/gym-dssat-pdi` in the checkout |
 | `DSSAT_PDI_BRIDGE_DIR` | runtime, DSSAT only | Checkout of the `gym_dssat_pdi` Python bridge when it is not found automatically |
 | `HF_TOKEN` | publishing only | Needed to upload checkpoints or result bundles; reading public repositories needs no token |
 | `OPENAI_API_KEY`, `GEMINI_API_KEY`, `OPENROUTER_API_KEY` | hosted models only | API keys for hosted-model evaluation |

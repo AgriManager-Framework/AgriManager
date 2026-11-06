@@ -30,10 +30,10 @@ from huggingface_hub import hf_hub_download
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 EXPERIMENT_DIR = Path(__file__).resolve().parent
-GENERAL_REPO = "agrimanager/wofost-weather-pool"
-GENERAL_REVISION = "0837df98e3d8c9989a4f4fb5195ac2e24b267cb9"
-REGIME_REPO = "agrimanager/wofost-weather-regime-pool"
-REGIME_REVISION = "cda48157a32b9f4e069f573b32e3fc402b11516e"
+GENERAL_REPO = "AgriManager-Framework/wofost-weather-pool"
+GENERAL_REVISION = "268da7d08a0f6e544469e56bfefd1dbb2b08ea64"
+REGIME_REPO = "AgriManager-Framework/wofost-weather-regime-pool"
+REGIME_REVISION = "32b799473b82e708b308f6b0654c02f39f3434b1"
 
 GENERAL_SPLITS = ("train", "val", "test")
 REGIME_SPLITS = (
@@ -137,6 +137,11 @@ METEO_CACHE_CANDIDATES = (
     / ".cache"
     / "wofost_gym"
     / "weather_pool_20crop_3200_val128_test512"
+    / "meteo_cache",
+    REPO_ROOT
+    / ".cache"
+    / "wofost_gym"
+    / "AgriManager-Framework__wofost-weather-pool"
     / "meteo_cache",
     REPO_ROOT
     / ".cache"

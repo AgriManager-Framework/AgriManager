@@ -16,7 +16,7 @@ cd "$PROJECT_ROOT"
 python -u experiments/app1_wofost_variety_ood/diagnose_variety_separability.py \
     --crop wheat \
     --varieties wheat_1 wheat_2 wheat_3 wheat_4 wheat_5 wheat_6 wheat_7 wheat_8 \
-    --pool agrimanager/wofost-weather-pool \
+    --pool AgriManager-Framework/wofost-weather-pool \
     --pool-split train \
     --num-scenarios 64 \
     --scenario-seed 42 \

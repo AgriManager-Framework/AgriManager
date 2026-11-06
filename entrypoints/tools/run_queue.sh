@@ -32,7 +32,7 @@ PUBLISH_INTERVAL="${PUBLISH_INTERVAL:-180}"
 # A checkpoint merge and 8-9 GB upload takes minutes, not hours. Past this the
 # run is left alone with its shards intact rather than deleted on a guess.
 PUBLISH_TIMEOUT="${PUBLISH_TIMEOUT:-5400}"
-HF_OWNER="${HF_OWNER:-agrimanager}"
+HF_OWNER="${HF_OWNER:-AgriManager-Framework}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in

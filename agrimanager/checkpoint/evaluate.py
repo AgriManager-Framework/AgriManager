@@ -160,6 +160,9 @@ class Reasoning:
     thinking_mode: str | None
     think_tag: str | None
     source: str  # "checkpoint manifest" or "operator-supplied"
+    # The published checkpoints were trained and scored with the legacy action
+    # parser (first amount in the answer), so scoring them pins it by default.
+    action_parser: str = "legacy"
 
     def overrides(self) -> dict[str, Any]:
         out: dict[str, Any] = {"require_think": self.require_think}
@@ -167,6 +170,7 @@ class Reasoning:
             out["thinking_mode"] = self.thinking_mode
         if self.think_tag:
             out["think_tag"] = self.think_tag
+        out["action_parser"] = self.action_parser
         return out
 
     def assertions(self) -> dict[str, Any]:
@@ -176,6 +180,7 @@ class Reasoning:
         out: dict[str, Any] = {"require_think": self.require_think}
         if self.think_tag:
             out["think_tag"] = self.think_tag
+        out["action_parser"] = self.action_parser
         return out
 
 
@@ -462,6 +467,7 @@ def run_evaluation(
     *,
     override_require_think: bool | None = None,
     override_think_tag: str | None = None,
+    action_parser: str = "legacy",
     upload: bool = True,
     keep_work_dir: bool = False,
     token: str | None = None,
@@ -476,9 +482,11 @@ def run_evaluation(
     reasoning = resolve_reasoning(
         checkpoint_manifest, override_require_think, override_think_tag
     )
+    reasoning.action_parser = action_parser
     print(
         f"reasoning: require_think={reasoning.require_think} "
-        f"think_tag={reasoning.think_tag} (from {reasoning.source})",
+        f"think_tag={reasoning.think_tag} (from {reasoning.source}) "
+        f"action_parser={reasoning.action_parser}",
         flush=True,
     )
 
@@ -567,6 +575,8 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--require-think", choices=["True", "False"],
                         help="only for checkpoints whose manifest predates reasoning recording")
     parser.add_argument("--think-tag")
+    parser.add_argument("--action-parser", choices=["legacy", "strict"], default="legacy",
+                        help="how answers are parsed; legacy (default) reproduces the paper's scores")
     parser.add_argument("--max-samples", type=int, help="prefix size, for pipeline checks")
     parser.add_argument("--num-trials", type=int, default=1)
     parser.add_argument("--forbid", action="append", default=[])
@@ -602,6 +612,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 None if args.require_think is None else args.require_think == "True"
             ),
             override_think_tag=args.think_tag,
+            action_parser=args.action_parser,
             upload=not args.no_upload,
             keep_work_dir=args.keep_work_dir,
             token=os.environ.get("HF_TOKEN"),

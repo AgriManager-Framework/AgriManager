@@ -10,10 +10,10 @@ Build the DSSAT runtime first: follow
 [docs/getting-started/install_dssat.md](../../docs/getting-started/install_dssat.md).
 That page covers the Spack build, the `gym_dssat_pdi` bridge, and the
 `DSSAT_GYM_PATH` / `DSSAT_PDI_BRIDGE_DIR` variables. In short, after
-`bash install.sh`:
+`bash install.sh` and the Spack build:
 
 ```bash
-conda activate agrimanager
+source .venv/bin/activate    # or: conda activate agrimanager
 export DSSAT_GYM_PATH=/path/to/spack/gym-dssat-pdi          # view containing bin/run_dssat
 export DSSAT_PDI_BRIDGE_DIR=/path/to/gym_dssat_pdi/gym-dssat-pdi   # only if not found automatically
 ```
@@ -33,8 +33,8 @@ LLM train/eval needs a GPU. Example interactive SLURM session:
 
 ```bash
 srun -A <account> --partition=<gpu_partition> --gpus=1 --cpus-per-task=16 --mem=120g --time=02:00:00 --pty bash
-conda activate agrimanager_gym_dssat
 cd /path/to/AgriManager
+source .venv/bin/activate    # or: conda activate agrimanager
 ```
 
 ## Smoke Tests

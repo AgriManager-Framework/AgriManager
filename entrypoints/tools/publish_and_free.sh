@@ -40,7 +40,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 QUEUE=""
-OWNER="agrimanager"
+OWNER="AgriManager-Framework"
 WORK_DIR="${AGRI_WORK_DIR:-$HOME/agrimanager_work}/agri_publish_work"
 BASE_MODEL="Qwen/Qwen3-4B-Instruct-2507"
 PUBLIC=0

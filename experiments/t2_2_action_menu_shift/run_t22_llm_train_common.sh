@@ -84,6 +84,7 @@ TRAIN_FILES_ARG="$(join_hydra_list "${TRAIN_FILES[@]}")"
 COMMON_ARGS=(
     --log-file "$LOG_FILE"
     --config-name agri_grpo
+    "+data.env_config_overrides.action_parser=legacy"
     "data.train_files=${TRAIN_FILES_ARG}"
     "data.val_files=null"
     "data.validation_axis=action_menu"

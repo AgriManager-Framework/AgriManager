@@ -9,7 +9,7 @@ The benchmark definition is documented in
 from the Hugging Face weather pool:
 
 ```text
-agrimanager/wofost-weather-regime-pool
+AgriManager-Framework/wofost-weather-regime-pool
 ```
 
 Generated parquet artifacts, logs, and results stay local to this experiment

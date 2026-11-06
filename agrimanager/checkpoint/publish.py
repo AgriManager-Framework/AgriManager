@@ -90,11 +90,19 @@ class PublishSpec:
 # identity guard
 # --------------------------------------------------------------------------- #
 
+# The release lives under the AgriManager-Framework organization, so its own
+# repository ids (checkpoints, results, the test-suite dataset) carry the
+# project name by design. They are removed before the structural scan; the
+# project-name rule still catches everything else, such as W&B project names.
+_RELEASE_REPO_IDS = re.compile(r"AgriManager-Framework(?:/[\w.\-]+)?", re.IGNORECASE)
+
+
 def find_identity_leaks(text: str, extra_terms: Iterable[str] = ()) -> list[str]:
     """Return human-readable descriptions of identity leaks found in ``text``."""
     leaks: list[str] = []
+    scanned = _RELEASE_REPO_IDS.sub("", text)
     for pattern, label in _STRUCTURAL_PATTERNS:
-        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+        for match in re.finditer(pattern, scanned, flags=re.IGNORECASE):
             leaks.append(f"{label}: {match.group(0)!r}")
     for term in extra_terms:
         term = term.strip()

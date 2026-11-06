@@ -47,8 +47,8 @@ rebuilt Cycles suites): 2,688 in Tier 1, 2,048 in Tier 2 and 1,542 in Tier 3.
 
 | Setting | Test groups | Scenarios | Config(s) | Source and seed |
 |---|---|---:|---|---|
-| T1.1 weather-regime | per crop (chickpea, potato): id, drought, wet, hot, cold, 128 each | 1,280 | `e4_t11_{chickpea,potato}_weather_regime.yaml` | unused scenarios of `agrimanager/wofost-weather-regime-pool`, regrouped by a predeclared rule (below); seed `20260725` |
-| T1.2 crop-variety | 4 seen crops + 4 held-out crops, 128 each; shared by 4ID, 8ID, 16ID | 1,024 | `e4_t12_cross_crop.yaml` | public `test` split of `agrimanager/wofost-weather-pool`; seed `20260725` |
+| T1.1 weather-regime | per crop (chickpea, potato): id, drought, wet, hot, cold, 128 each | 1,280 | `e4_t11_{chickpea,potato}_weather_regime.yaml` | unused scenarios of `AgriManager-Framework/wofost-weather-regime-pool`, regrouped by a predeclared rule (below); seed `20260725` |
+| T1.2 crop-variety | 4 seen crops + 4 held-out crops, 128 each; shared by 4ID, 8ID, 16ID | 1,024 | `e4_t12_cross_crop.yaml` | public `test` split of `AgriManager-Framework/wofost-weather-pool`; seed `20260725` |
 | T1.3 price-regime | id_test, high_corn, high_soybean, 128 each, paired | 384 | `e4_t13_price_regime.yaml` | Cycles crop planning: two sites × the four validation year windows (1986–2004 to 1989–2007) × 16 seeds from `300000` (validation used `200000`); seed `20260725` |
 | T2.1 observation-schema | S1, S2a to S2d, S3, S4, S5, 128 each, paired | 1,024 | `e4_t21_observation_schema.yaml` | shared maize base |
 | T2.2 action-menu | `lnpkw`, `lnw`, `ln`, `lw`, 128 each, paired; shared by Families A and B | 512 | `e4_t22_action_menu.yaml` | shared maize base |
@@ -171,7 +171,7 @@ Face dataset repository.
 
 | Item | Location |
 |---|---|
-| Suites, manifests, audits | Hugging Face dataset `agrimanager/<test-suite-dataset>` (`TODO(dataset-name)`; built from `experiments/rebuttal_confirmatory_eval/data/` by `upload_eval_suites.py`, which includes every suite below, the rebuilt Cycles suites and the two numeric-baseline suites `e4_t12_cross_crop_nn`, `e4_t13_price_regime_nn`) |
+| Suites, manifests, audits | Hugging Face dataset `AgriManager-Framework/agrimanager-test-suite` (built from `experiments/rebuttal_confirmatory_eval/data/` by `upload_eval_suites.py`, which includes every suite below, the rebuilt Cycles suites and the two numeric-baseline suites `e4_t12_cross_crop_nn`, `e4_t13_price_regime_nn`) |
 | Dataset card draft | [docs/release/test_suite_dataset_card.md](../release/test_suite_dataset_card.md) |
 
 ## Rebuilding a suite

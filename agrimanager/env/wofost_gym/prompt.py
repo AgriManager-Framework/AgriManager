@@ -8,6 +8,12 @@ from datetime import date, timedelta, datetime
 from typing import Dict, List, Optional, Tuple
 import numpy as np
 
+from agrimanager.env.base.action_parser import (
+    LEGACY,
+    STRICT,
+    names_too_many_amounts,
+    no_action_with_amount,
+)
 from agrimanager.env.base.objective_prompt import (
     build_management_objective_block,
     cropgrowth_system_prompt,
@@ -571,10 +577,18 @@ class WOFOSTPromptGenerator:
         if m is None:
             return None
         action_text = m.group(m.lastindex).strip().lower()
+        strict = getattr(self, "action_parser", STRICT) != LEGACY
 
         # Parse action type
         if "take no action" in action_text or "do nothing" in action_text:
+            if strict and no_action_with_amount(action_text):
+                return None
             return 0
+
+        # Strict: one action takes one amount; a list or range of candidate
+        # amounts is not an action.
+        if strict and names_too_many_amounts(action_text, allowed=1):
+            return None
 
         # Try to extract amount
         amount_match = re.search(r"(\d+\.?\d*)", action_text)

@@ -2,7 +2,7 @@ env_name: wofost_gym
 dataset_id: rice_variety_llm_traits_v1_no_think
 source:
   kind: weather_pool
-  path: agrimanager/wofost-weather-pool
+  path: AgriManager-Framework/wofost-weather-pool
 sampling:
   generation_seed: 42
   variety_splits:

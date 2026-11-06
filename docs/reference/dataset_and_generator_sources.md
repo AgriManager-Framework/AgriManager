@@ -13,9 +13,9 @@ WOFOST experiments:
 
 | Dataset | Main code use | Materials on the hub |
 | --- | --- | --- |
-| `agrimanager/wofost-weather-regime-pool` | T1.1 weather-regime shift for `chickpea` and `potato`. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
-| `agrimanager/wofost-weather-pool` | T1.2 cross-crop trait shift and WOFOST crop-support experiments. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
-| `agrimanager/weather_pool_maize` | T2/T3 maize WOFOST schema, action, reward, and cross-simulator experiments. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
+| `AgriManager-Framework/wofost-weather-regime-pool` | T1.1 weather-regime shift for `chickpea` and `potato`. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
+| `AgriManager-Framework/wofost-weather-pool` | T1.2 cross-crop trait shift and WOFOST crop-support experiments. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
+| `AgriManager-Framework/weather_pool_maize` | T2/T3 maize WOFOST schema, action, reward, and cross-simulator experiments. | Dataset card, parquet files, `meteo_cache.tar.gz`, Croissant JSON with RAI fields. |
 
 The hosted WOFOST rows are simulator-derived benchmark scenarios. The
 meteorological inputs come from NASA POWER via the WOFOST-Gym/PCSE weather data

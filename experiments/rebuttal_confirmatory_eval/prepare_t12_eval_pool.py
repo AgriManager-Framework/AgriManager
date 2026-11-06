@@ -35,8 +35,8 @@ AUDIT_PATH = OUTPUT_DIR / "audit.json"
 OUTPUT_METEO_CACHE = OUTPUT_DIR / "meteo_cache"
 
 PROTOCOL_ID = "e4-t12-cross-crop-v1"
-SOURCE_REPO = "agrimanager/wofost-weather-pool"
-SOURCE_REVISION = "0837df98e3d8c9989a4f4fb5195ac2e24b267cb9"
+SOURCE_REPO = "AgriManager-Framework/wofost-weather-pool"
+SOURCE_REVISION = "268da7d08a0f6e544469e56bfefd1dbb2b08ea64"
 
 # The crop partition is the experiment. It is copied from
 # experiments/t1_2_cross_crop_trait_shift/config/cross_crop_4id_llm_traits_v1_23d_think.yaml

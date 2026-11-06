@@ -51,7 +51,7 @@ UPSTREAM_GITHUB_OWNERS = {
     "squidfunk", "mkdocs", "humancompatibleai",
 }
 UPSTREAM_HF_OWNERS = {
-    "api", "qwen", "meta-llama", "agrimanager", "datasets", "spaces", "docs",
+    "api", "qwen", "meta-llama", "agrimanager", "agrimanager-framework", "datasets", "spaces", "docs",
     "openai", "google", "nvidia", "deepseek-ai", "mistralai",
 }
 EXAMPLE_EMAIL = re.compile(r"@(example\.(com|org)|users\.noreply\.github\.com|anthropic\.com)$", re.I)
@@ -69,7 +69,7 @@ PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("host_name", re.compile(r"\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:edu|ac\.[a-z]{2})\b")),
     ("host_name", re.compile(r"\b(?:[a-z]{1,4}-login\d*|login\d+\.[a-z]+)\b")),
     ("github_owner", re.compile(r"github\.com[/:]([A-Za-z0-9_.-]+)", re.I)),
-    ("hf_owner", re.compile(r"huggingface\.co/(?:datasets/|spaces/)?([A-Za-z0-9_.-]+)", re.I)),
+    ("hf_owner", re.compile(r"huggingface\.co/(?:datasets/|spaces/|collections/)?([A-Za-z0-9_.-]+)", re.I)),
     ("hf_owner", re.compile(r"(?<![/\w.$-])([A-Za-z0-9][A-Za-z0-9_.-]*)/(?:schema-|t32-diffmodels|agrimanager-)[A-Za-z0-9_.-]+")),
 ]
 
@@ -132,13 +132,14 @@ def keep(category: str, value: str) -> bool:
         return v not in UPSTREAM_HF_OWNERS and not v.startswith(("<", "{", "$", "todo")) and v not in {
             "your-hf-user", "owner", "org", "user", "local"}
     if category == "wandb_entity":
-        return v not in {"null", "none", "~", "''", '""', "${wandb_entity}"}
+        # "agrimanager" is the release team on W&B (an organization, not a person).
+        return v not in {"null", "none", "~", "''", '""', "${wandb_entity}", "agrimanager"}
     if category == "host_name":
         # Upstream simulator homepages cited in the docs.
         return v not in {"example.edu", "plantscience.psu.edu"}
     if category == "home_path":
         # Generic scratch folders used as defaults, not anyone's home.
-        return v not in {"/tmp/dssat_configs/", "/tmp/wofost_configs/"}
+        return v not in {"/tmp/dssat_configs/", "/tmp/wofost_configs/", "/home/someone/"}
     return True
 
 

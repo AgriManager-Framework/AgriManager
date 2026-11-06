@@ -23,6 +23,7 @@ from .n_loss import (
     n_loss_totals,
 )
 from .prompt import build_prompt_generator
+from agrimanager.env.base.action_parser import resolve_action_parser
 
 
 def _as_list(value: Any) -> list[Any]:
@@ -292,6 +293,7 @@ class CyclesEnv(BaseEnv):
                 objective_text=getattr(config, "prompt_objective_text", None),
                 reward_params=self.reward_params,
             )
+            self.prompt_generator.action_parser = resolve_action_parser(config)
 
         super().__init__(config)
 

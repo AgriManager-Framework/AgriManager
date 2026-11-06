@@ -2,7 +2,7 @@
 vLLM Offline provider configuration.
 """
 from dataclasses import dataclass
-from typing import Optional
+from typing import Any, Dict, Optional
 from ..base.model_config import ModelConfig
 
 
@@ -38,6 +38,11 @@ class VLLMOfflineConfig(ModelConfig):
     # When None, falls back to auto-detection of <think>/<analysis> XML tags.
     reasoning_start_token: Optional[str] = None
     reasoning_end_token: Optional[str] = None
+
+    # Extra keyword arguments for the tokenizer's chat template, e.g.
+    # {"enable_thinking": False} for hybrid Qwen3 checkpoints, matching the
+    # trainer's data.apply_chat_template_kwargs.
+    chat_template_kwargs: Optional[Dict[str, Any]] = None
 
     def __post_init__(self):
         """Validate vLLM-specific configuration."""

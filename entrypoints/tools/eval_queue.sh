@@ -23,8 +23,8 @@ TARGETS=""
 INTERVAL=600
 GPU=""
 WORKER=""
-HF_OWNER="${HF_OWNER:-agrimanager}"
-SUITE_REPO="${SUITE_REPO:-agrimanager/schema-shift-confirmatory-eval-v1}"
+HF_OWNER="${HF_OWNER:-AgriManager-Framework}"
+SUITE_REPO="${SUITE_REPO:-AgriManager-Framework/agrimanager-test-suite}"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in

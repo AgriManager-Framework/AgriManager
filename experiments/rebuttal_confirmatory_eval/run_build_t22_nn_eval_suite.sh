@@ -13,6 +13,10 @@
 
 set -euo pipefail
 
+# Commands run in the active Python environment (Conda or uv venv). To use a named
+# Conda environment without activating it: AGRI_RUN="conda run --no-capture-output -n agrimanager".
+AGRI_RUN="${AGRI_RUN:-}"
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 CONFIG="$SCRIPT_DIR/config/e4_t22_action_menu_nn.yaml"
@@ -37,16 +41,16 @@ if [[ ! -f "$LLM_DATASET_DIR/test_lnw.parquet" ]]; then
     exit 1
 fi
 
-conda run -n agrimanager \
+$AGRI_RUN \
     bash entrypoints/dataset/build.sh \
     --config "$CONFIG" \
     --output-dir "$DATASET_DIR" \
     --num-workers 1
 
-conda run -n agrimanager \
+$AGRI_RUN \
     python experiments/rebuttal_confirmatory_eval/normalize_eval_suite_paths.py --apply
 
-conda run -n agrimanager \
+$AGRI_RUN \
     python experiments/rebuttal_confirmatory_eval/audit_t22_eval_suite.py \
     --dataset-dir "$DATASET_DIR" \
     --paired-with "$LLM_DATASET_DIR"

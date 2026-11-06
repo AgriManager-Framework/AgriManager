@@ -13,8 +13,9 @@ Bundles are therefore addressed by path inside one branch:
 
 which cannot collide, and shows the whole tier in one tree.
 
-Results stay private. They carry per-scenario model output, and unlike the
-weights there is no reason to expose them.
+New bundles go to a private repository first. The per-run records are released
+publicly with the paper (AgriManager-Framework/schema-results-*) after review; this tool
+refuses to add bundles to a repository that is already public.
 
     python -m agrimanager.checkpoint.upload_results --bundle <dir> --results-repo <owner>/<name>
     python -m agrimanager.checkpoint.upload_results --scan /workspace/e5 --map <tsv>
@@ -82,8 +83,8 @@ def upload_bundle(
     info = api.repo_info(repo_id=results_repo, repo_type="dataset")
     if not info.private:
         raise PublishError(
-            f"{results_repo} is public. Result bundles hold per-scenario model "
-            f"output and are meant to stay private; refusing to upload."
+            f"{results_repo} is public. New result bundles go to a private "
+            f"repository and are published after review; refusing to upload."
         )
 
     api.upload_folder(
@@ -117,7 +118,7 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--results-repo", help="target repository for --bundle")
     parser.add_argument("--scan", help="work directory holding <tag>/bundle/ subdirectories")
     parser.add_argument("--map", help="TSV mapping run_name to results repo (the eval targets file)")
-    parser.add_argument("--owner", default="agrimanager")
+    parser.add_argument("--owner", default="AgriManager-Framework")
     parser.add_argument("--state", default="/workspace/eval_queue/.uploaded",
                         help="record of what has already been uploaded")
     parser.add_argument("--forbid", action="append", default=[])

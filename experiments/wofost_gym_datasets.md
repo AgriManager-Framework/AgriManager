@@ -8,22 +8,27 @@ sources; they do not recompute the source-level filtering logic at training time
 
 | Pool | Hugging Face source | Main use |
 | --- | --- | --- |
-| Weather-regime pool | `agrimanager/wofost-weather-regime-pool` | T1.1 weather-regime shift. |
-| 20-crop weather pool | `agrimanager/wofost-weather-pool` | T1.2 cross-crop trait shift and WOFOST crop-support runs. |
-| Maize weather pool | `agrimanager/weather_pool_maize` | WOFOST maize schema, action, reward, and cross-simulator experiments. |
+| Weather-regime pool | `AgriManager-Framework/wofost-weather-regime-pool` | T1.1 weather-regime shift. |
+| 20-crop weather pool | `AgriManager-Framework/wofost-weather-pool` | T1.2 cross-crop trait shift and WOFOST crop-support runs. |
+| Maize weather pool | `AgriManager-Framework/weather_pool_maize` | WOFOST maize schema, action, reward, and cross-simulator experiments. |
 
 ## Public Namespace Verification
 
-The public `agrimanager/*` pools replaced the earlier private copies of the same
-pools on 2026-07-24. Equivalence was checked from Hub file metadata without downloading
+The pools were first published on 2026-07-24, replacing earlier private copies of the
+same pools. Equivalence was checked from Hub file metadata without downloading
 the large weather archives: every Parquet and `meteo_cache.tar.gz` LFS object
 had the same path, byte size, and SHA-256 in the corresponding repository.
 
-| Public source | Verified revision | Matching core files | Matching bytes |
-| --- | --- | ---: | ---: |
-| `agrimanager/wofost-weather-pool` | `0837df98e3d8c9989a4f4fb5195ac2e24b267cb9` | 61 | 17,564,531,383 |
-| `agrimanager/wofost-weather-regime-pool` | `cda48157a32b9f4e069f573b32e3fc402b11516e` | 15 | 289,811,027 |
-| `agrimanager/weather_pool_maize` | `11d9558c981fa8cf43a69ee8f586134da94ef5e6` | 3 | 250,207,408 |
+| Release source | Release revision | Verified revision (2026-07-24) | Matching core files | Matching bytes |
+| --- | --- | --- | ---: | ---: |
+| `AgriManager-Framework/wofost-weather-pool` | `268da7d08a0f6e544469e56bfefd1dbb2b08ea64` | `0837df98e3d8c9989a4f4fb5195ac2e24b267cb9` | 61 | 17,564,531,383 |
+| `AgriManager-Framework/wofost-weather-regime-pool` | `32b799473b82e708b308f6b0654c02f39f3434b1` | `cda48157a32b9f4e069f573b32e3fc402b11516e` | 15 | 289,811,027 |
+| `AgriManager-Framework/weather_pool_maize` | `3389bc2d75acddbd6740f30198167e8d3e4559c3` | `11d9558c981fa8cf43a69ee8f586134da94ef5e6` | 3 | 250,207,408 |
+
+On 2026-10-25 the pools were copied into the `AgriManager-Framework` organization. Every data
+file of a release revision is byte-identical (same LFS SHA-256) to the verified
+revision; the release revisions add a dataset card and Croissant metadata. The
+`prepare_*_eval_pool.py` scripts pin the release revisions.
 
 There were no missing or mismatched core files. As a second check, the small
 maize train and validation Parquet files were downloaded from both namespaces

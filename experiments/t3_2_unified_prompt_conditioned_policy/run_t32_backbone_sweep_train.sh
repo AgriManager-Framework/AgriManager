@@ -176,6 +176,7 @@ echo "T3.2 backbone sweep run: ${RUN_NAME} (model ${MODEL_PATH}, algo ${ALGO}, t
 exec bash entrypoints/train/train.sh \
     --log-file "$LOG_FILE" \
     --config-name "$CONFIG_NAME" \
+    "+data.env_config_overrides.action_parser=legacy" \
     "data.train_files=${TRAIN_FILES}" \
     "data.val_files=null" \
     "data.validation_axis=schema_tuple" \

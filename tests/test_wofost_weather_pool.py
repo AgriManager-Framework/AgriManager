@@ -78,16 +78,16 @@ def test_non_default_hf_pool_uses_repo_specific_cache(tmp_path: Path, monkeypatc
 
     monkeypatch.setattr(weather_pool, "download_pool", fake_download)
 
-    pool_dir = ensure_pool("agrimanager/wofost-weather-regime-pool", revision="rev-a")
+    pool_dir = ensure_pool("AgriManager-Framework/wofost-weather-regime-pool", revision="rev-a")
 
     assert calls
-    assert calls[0][0] == "agrimanager/wofost-weather-regime-pool"
-    assert calls[0][1].name == "agrimanager__wofost-weather-regime-pool"
+    assert calls[0][0] == "AgriManager-Framework/wofost-weather-regime-pool"
+    assert calls[0][1].name == "AgriManager-Framework__wofost-weather-regime-pool"
     assert calls[0][2] == "rev-a"
     assert pool_dir == calls[0][1]
 
     calls.clear()
-    pool_dir_again = ensure_pool("agrimanager/wofost-weather-regime-pool", revision="rev-b")
+    pool_dir_again = ensure_pool("AgriManager-Framework/wofost-weather-regime-pool", revision="rev-b")
 
     assert pool_dir_again == pool_dir
     assert calls == []
@@ -114,3 +114,66 @@ def test_default_hf_pool_refreshes_legacy_no_test_cache(tmp_path: Path, monkeypa
 
     assert pool_dir == legacy_dir
     assert calls == [(DEFAULT_POOL_REPO_ID, legacy_dir, "rev-a")]
+
+
+def test_first_owner_pool_ids_resolve_to_release_copies() -> None:
+    from agrimanager.env.wofost_gym.weather_pool import resolve_pool_repo_id
+
+    for name in ("wofost-weather-pool", "wofost-weather-regime-pool", "weather_pool_maize"):
+        assert resolve_pool_repo_id(f"agrimanager/{name}") == f"AgriManager-Framework/{name}"
+        assert resolve_pool_repo_id(f"AgriManager-Framework/{name}") == f"AgriManager-Framework/{name}"
+    # Only the three released pools of the first owner are redirected.
+    assert resolve_pool_repo_id("agrimanager/other-dataset") == "agrimanager/other-dataset"
+    assert resolve_pool_repo_id("someone/weather_pool_maize") == "someone/weather_pool_maize"
+
+
+def test_first_owner_pool_id_downloads_release_copy_into_its_own_dir(tmp_path: Path, monkeypatch) -> None:
+    from agrimanager.env.wofost_gym import weather_pool
+
+    calls: list[tuple[str, Path, str]] = []
+    monkeypatch.setattr(weather_pool, "_REPO_ROOT", tmp_path)
+
+    def fake_download(repo_id: str, local_dir: str | Path, revision: str = "main") -> Path:
+        local = Path(local_dir)
+        calls.append((repo_id, local, revision))
+        (local / "train").mkdir(parents=True)
+        (local / "train" / "maize.parquet").write_bytes(b"placeholder")
+        return local
+
+    monkeypatch.setattr(weather_pool, "download_pool", fake_download)
+
+    pool_dir = ensure_pool("agrimanager/weather_pool_maize")
+
+    assert calls == [("AgriManager-Framework/weather_pool_maize", pool_dir, "main")]
+    assert pool_dir == tmp_path / ".cache" / "wofost_gym" / "agrimanager__weather_pool_maize"
+    # The first owner's 20-crop ID keeps the shared default directory.
+    assert weather_pool._default_local_dir_for_repo("agrimanager/wofost-weather-pool") == weather_pool.DEFAULT_POOL_DIR
+
+
+def test_frozen_suite_cache_dir_of_first_owner_is_filled_from_release_copy(tmp_path: Path, monkeypatch) -> None:
+    from agrimanager.env.wofost_gym import weather_pool
+
+    calls: list[tuple[str, Path, str]] = []
+    monkeypatch.setattr(weather_pool, "_REPO_ROOT", tmp_path)
+
+    def fake_download(repo_id: str, local_dir: str | Path, revision: str = "main") -> Path:
+        local = Path(local_dir)
+        calls.append((repo_id, local, revision))
+        (local / "val").mkdir(parents=True)
+        (local / "val" / "maize.parquet").write_bytes(b"placeholder")
+        (local / "meteo_cache").mkdir()
+        (local / "meteo_cache" / "example.cache").write_bytes(b"weather")
+        return local
+
+    monkeypatch.setattr(weather_pool, "download_pool", fake_download)
+
+    # What a frozen suite row records: the first owner's cache directory, relative to the repo.
+    recorded = ".cache/wofost_gym/agrimanager__weather_pool_maize/meteo_cache"
+    fetched = weather_pool.ensure_weather_caches([{"weather_cache_dir": recorded}, {"weather_cache_dir": recorded}])
+
+    pool_dir = tmp_path / ".cache" / "wofost_gym" / "agrimanager__weather_pool_maize"
+    assert fetched == ["AgriManager-Framework/weather_pool_maize"]
+    assert calls == [("AgriManager-Framework/weather_pool_maize", pool_dir, "main")]
+    assert (tmp_path / recorded / "example.cache").is_file()
+    # Once present, the cache is not fetched again.
+    assert weather_pool.ensure_weather_caches([{"weather_cache_dir": recorded}]) == []

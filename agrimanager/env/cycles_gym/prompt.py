@@ -5,6 +5,12 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List, Optional, Union
 
+from agrimanager.env.base.action_parser import (
+    LEGACY,
+    STRICT,
+    names_too_many_amounts,
+    no_action_with_amount,
+)
 from agrimanager.env.base.objective_prompt import (
     build_management_objective_block,
     cropgrowth_system_prompt,
@@ -207,9 +213,17 @@ class CornPromptGenerator:
             txt = self._extract_answer_text(response).lower()
         if not txt:
             return None
+        strict = getattr(self, "action_parser", STRICT) != LEGACY
 
         if "do nothing" in txt or "take no action" in txt:
+            if strict and no_action_with_amount(txt):
+                return None
             return 0
+
+        # Strict: one action takes one amount; a list or range of candidate
+        # amounts is not an action.
+        if strict and names_too_many_amounts(txt, allowed=1):
+            return None
 
         amount_match = re.search(
             r"(-?\d+(?:\.\d+)?)\s*(?:kg\s*/\s*ha|kg\s*ha\s*-?1|kg/ha|kg)",
@@ -736,6 +750,10 @@ class CropPlanningPromptGenerator:
 
         if answer_text:
             nums = re.findall(r"-?\d+", answer_text)
+            # Strict: more integers than the action has fields means the answer
+            # lists candidate options instead of choosing one.
+            if getattr(self, "action_parser", STRICT) != LEGACY and len(nums) > needed:
+                return None
             if len(nums) >= needed:
                 try:
                     values = [int(x) for x in nums[-needed:]]

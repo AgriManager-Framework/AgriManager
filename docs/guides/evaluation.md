@@ -27,9 +27,9 @@ revision on every suite group of a setting and writes one result bundle.
 
 ```bash
 bash entrypoints/eval/e5_evaluate_checkpoint.sh \
-    --checkpoint-repo agrimanager/schema-t32-qwen-think-r2 \
+    --checkpoint-repo AgriManager-Framework/schema-t32-qwen-think-r2 \
     --revision step-800 \
-    --suite-repo agrimanager/<test-suite-dataset> \
+    --suite-repo AgriManager-Framework/agrimanager-test-suite \
     --results-repo <your-hf-user>/<results-dataset> \
     --tier t32 \
     --no-upload
@@ -41,8 +41,8 @@ add `--suite-dir`:
 
 ```bash
 bash entrypoints/eval/e5_evaluate_checkpoint.sh \
-    --checkpoint-repo agrimanager/schema-t13-price-think-r1 --revision step-141 \
-    --suite-repo agrimanager/<test-suite-dataset> --suite-dir <dir-with-e4_t13_price_regime> \
+    --checkpoint-repo AgriManager-Framework/schema-t13-price-think-r1 --revision step-141 \
+    --suite-repo AgriManager-Framework/agrimanager-test-suite --suite-dir <dir-with-e4_t13_price_regime> \
     --results-repo local/none --tier t13 --no-upload --work-dir runs/t13-think-r1
 ```
 
@@ -109,6 +109,12 @@ Hosted models work through `--config-name openrouter` and an
 `OPENROUTER_API_KEY`; use a fixed model slug for comparable numbers. Report
 results on the whole split.
 
+By default an answer that names more amounts than its action takes (for
+example `Apply 5.0, 10.0, or 15.0 cm irrigation depth.`) is an invalid action;
+the env-config key `action_parser: legacy` (or `AGRI_ACTION_PARSER=legacy`)
+restores the earlier first-amount reading, which `e5_evaluate_checkpoint.sh`
+(`--action-parser`) and the `experiments/` run scripts pin.
+
 ## Scripted references and neural baselines
 
 | What | Command | Hardware |
@@ -135,16 +141,25 @@ replace `<untrained-base>` in the manifest with that directory.
 
 ## Reproducibility across hardware
 
-Greedy decoding with vLLM is deterministic on one machine, but scores are not
-bitwise identical across GPU types or driver versions. Re-scoring the same
-checkpoints on a different machine changed a few episodes out of 128 per split
-(about six in one comparison). In one DSSAT target the think arm moved by up to
-0.25, about 1.4 scenario-level standard errors; no-think rows matched exactly.
+Greedy decoding with vLLM is close to deterministic: where two tokens are
+nearly tied, a different GPU model, driver or even a rerun on the same GPU can
+flip the choice, and that episode then diverges. Re-scoring the paper's
+terminal checkpoints on the WOFOST and DSSAT targets in a later pass left 68 of
+159 trained no-think seed means bit-identical; trained seed means moved by at
+most 0.16 (no-think) and 0.29 (think), at most 1.7 scenario-level standard
+errors, and the untrained model's by up to 0.62 (paper, Appendix D). Two H200
+machines with different drivers differed on 6 of 128 WOFOST episodes of one
+checkpoint.
 In a fresh install on an A40 (2026-10-25), T2.1 split `s1` of replicate r2
 scored 1.0854 (no-think) and 6.0038 (think) against 1.0878 and 5.9592 in the
 paper's table; against an A100 re-score of the same checkpoints, 2 of 128
 no-think episodes and 63 of 128 think episodes differed (long reasoning traces
 diverge more), and the split means differed by 0.3% and 0.6%.
+A DSSAT example from a fresh install on one RTX 4090 (2026-10-25): T3.1
+DSSAT-trained no-think r2 (`step-114`) on the T3.1 DSSAT split scored
+8.00614849805832, equal to the table to all digits, with all 128 episodes
+identical to the paper's bundle down to the raw model responses; a repeat on
+the same GPU diverged in one episode and scored 7.9922.
 Expect differences of that size when you re-score on other hardware.
 
 **CycleGym price-regime suite (T1.3).** Its environment

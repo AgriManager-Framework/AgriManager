@@ -42,8 +42,8 @@ reward parameters, prompt options), plus labels (setting, test group,
 AgriManager environment loop to obtain an episode return.
 
 The rows are simulator inputs. WOFOST rows reference weather from the public
-NASA POWER-derived pools (`agrimanager/weather_pool_maize`,
-`agrimanager/wofost-weather-pool`, `agrimanager/wofost-weather-regime-pool`);
+NASA POWER-derived pools (`AgriManager-Framework/weather_pool_maize`,
+`AgriManager-Framework/wofost-weather-pool`, `AgriManager-Framework/wofost-weather-regime-pool`);
 Cycles and DSSAT rows are generator configurations for those simulators.
 
 ## Contents

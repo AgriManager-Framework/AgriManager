@@ -170,7 +170,7 @@ def build_algorithm(
     num_envs: int,
     gamma: float,
     seed: int,
-    tensorboard_log: str,
+    tensorboard_log: str | None,
     device: str,
 ) -> tuple[str, BaseAlgorithm]:
     name = resolve_algorithm_name(agent_cfg)

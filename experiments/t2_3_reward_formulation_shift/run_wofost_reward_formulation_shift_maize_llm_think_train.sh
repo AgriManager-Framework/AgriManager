@@ -62,6 +62,7 @@ fi
 exec bash entrypoints/train/train.sh \
     --log-file "$LOG_FILE" \
     --config-name agri_grpo \
+    "+data.env_config_overrides.action_parser=legacy" \
     "data.train_files=[${TRAIN_YIELD_FILE},${TRAIN_PROFIT_FILE},${TRAIN_WATER_FILE}]" \
     "data.val_files=null" \
     "data.validation_axis=reward_formulation" \

@@ -21,8 +21,8 @@ MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
 AUDIT_PATH = OUTPUT_DIR / "audit.json"
 OUTPUT_METEO_CACHE = OUTPUT_DIR / "meteo_cache"
 
-SOURCE_REPO = "agrimanager/weather_pool_maize"
-SOURCE_REVISION = "11d9558c981fa8cf43a69ee8f586134da94ef5e6"
+SOURCE_REPO = "AgriManager-Framework/weather_pool_maize"
+SOURCE_REVISION = "3389bc2d75acddbd6740f30198167e8d3e4559c3"
 SOURCE_TRAIN_FILE = "train/maize.parquet"
 SOURCE_VAL_FILE = "val/maize.parquet"
 
@@ -40,7 +40,14 @@ LOCAL_RENDERED_REFERENCE = (
     / "t32_unified_wofost"
     / "val_wofost_lnw_profit.parquet"
 )
+# A pool fetched under the release name, or under the first owner's name that
+# frozen suites record (both hold the same files).
 LOCAL_METEO_CACHE_CANDIDATES = (
+    REPO_ROOT
+    / ".cache"
+    / "wofost_gym"
+    / "AgriManager-Framework__weather_pool_maize"
+    / "meteo_cache",
     REPO_ROOT
     / ".cache"
     / "wofost_gym"
