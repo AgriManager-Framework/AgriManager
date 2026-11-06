@@ -58,10 +58,10 @@ Both modes:
 - initialize the `verl` git submodule (upstream VeRL `v0.7.0-1`, commit
   `7522bef0`) and install it in editable mode;
 - clone WOFOST-Gym into `../AgriManagerExternal/WOFOSTGym` from
-  `github.com/AgriManager-Framework/WOFOSTGym` at commit `1096a6d7` and install
+  `github.com/AgriManager-Framework/WOFOSTGym` at commit `253cf546` and install
   its `pcse`, `pcse_gym`, `imitation` and `stable-baselines3` packages;
 - clone CycleGym into `../AgriManagerExternal/CyclesGym` from
-  `github.com/AgriManager-Framework/cyclesgym` at commit `c5f4ba12`, install it
+  `github.com/AgriManager-Framework/cyclesgym` at commit `2eb87583`, install it
   next to the legacy `gym==0.26.2` it imports, run its native bootstrap
   (`install_cycles.py`, which downloads the Cycles `v0.12.9-alpha` binary) and
   check that the binary and input files exist;

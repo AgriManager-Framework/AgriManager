@@ -50,9 +50,9 @@ EXTERNAL_DIR="$(cd "$EXTERNAL_DIR" && pwd)"
 # Pinned external sources. The default remotes are the public forks; the refs are
 # the exact code the paper used (tree-identical to the original working forks).
 WOFOST_GYM_REMOTE="${WOFOST_GYM_REMOTE:-https://github.com/AgriManager-Framework/WOFOSTGym.git}"
-WOFOST_GYM_REF="${WOFOST_GYM_REF:-1096a6d7018fd94857f30456a8403c644894f2eb}"
+WOFOST_GYM_REF="${WOFOST_GYM_REF:-253cf546f9b39a9efdb225049a1a48341a665c87}"
 CYCLES_GYM_REMOTE="${CYCLES_GYM_REMOTE:-https://github.com/AgriManager-Framework/cyclesgym.git}"
-CYCLES_GYM_REF="${CYCLES_GYM_REF:-c5f4ba1249c2c2bf2e3442dd717b3d9772a27fbe}"
+CYCLES_GYM_REF="${CYCLES_GYM_REF:-2eb875834b71bb4e3a1ae59d0468551b41882331}"
 CYCLES_GYM_LEGACY_GYM_VERSION="0.26.2"
 GPU_LOCK_FILE="$REPO_ROOT/requirements/locks/agrimanager-py312-cu128.lock.txt"
 CPU_LOCK_FILE="$REPO_ROOT/requirements/locks/agrimanager-py312-cpu.lock.txt"

@@ -1,12 +1,29 @@
-# TODO(authors): fill in the author list (family-names / given-names / affiliation)
-# once it is final. TODO(doi): add the proceedings or arXiv identifier.
+# TODO(doi): add the proceedings or arXiv identifier.
 cff-version: 1.2.0
 message: "If you use AgriManager, please cite the paper below."
 title: "AgriManager"
 type: software
 authors:
-  - name: "TODO(authors)"
+  - family-names: "Gui"
+    given-names: "Chi"
+  - family-names: "Zheng"
+    given-names: "Junwen"
+  - family-names: "Nigam"
+    given-names: "Ritwik"
+  - family-names: "Yang"
+    given-names: "Qianlan"
+  - family-names: "Lang"
+    given-names: "Meagan"
+  - family-names: "Dongre"
+    given-names: "Vardhan"
+  - family-names: "Barr"
+    given-names: "Jeremiah"
+  - family-names: "Wang"
+    given-names: "Yu-Xiong"
+  - family-names: "Adve"
+    given-names: "Vikram S."
 repository-code: "https://github.com/AgriManager-Framework/AgriManager"
+url: "https://agrimanager-framework.github.io/"
 license: Apache-2.0
 keywords:
   - agriculture
@@ -18,6 +35,23 @@ preferred-citation:
   type: conference-paper
   title: "AgriManager: A Framework and Benchmark for LLM-RL Generalization in Agricultural Management"
   authors:
-    - name: "TODO(authors)"
+    - family-names: "Gui"
+      given-names: "Chi"
+    - family-names: "Zheng"
+      given-names: "Junwen"
+    - family-names: "Nigam"
+      given-names: "Ritwik"
+    - family-names: "Yang"
+      given-names: "Qianlan"
+    - family-names: "Lang"
+      given-names: "Meagan"
+    - family-names: "Dongre"
+      given-names: "Vardhan"
+    - family-names: "Barr"
+      given-names: "Jeremiah"
+    - family-names: "Wang"
+      given-names: "Yu-Xiong"
+    - family-names: "Adve"
+      given-names: "Vikram S."
   collection-title: "Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track"
   year: 2026

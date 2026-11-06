@@ -2,7 +2,7 @@
 
 **A Framework and Benchmark for LLM-RL Generalization in Agricultural Management**
 
-[Website](TODO(website-url)) · [Paper](TODO(paper-url)) · [Models & Data](https://huggingface.co/AgriManager-Framework) · [Training logs](https://wandb.ai/agrimanager) · [Docs](docs/README.md)
+[Website](https://agrimanager-framework.github.io/) · [Paper](TODO(paper-url)) · [Models & Data](https://huggingface.co/AgriManager-Framework) · [Training logs](https://wandb.ai/agrimanager) · [Docs](docs/README.md)
 
 ![AgriManager overview](assets/main_diagram.png)
 
@@ -135,7 +135,9 @@ If you use AgriManager, please cite the paper. A machine-readable entry is in
 @inproceedings{agrimanager2026,
   title     = {AgriManager: A Framework and Benchmark for {LLM-RL} Generalization
                in Agricultural Management},
-  author    = {TODO(authors)},
+  author    = {Gui, Chi and Zheng, Junwen and Nigam, Ritwik and Yang, Qianlan and
+               Lang, Meagan and Dongre, Vardhan and Barr, Jeremiah and
+               Wang, Yu-Xiong and Adve, Vikram S.},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS),
                Evaluations and Datasets Track},
   year      = {2026},

@@ -16,11 +16,11 @@ place given in the last column.
 | Component | Used as | Version / commit | License | Where the license was read |
 |---|---|---|---|---|
 | VeRL | git submodule `verl/` (RL training framework) | upstream `verl-project/verl` @ `7522bef0eb5c5761500fa8652e7ed45936f5323d` (`v0.7.0-1-g7522bef0`) | Apache-2.0 | `LICENSE` and `Notice.txt` in the repository; GitHub license API |
-| WOFOSTGym | Gym wrapper around WOFOST | AgriManager fork `AgriManager-Framework/WOFOSTGym` @ `1096a6d7018fd94857f30456a8403c644894f2eb` = upstream `Intelligent-Reliable-Autonomous-Systems/WOFOSTGym` @ `281f0af` plus one patch commit | MIT | `LICENSE.md` (W. H. Solow, 2024); GitHub license API |
+| WOFOSTGym | Gym wrapper around WOFOST | AgriManager fork `AgriManager-Framework/WOFOSTGym` @ `253cf546f9b39a9efdb225049a1a48341a665c87` = upstream `Intelligent-Reliable-Autonomous-Systems/WOFOSTGym` @ `281f0af` plus one patch commit | MIT | `LICENSE.md` (W. H. Solow, 2024); GitHub license API |
 | PCSE / WOFOST (inside WOFOSTGym, `pcse/`) | crop model | modified PCSE 5.5.6 shipped in WOFOSTGym | European Union Public Licence (EUPL) | `pcse/pcse/__init__.py` (Copyright Alterra, Wageningen-UR; `__license__ = "European Union Public License"`; "all files in pcse directory fall under this license"). Upstream `ajwdewit/pcse` `LICENSE`: EUPL v1.1 or later. WOFOSTGym's `pcse/LICENSE.md` is an MIT text; we treat the EUPL header as governing |
 | `pcse_gym`, `imitation`, `rl_algs` (inside WOFOSTGym) | Gym environments, helper code | same commit | MIT | `pcse_gym/LICENSE.md`, `imitation/LICENSE.md` (W. H. Solow) |
 | Stable-Baselines3 (inside WOFOSTGym, `stable-baselines3/`) | numerical-RL baselines | 2.6.0a1 copy | MIT | `stable-baselines3/LICENSE` (A. Raffin); upstream `DLR-RM/stable-baselines3` |
-| CyclesGym | Gym wrapper around Cycles | AgriManager fork `AgriManager-Framework/cyclesgym` @ `c5f4ba1249c2c2bf2e3442dd717b3d9772a27fbe` = upstream `kora-labs/cyclesgym` @ `44e7dbc` plus one patch commit | BSD-3-Clause | GitHub license API for `kora-labs/cyclesgym` |
+| CyclesGym | Gym wrapper around Cycles | AgriManager fork `AgriManager-Framework/cyclesgym` @ `2eb875834b71bb4e3a1ae59d0468551b41882331` = upstream `kora-labs/cyclesgym` @ `44e7dbc` plus one patch commit | BSD-3-Clause | GitHub license API for `kora-labs/cyclesgym` |
 | Cycles crop simulator | native binary, downloaded by CyclesGym's `install_cycles.py` | `v0.12.9-alpha` release archives of `PSUmodeling/Cycles` | CC BY-NC-ND 4.0 | `LICENSE.md` of `PSUmodeling/Cycles` (Copyright 2023 Armen Kemanian). Not redistributed by AgriManager; non-commercial terms apply to the binary |
 | OpenAI Gym | legacy API imported by CyclesGym | `gym==0.26.2` (PyPI) | MIT | PyPI metadata |
 
